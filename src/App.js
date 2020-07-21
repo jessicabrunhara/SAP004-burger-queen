@@ -1,15 +1,13 @@
 import React from 'react';
 
+import Login from '../src/Pages/Login/main'
+
+import './global-style.css';
+
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-       
-        <p>
-          Hello girls! 
-        </p>
-       
-      </header>
+    <div>
+      <Login></Login>
     </div>
   );
 }
