@@ -6,44 +6,29 @@ import {
     Link,
 } from "react-router-dom";
 
-import KitchenNewOrder from './Pages/kitchen-new-order';
-import LoungeNewOrder from './Pages/lounge-new-order';
-import Login from './Pages/login';
-import Register from './Pages/register';
-import LoungeOrderReady from './Pages/lounge-order-ready';
-import KitchenOrderReady from './Pages/kitchen-order-ready';
-import FinishedOrder from './Pages/finished-order';
+import KitchenNewOrder from './Pages/Kitchen/kitchen-new-order';
+import LoungeNewOrder from './Pages/Lounge/lounge-new-order';
+import Login from './Pages/Auth/login';
+import Register from './Pages/Auth/register';
+import LoungeOrderReady from './Pages/Lounge/lounge-order-ready';
+import KitchenOrderReady from './Pages/Kitchen/kitchen-order-ready';
+import FinishedOrder from './Pages/Finished-Order/finished-order';
 
-
-export default function QueenRouter () {
+export default function QueenRouter() {
   return (
     <Router>
       <Switch>
-        <Route exact path='/'>
-          <Login />
-        </Route>
-        <Route path='/register'>
-          <Register />
-        </Route>
-        <Route path='/lounge-new-order'>
-         <LoungeNewOrder />
-        </Route>
-        <Route path='/lounge-order-ready'>
-         <LoungeOrderReady />]
-        </Route>
-        <Route path='/kitchen-new-order'>
-          <KitchenNewOrder />
-        </Route>
-        <Route path='/kitchen-order-ready'>
-         <KitchenOrderReady />
-        </Route>
-        <Route path='/finished-order'>
-         <FinishedOrder />
-        </Route>
+        <Route exact path='/' component={Login} />
+        <Route path='/register' component={Register} />
+        <Route path='/lounge-new-order' component={LoungeNewOrder} />
+        <Route path='/lounge-order-ready' component={LoungeOrderReady} />
+        <Route path='/kitchen-new-order' component={KitchenNewOrder} />
+        <Route path='/kitchen-order-ready' component={KitchenOrderReady} />
+        <Route path='/finished-order' component={FinishedOrder} />
         <Route path='*'>
           <div>Página não encontrada</div>
         </Route>
       </Switch>
     </Router>
-    )
+  )
 }
