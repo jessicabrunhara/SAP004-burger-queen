@@ -1,0 +1,11 @@
+.header-wrapper{
+    display: flex;
+    background-color: #0A1936;
+    color: whitesmoke;
+    padding: 15px 0px 15px 0px;
+    justify-content: center;
+}
+.header-wrapper img{
+    width: 60px;
+    align-self: center;
+}

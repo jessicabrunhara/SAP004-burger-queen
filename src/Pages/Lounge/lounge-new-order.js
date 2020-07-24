@@ -1,11 +1,15 @@
 import React from 'react';
+import Header from '../../Components/header';
 
 const LoungeNewOrder = () => {
 
-    return (
-        <div>
-            <p>Olá, garçom.</p>
-        </div>
+  return (
+    <div>
+      <Header />
+      <div>
+        <p>Olá, garçom.</p>
+      </div>
+    </div>    
     )
 }
 

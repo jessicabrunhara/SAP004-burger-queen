@@ -1,11 +1,16 @@
 import React from 'react';
+import Header from '../../Components/header'
 
 const FinishedOrder = () => {
 
   return (
     <div>
-      <p>Olá, pedidos finalizados.</p>
+      <Header />
+      <div>
+        <p>Olá, pedidos finalizados.</p>
+      </div>
     </div>
+   
     )
 }
 
