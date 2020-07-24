@@ -1,15 +1,14 @@
 import React from "react";
 import {
-    BrowserRouter as Router, 
-    Switch,
-    Route,
-    Link,
+  BrowserRouter as Router,
+  Switch,
+  Route
 } from "react-router-dom";
 
 import KitchenNewOrder from './Pages/Kitchen/kitchen-new-order';
 import LoungeNewOrder from './Pages/Lounge/lounge-new-order';
-import Login from './Pages/Auth/login';
-import Register from './Pages/Auth/register';
+import Login from './Pages/Login/';
+import Register from './Pages/Register/';
 import LoungeOrderReady from './Pages/Lounge/lounge-order-ready';
 import KitchenOrderReady from './Pages/Kitchen/kitchen-order-ready';
 import FinishedOrder from './Pages/Finished-Order/finished-order';
