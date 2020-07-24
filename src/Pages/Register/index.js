@@ -4,7 +4,7 @@ const Register = () => {
 
     return (
         <div className='login-wrapper'>
-          <div>Página de Registro</div>
+            <div>Página de Registro</div>
             <form>
                 <input type='text' placeholder='Nome'></input>
                 <input type='email' placeholder='email'></input>
