@@ -1,7 +1,7 @@
 import React from 'react';
-import Header from '../../Components/header';
+import Header from 'Components/header';
 
-const LoungeOrderReady= () => {
+const LoungeOrderReady = () => {
 
   return (
     <div>
@@ -10,7 +10,7 @@ const LoungeOrderReady= () => {
         <p>Olá, Novos Pedidos.</p>
       </div>
     </div>
-    )
+  )
 }
 
 export default LoungeOrderReady;
