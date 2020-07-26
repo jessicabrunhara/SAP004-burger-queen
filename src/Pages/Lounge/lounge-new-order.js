@@ -1,5 +1,5 @@
 import React from 'react';
-import Header from '../../Components/header';
+import Header from 'Components/header';
 
 const LoungeNewOrder = () => {
 
@@ -9,8 +9,8 @@ const LoungeNewOrder = () => {
       <div>
         <p>Olá, garçom.</p>
       </div>
-    </div>    
-    )
+    </div>
+  )
 }
 
 export default LoungeNewOrder;

@@ -1,5 +1,5 @@
 import React from 'react';
-import Header from '../../Components/header'
+import Header from 'Components/header'
 
 const FinishedOrder = () => {
 
@@ -10,8 +10,8 @@ const FinishedOrder = () => {
         <p>Olá, pedidos finalizados.</p>
       </div>
     </div>
-   
-    )
+
+  )
 }
 
 export default FinishedOrder;
