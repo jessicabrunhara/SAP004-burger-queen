@@ -2,5 +2,41 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-top: 30px;
+    background-image: url(../../Images/azul.jpg);
+    background-size: cover;
+    background-repeat: repeat;
+    height: 1024px;  
+}
+.logo-login {
+    padding-top: 50px; 
+    margin: 15px;
+ }
+ 
+.login-form {
+    flex-direction: column;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+}
+
+.register-link{
+    margin-top: 20px;
+    display: flex;
+    font-size: 30px;
+    color: white;
+}
+
+.register-link :last-child {
+    padding-left: 10px;
+    text-decoration-line: underline;
+    color: white;
+    transition: .2s;
+
+}
+.register-link :last-child:active {
+    color: #fa9494;
+}
+.register-link :last-child:hover {
+    color: #fa9494;
 }

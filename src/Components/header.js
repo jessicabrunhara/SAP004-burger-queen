@@ -5,7 +5,7 @@ import LogoPiscando from 'Images/gifheader.gif'
 
 const Header = () => {
   return (
-    <header class='header-wrapper'>
+    <header className='header-wrapper'>
       <img src={LogoPiscando} />
     </header>
 
