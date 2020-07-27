@@ -27,7 +27,7 @@ const Login = () => {
       <form>
         <Input class='input-std' onChange={(e) => setEmail(e.target.value)} type='email' placeholder='Email'/>
         <Input class='input-std' onChange={(e) => setPassword(e.target.value)} type='password' placeholder='Senha'/>
-
+        
         <Button class='btn-std' onClick={signIn} type='button' name='Entrar'/>
         <div>
           {msgType === 'sucesso' && <span><strong>WoW!</strong>Você está conectado! &#128526;</span>}

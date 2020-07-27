@@ -6,7 +6,7 @@ import './logo.css';
 const Logo = () => {
     return (
       <div class='logo-wrapper'>
-        {/*   <img src={LogoPiscando} /> */}
+     {/*  <img src={LogoPiscando} />  */}
       </div>
   
     );

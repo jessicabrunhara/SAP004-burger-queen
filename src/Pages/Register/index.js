@@ -86,6 +86,18 @@ const Register = () => {
           <input type='radio' value='lounge' name='sector' id='lounge' required />
         </div>
 
+        
+   {/*   -----------------------  exemplo ----------
+      <div className='select-role'>
+          <label htmlFor='kitchen'>COZINHA</label>
+          <Input type='radio' className='radio-button' name='jobTitle' id='kitchen' value='Kitchen' onChange={(e) => setJobTitle(e.target.value)} />
+          <label htmlFor='hall'>SALÃO</label>
+          <Input type='radio' className='radio-button' name='jobTitle' id='hall' value='Hall' onChange={(e) => setJobTitle(e.target.value)} />
+          {showErroEmptyRadios && (
+            <p>{showErroEmptyRadios}</p>
+          )}
+        </div> */}
+
         {
           loading ? <div className="spinner-border text-danger" role="status"><span className="sr-only">Loading...</span></div>
             : <button onClick={signUp} type="button">Cadastrar</button>
