@@ -4,10 +4,12 @@ import firebase from 'Config/firebase';
 import 'firebase/auth';
 import 'firebase/firestore';
 import { Link } from 'react-router-dom';
+import Logo from 'Components/Logo/logo';
+import Input from 'Components/Input/input'
+import Button from 'Components/Button/button'
 
 const Register = () => {
-  const [firstName, setFirstName] = useState();
-  const [lastName, setLastName] = useState();
+  const [name, setName] = useState();
   const [email, setEmail] = useState();
   const [password, setPassword] = useState();
   const [msgType, setMsgType] = useState();
@@ -70,24 +72,23 @@ const Register = () => {
   }
 
   return (
-    <div className='login-wrapper'>
-      <div>Página de Registro</div>
-      <form>
-        <input onChange={(e) => setFirstName(e.target.value)} type='text' placeholder='Nome'></input>
-        <input onChange={(e) => setLastName(e.target.value)} type='text' placeholder='Sobrenome'></input>
-        <input onChange={(e) => setEmail(e.target.value)} type='email' placeholder='email'></input>
-        <input onChange={(e) => setPassword(e.target.value)} type='password' placeholder='Senha'></input>
+    <div className='register-wrapper'>
+      <Logo className='logo-register' />
+      <form className='register-form'>
+        <Input className='input-register' onChange={(e) => setName(e.target.value)} type='text' placeholder='Nome Completo' />
+        <Input className='input-register' onChange={(e) => setEmail(e.target.value)} type='email' placeholder='email' />
+        <Input className='input-register' onChange={(e) => setPassword(e.target.value)} type='password' placeholder='Senha' />
 
-        <div onChange={(e) => setSector(e.target.value)}>
-          <label>Selecione seu setor</label>
-          <label>Cozinha</label>
-          <input type='radio' value='kitchen' name='sector' id='kitchen' required />
-          <label>Salão</label>
-          <input type='radio' value='lounge' name='sector' id='lounge' required />
+        <div className='options-wrapper'>
+          <p>Selecione o seu setor: </p>
+          <select name='select-type' id='select-type' className='options-sector'>
+            <option className='sector' value='kitchen'>Cozinha</option>
+            <option className='sector' value='lounge'>Salão</option>
+          </select>
         </div>
 
-        
-   {/*   -----------------------  exemplo ----------
+
+        {/*   -----------------------  exemplo ----------
       <div className='select-role'>
           <label htmlFor='kitchen'>COZINHA</label>
           <Input type='radio' className='radio-button' name='jobTitle' id='kitchen' value='Kitchen' onChange={(e) => setJobTitle(e.target.value)} />
@@ -100,14 +101,14 @@ const Register = () => {
 
         {
           loading ? <div className="spinner-border text-danger" role="status"><span className="sr-only">Loading...</span></div>
-            : <button onClick={signUp} type="button">Cadastrar</button>
+            : <Button className='btn-std' onClick={signUp} type="button" name='Cadastrar' />
         }
         <div>
           {msgType === 'sucesso' && <span><strong>WoW!</strong>Usuário cadastrado com sucesso! &#128526;</span>}
           {msgType === 'erro' && <span><strong>Ops!</strong> {msg} &#128546;</span>}
         </div>
       </form >
-      <div>
+      <div className='login-link'>
         <p>Já é cadastrado?</p>
         <Link to='/'>Faça login</Link>
       </div>

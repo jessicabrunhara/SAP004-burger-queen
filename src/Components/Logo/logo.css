@@ -1,6 +1,18 @@
-.logo-wrapper{
-    display: flex;
-    width: 200px;
-    height: 300px; 
 
-   }
+.logo-login {
+    padding-top: 50px; 
+    margin: 15px;
+ }
+ .logo-login img{
+    width: auto;
+    height: 450px;
+}
+
+.logo-register {
+    padding-top: 20px; 
+    margin: 15px;
+ }
+ .logo-register img{
+    width: auto;
+    height: 410px;
+}
