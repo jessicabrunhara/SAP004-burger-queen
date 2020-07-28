@@ -33,23 +33,29 @@ const Login = () => {
 
   return (
     <div className='login-wrapper'>
-      <Logo className='logo-login' />
-      <form className='login-form'>
-        <Input className='input-login' onChange={(e) => setEmail(e.target.value)} type='email' placeholder='Email' />
-        <Input className='input-login' onChange={(e) => setPassword(e.target.value)} type='password' placeholder='Senha' />
 
-        <Button className='btn-std' onClick={signIn} type='button' name='Entrar' />
-        <div>
-          {msgType === 'sucesso' && <span><strong>WoW!</strong>Você está conectado! &#128526;</span>}
-          {msgType === 'erro' && <span><strong>Ops!</strong>Verifique se a senha ou usuário estão corretos! &#128546;</span>}
-        </div>
+      <div className="logo-wrapper">
+        <Logo className='logo-login' />
+      </div>
 
-        <div className='register-link'>
-          <p>Não tem uma conta?</p>
-          <Link to='/register'>Registre-se</Link>
-        </div>
+      <div className="form-wrapper">
+        <form className='login-form'>
+          <Input className='input-login' onChange={(e) => setEmail(e.target.value)} type='email' placeholder='Email' />
+          <Input className='input-login' onChange={(e) => setPassword(e.target.value)} type='password' placeholder='Senha' />
 
-      </form>
+          <Button className='btn-std' onClick={signIn} type='button' name='Entrar' />
+          <div>
+            {msgType === 'sucesso' && <span><strong>WoW!</strong>Você está conectado! &#128526;</span>}
+            {msgType === 'erro' && <span><strong>Ops!</strong>Verifique se a senha ou usuário estão corretos! &#128546;</span>}
+          </div>
+
+          <div className='register-link'>
+            <p>Não tem uma conta?</p>
+            <Link to='/register'>Registre-se</Link>
+          </div>
+        </form>
+      </div>
+
     </div>
 
   )
