@@ -4,6 +4,9 @@ import {
   Switch,
   Route
 } from "react-router-dom";
+import store from './Store';
+import { Provider } from 'react-redux';
+
 
 import KitchenNewOrder from 'Pages/Kitchen/kitchen-new-order';
 import LoungeNewOrder from 'Pages/Lounge/lounge-new-order';
@@ -15,19 +18,21 @@ import FinishedOrder from 'Pages/Finished-Order/finished-order';
 
 export default function QueenRouter() {
   return (
-    <Router>
-      <Switch>
-        <Route exact path='/' component={Login} />
-        <Route path='/register' component={Register} />
-        <Route path='/lounge-new-order' component={LoungeNewOrder} />
-        <Route path='/lounge-order-ready' component={LoungeOrderReady} />
-        <Route path='/kitchen-new-order' component={KitchenNewOrder} />
-        <Route path='/kitchen-order-ready' component={KitchenOrderReady} />
-        <Route path='/finished-order' component={FinishedOrder} />
-        <Route path='*'>
-          <div>Página não encontrada</div>
-        </Route>
-      </Switch>
-    </Router>
+    <Provider store={store}>
+      <Router>
+        <Switch>
+          <Route exact path='/' component={Login} />
+          <Route path='/register' component={Register} />
+          <Route path='/lounge-new-order' component={LoungeNewOrder} />
+          <Route path='/lounge-order-ready' component={LoungeOrderReady} />
+          <Route path='/kitchen-new-order' component={KitchenNewOrder} />
+          <Route path='/kitchen-order-ready' component={KitchenOrderReady} />
+          <Route path='/finished-order' component={FinishedOrder} />
+          <Route path='*'>
+            <div>Página não encontrada</div>
+          </Route>
+        </Switch>
+      </Router>
+    </Provider>
   )
 }
