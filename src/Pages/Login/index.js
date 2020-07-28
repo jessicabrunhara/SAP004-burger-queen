@@ -22,6 +22,15 @@ const Login = () => {
         setTimeout(() => {
           dispatch({ type: 'LOG_IN', userEmail: email })
         }, 2000);
+
+        firebase.firestore().collection('userProfile')
+          .where('uid', '==', firebase.auth().currentUser.uid)
+          .get().then((querySnapshot) => {
+            querySnapshot.forEach((doc) => {
+              console.log(doc.data());
+            });
+          });
+
       })
       .catch(erro => {
         setMsgType('erro');

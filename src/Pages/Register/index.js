@@ -9,40 +9,48 @@ import Input from 'Components/Input/input'
 import Button from 'Components/Button/button'
 
 const Register = () => {
-  const [name, setName] = useState();
-  const [email, setEmail] = useState();
-  const [password, setPassword] = useState();
-  const [sector, setSector] = useState();
-  const [msgType, setMsgType] = useState();
-  const [msg, setMsg] = useState();
-  const [loading, setLoading] = useState();
+  const [name, setName] = useState('');
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  const [msgType, setMsgType] = useState('');
+  const [msg, setMsg] = useState('');
+  const [loading, setLoading] = useState(false);
+  const [sector, setSector] = useState('kitchen');
 
-  /* const newUser = () => {
-    firebase.firestore().collection('users').add({
+  function populateUser() {
+    const user = firebase.auth().currentUser
+
+    const sectorPromise = firebase.firestore().collection('userProfile').add({
+      uid: firebase.auth().currentUser.uid,
       name: name,
-      email: email,
       sector: sector,
-      userId: firebase.auth().currentUser.uid,
     });
-  } */
+
+    sectorPromise.then(() => {
+      setMsgType('sucesso');
+      setLoading(false);
+    }).catch((error) => {
+      setLoading(false);
+      setMsgType(`erro: ${error}`);
+    })
+  }
 
   const signUp = () => {
 
-    setLoading(1);
+    setLoading(true);
     setMsgType(null);
 
-    if (!email || !password || !name || !sector) {
+    if (!email || !password) {
       setMsgType('erro')
-      setMsg('Informações incompletas. Preencha todos os campos para se cadastrar')
+      setMsg('Informações incompletas. Informe email e senha para se cadastrar')
       return
     }
 
     firebase.auth().createUserWithEmailAndPassword(email, password)
       .then(() => {
-        setLoading(0);
-        setMsgType('sucesso');
+        populateUser();
       }).catch(erro => {
-        setLoading(0);
+        setLoading(false);
         setMsgType('erro')
         switch (erro.message) {
           case 'Password should be at least 6 characters':
@@ -70,12 +78,14 @@ const Register = () => {
 
         <div className='options-wrapper'>
           <p>Selecione o seu setor: </p>
-          <select onChange={(e) => setSector(e.target.value)} name='select-type' id='select-type' className='options-sector'>
-            <option disabled selected value> --- </option>
+          <select name='select-type' id='select-type' className='options-sector' onChange={(e) => setSector(e.target.value)}>
+            {/*  <option disabled selected value> --- </option> */}
             <option className='sector' value='kitchen'>Cozinha</option>
             <option className='sector' value='lounge'>Salão</option>
           </select>
         </div>
+
+
         {
           loading ? <div className="spinner-border text-danger" role="status"><span className="sr-only">Loading...</span></div>
             : <Button className='btn-std' onClick={signUp} type="button" name='Cadastrar' />
@@ -90,6 +100,7 @@ const Register = () => {
         <Link to='/'>Faça login</Link>
       </div>
     </div >
+
   )
 }
 
