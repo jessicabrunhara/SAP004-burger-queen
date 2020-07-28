@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import firebase from 'Config/firebase';
 import 'firebase/auth';
 import { Link, Redirect } from 'react-router-dom';
-import { useSelector, useDispatch } from 'react-redux';
+import { useSelector } from 'react-redux';
 import Input from 'Components/Input/input';
 import Button from 'Components/Button/button';
 import './login.css';
@@ -13,15 +13,11 @@ const Login = () => {
   const [password, setPassword] = useState();
   const [msgType, setMsgType] = useState();
 
-  const dispatch = useDispatch();
 
   const signIn = () => {
     firebase.auth().signInWithEmailAndPassword(email, password)
       .then(result => {
         setMsgType('sucesso')
-        setTimeout(() => {
-          dispatch({ type: 'LOG_IN', userEmail: email })
-        }, 2000);
 
         firebase.firestore().collection('userProfile')
           .where('uid', '==', firebase.auth().currentUser.uid)
@@ -30,7 +26,6 @@ const Login = () => {
               console.log(doc.data());
             });
           });
-
       })
       .catch(erro => {
         setMsgType('erro');
