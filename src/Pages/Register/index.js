@@ -12,29 +12,18 @@ const Register = () => {
   const [name, setName] = useState();
   const [email, setEmail] = useState();
   const [password, setPassword] = useState();
+  const [sector, setSector] = useState();
   const [msgType, setMsgType] = useState();
   const [msg, setMsg] = useState();
   const [loading, setLoading] = useState();
-  const [sector, setSector] = useState();
 
-  /* function createUser(email, firstName, lastName, sector) {
-    console.log(sector.value);
-    if (sector.value === 'kitchen') {
-      firebase.firestore().collection('userKitchen').add({
-        firstName,
-        lastName,
-        email,
-        sector,
-        uid: firebase.auth().currentUser.uid,
-      });
-    } else {
-      firebase.firestore().collection('userLounge').add({
-        firstName,
-        lastName,
-        email,
-        uid: firebase.auth().currentUser.uid,
-      });
-    }
+  /* const newUser = () => {
+    firebase.firestore().collection('users').add({
+      name: name,
+      email: email,
+      sector: sector,
+      userId: firebase.auth().currentUser.uid,
+    });
   } */
 
   const signUp = () => {
@@ -42,16 +31,16 @@ const Register = () => {
     setLoading(1);
     setMsgType(null);
 
-    if (!email || !password) {
+    if (!email || !password || !name || !sector) {
       setMsgType('erro')
-      setMsg('Informações incompletas. Informe email e senha para se cadastrar')
+      setMsg('Informações incompletas. Preencha todos os campos para se cadastrar')
       return
     }
 
     firebase.auth().createUserWithEmailAndPassword(email, password)
       .then(() => {
         setLoading(0);
-        setMsgType('sucesso')
+        setMsgType('sucesso');
       }).catch(erro => {
         setLoading(0);
         setMsgType('erro')
@@ -81,24 +70,12 @@ const Register = () => {
 
         <div className='options-wrapper'>
           <p>Selecione o seu setor: </p>
-          <select name='select-type' id='select-type' className='options-sector'>
+          <select onChange={(e) => setSector(e.target.value)} name='select-type' id='select-type' className='options-sector'>
+            <option disabled selected value> --- </option>
             <option className='sector' value='kitchen'>Cozinha</option>
             <option className='sector' value='lounge'>Salão</option>
           </select>
         </div>
-
-
-        {/*   -----------------------  exemplo ----------
-      <div className='select-role'>
-          <label htmlFor='kitchen'>COZINHA</label>
-          <Input type='radio' className='radio-button' name='jobTitle' id='kitchen' value='Kitchen' onChange={(e) => setJobTitle(e.target.value)} />
-          <label htmlFor='hall'>SALÃO</label>
-          <Input type='radio' className='radio-button' name='jobTitle' id='hall' value='Hall' onChange={(e) => setJobTitle(e.target.value)} />
-          {showErroEmptyRadios && (
-            <p>{showErroEmptyRadios}</p>
-          )}
-        </div> */}
-
         {
           loading ? <div className="spinner-border text-danger" role="status"><span className="sr-only">Loading...</span></div>
             : <Button className='btn-std' onClick={signUp} type="button" name='Cadastrar' />
@@ -113,7 +90,6 @@ const Register = () => {
         <Link to='/'>Faça login</Link>
       </div>
     </div >
-
   )
 }
 
