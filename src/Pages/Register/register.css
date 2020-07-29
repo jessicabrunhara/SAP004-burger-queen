@@ -1,10 +1,11 @@
 .register-wrapper{
     display: flex;
-    flex-direction: row;
     align-items: center;
-    justify-content: space-evenly;
     background-image: url(../../Images/azul.jpg);
     background-size: cover;
+    flex-direction: row;
+    justify-content: space-evenly;
+    height: 635px;
 }
 
 .logo-wrapper{
@@ -24,6 +25,7 @@ flex-direction: column;
     text-align: center;
     align-items: center;
 }
+
 .options-wrapper{
     display: flex;
     color: white;
@@ -31,6 +33,7 @@ flex-direction: column;
     margin: 20px 0px 10px 0px;
     align-items: center;
 }
+
 .options-sector{
   font-size: 20px;
   padding: 0px 10px 0px 10px;
@@ -38,18 +41,22 @@ flex-direction: column;
   border-radius: 10px; 
   border: #fa9494 2px solid; 
 }
+
 .options-wrapper p{
     padding: 0px 15px 0px 0px;
     margin: 0;
     font-weight: 500;
 }
+
 .options-sector .sector {
     font-size: 20px;
     border-radius: 10px;
 }
+
 .options-sector .sector:hover {
   background-color: #fa9494;
 }
+
 .login-link{
     margin: 0px 0px 20px 0px;
     display: flex;
@@ -66,9 +73,11 @@ flex-direction: column;
     transition: .2s;
 
 }
+
 .login-link :last-child:active {
     color: #fa9494;
 }
+
 .login-link :last-child:hover {
     color: #fa9494;
 }
@@ -83,6 +92,7 @@ flex-direction: column;
     background-repeat: repeat;
     height: 1024px;  
 }
+
 .register-form{
     flex-direction: column;
     display: flex;
@@ -90,6 +100,7 @@ flex-direction: column;
     text-align: center;
     align-items: center;
 }
+
 .options-wrapper{
     display: flex;
     color: white;
@@ -97,6 +108,7 @@ flex-direction: column;
     margin: 20px 0px 10px 0px;
     align-items: center;
 }
+
 .options-sector{
   font-size: 30px;
   padding: 0px 10px 0px 10px;
@@ -104,18 +116,22 @@ flex-direction: column;
   border-radius: 10px; 
   border: #fa9494 2px solid; 
 }
+
 .options-wrapper p{
     padding: 0px 15px 0px 0px;
     margin: 0;
     font-weight: 500;
 }
+
 .options-sector .sector {
     font-size: 20px;
     border-radius: 10px;
 }
+
 .options-sector .sector:hover {
   background-color: #fa9494;
 }
+
 .login-link{
     margin-top: 20px;
     display: flex;
@@ -140,13 +156,19 @@ flex-direction: column;
 }
 
 @media (max-width: 500px) {
-.register-wrapper{
+.form-wrapper{
     display: flex;
-    flex-direction: column;
+    padding-top: 0px;
+}
+.register-wrapper{
+    margin-top: 5px;
+    padding: 10px;
+    display: flex;
     align-items: center;
-    background-image: url(../../Images/azul2.jpg);
-    background-size: cover;
-    background-repeat: repeat;
+    flex-direction: column;
+    justify-content: space-evenly;
+    height: auto;
+    text-align: center;
 }
 .register-form{
     flex-direction: column;
@@ -155,52 +177,36 @@ flex-direction: column;
     text-align: center;
     align-items: center;
 }
+
 .options-wrapper{
     display: flex;
     color: white;
-    font-size: 30px;
-    margin: 20px 0px 10px 0px;
+    font-size: 20px;
+    margin: 10px 0px 10px 0px;
     align-items: center;
 }
 .options-sector{
-  font-size: 30px;
-  padding: 0px 10px 0px 10px;
-  height: 50px;
-  border-radius: 10px; 
-  border: #fa9494 2px solid; 
+    font-size: 20px;
+    padding: 0px 10px 0px 10px;
+    height: 30px;
+    border-radius: 10px; 
+    border: #fa9494 2px solid; 
 }
 .options-wrapper p{
     padding: 0px 15px 0px 0px;
     margin: 0;
-    font-weight: 500;
+    font-weight: 300;
 }
 .options-sector .sector {
     font-size: 20px;
     border-radius: 10px;
 }
-.options-sector .sector:hover {
-  background-color: #fa9494;
-}
+
 .login-link{
-    margin-top: 20px;
+    margin-top: 5px;
     display: flex;
-    font-size: 30px;
+    font-size: 20px;
     color: white;
-    font-weight: 500;
+    font-weight: 300;
 }
-
-.login-link :last-child {
-    padding-left: 10px;
-    text-decoration-line: underline;
-    color: white;
-    transition: .2s;
-
-}
-.login-link :last-child:active {
-    color: #fa9494;
-}
-.login-link :last-child:hover {
-    color: #fa9494;
-}
-
 }
