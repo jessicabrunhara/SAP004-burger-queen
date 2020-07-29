@@ -91,16 +91,18 @@ const Register = () => {
             loading ? <div className="spinner-border text-danger" role="status"><span className="sr-only">Loading...</span></div>
               : <Button className='btn-std' onClick={signUp} type="button" name='Cadastrar' />
           }
-          <div className="msg-login text-white text-center my-5">
+          <div className="msg-login text-white text-center my-2">
             {msgType === 'sucesso' && <span><strong>WoW!</strong>Usuário cadastrado com sucesso! &#128526;</span>}
             {msgType === 'erro' && <span><strong>Ops!</strong> {msg} &#128546;</span>}
           </div>
 
-          <div className='login-link'>
-            <p>Já é cadastrado?</p>
-            <Link to='/'>Faça login</Link>
-          </div>
         </form >
+
+        <div className='login-link'>
+          <p>Já é cadastrado?</p> <Link to='/'>Faça login</Link>
+
+        </div>
+
       </div>
 
     </div >

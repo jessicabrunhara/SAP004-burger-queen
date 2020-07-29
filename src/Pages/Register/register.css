@@ -3,9 +3,8 @@
     flex-direction: row;
     align-items: center;
     justify-content: space-evenly;
-    background-image: url(../../Images/azul2.jpg);
+    background-image: url(../../Images/azul.jpg);
     background-size: cover;
-    background-repeat: repeat;  
 }
 
 .logo-wrapper{
@@ -14,7 +13,8 @@ display: flex;
 
 .form-wrapper{
 display: flex;
-padding-top: 40px;
+align-self: center;
+flex-direction: column;
 }
 
 .register-form{
@@ -51,11 +51,12 @@ padding-top: 40px;
   background-color: #fa9494;
 }
 .login-link{
-    margin: 0px 0px 100px 0px;
+    margin: 0px 0px 20px 0px;
     display: flex;
     font-size: 20px;
     color: white;
     font-weight: 500;
+    justify-content: center;
 }
 
 .login-link :last-child {
