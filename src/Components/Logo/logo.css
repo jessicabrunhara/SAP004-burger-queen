@@ -9,15 +9,14 @@
 }
 
 .logo-register {
-    padding-top: 20px; 
     margin: 15px;
  }
  .logo-register img{
     width: auto;
-    height: 410px;
+    height: 450px;
 }
 
-@media (max-width: 414px) {
+@media (max-width: 450px) {
     .logo-login {
         padding-top: 5px; 
         margin: 5px;
@@ -26,4 +25,13 @@
         width: auto;
         height: 250px;
     }
+
+    .logo-register {
+        padding-top: 10px; 
+        margin: 15px;
+ }
+    .logo-register img{
+        width: auto;
+        height: 250px;
+}
 }

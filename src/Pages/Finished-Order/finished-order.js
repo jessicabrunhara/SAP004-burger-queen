@@ -11,7 +11,6 @@ const FinishedOrder = () => {
         <p>Olá, pedidos finalizados.</p>
       </div>
     </div>
-
   )
 }
 

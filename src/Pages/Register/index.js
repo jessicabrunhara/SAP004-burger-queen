@@ -70,33 +70,41 @@ const Register = () => {
 
   return (
     <div className='register-wrapper'>
-      <Logo className='logo-register' />
-      <form className='register-form'>
-        <Input className='input-register' onChange={(e) => setName(e.target.value)} type='text' placeholder='Nome Completo' />
-        <Input className='input-register' onChange={(e) => setEmail(e.target.value)} type='email' placeholder='email' />
-        <Input className='input-register' onChange={(e) => setPassword(e.target.value)} type='password' placeholder='Senha' />
-
-        <div className='options-wrapper'>
-          <p>Selecione o seu setor: </p>
-          <select name='select-type' id='select-type' className='options-sector' onChange={(e) => setSector(e.target.value)}>
-            <option className='sector' value='kitchen'>Cozinha</option>
-            <option className='sector' value='lounge'>Salão</option>
-          </select>
-        </div>
-
-        {
-          loading ? <div className="spinner-border text-danger" role="status"><span className="sr-only">Loading...</span></div>
-            : <Button className='btn-std' onClick={signUp} type="button" name='Cadastrar' />
-        }
-        <div>
-          {msgType === 'sucesso' && <span><strong>WoW!</strong>Usuário cadastrado com sucesso! &#128526;</span>}
-          {msgType === 'erro' && <span><strong>Ops!</strong> {msg} &#128546;</span>}
-        </div>
-      </form >
-      <div className='login-link'>
-        <p>Já é cadastrado?</p>
-        <Link to='/'>Faça login</Link>
+      <div className="logo-wrapper">
+        <Logo className='logo-register' />
       </div>
+      <div className="form-wrapper">
+        <form className='register-form'>
+          <Input className='input-register' onChange={(e) => setName(e.target.value)} type='text' placeholder='Nome Completo' />
+          <Input className='input-register' onChange={(e) => setEmail(e.target.value)} type='email' placeholder='email' />
+          <Input className='input-register' onChange={(e) => setPassword(e.target.value)} type='password' placeholder='Senha' />
+
+          <div className='options-wrapper'>
+            <p>Selecione o seu setor: </p>
+            <select name='select-type' id='select-type' className='options-sector' onChange={(e) => setSector(e.target.value)}>
+              <option className='sector' value='kitchen'>Cozinha</option>
+              <option className='sector' value='lounge'>Salão</option>
+            </select>
+          </div>
+
+          {
+            loading ? <div className="spinner-border text-danger" role="status"><span className="sr-only">Loading...</span></div>
+              : <Button className='btn-std' onClick={signUp} type="button" name='Cadastrar' />
+          }
+          <div className="msg-login text-white text-center my-2">
+            {msgType === 'sucesso' && <span><strong>WoW!</strong>Usuário cadastrado com sucesso! &#128526;</span>}
+            {msgType === 'erro' && <span><strong>Ops!</strong> {msg} &#128546;</span>}
+          </div>
+
+        </form >
+
+        <div className='login-link'>
+          <p>Já é cadastrado?</p> <Link to='/'>Faça login</Link>
+
+        </div>
+
+      </div>
+
     </div >
 
   )
