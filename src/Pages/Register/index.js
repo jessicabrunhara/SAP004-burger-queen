@@ -79,12 +79,10 @@ const Register = () => {
         <div className='options-wrapper'>
           <p>Selecione o seu setor: </p>
           <select name='select-type' id='select-type' className='options-sector' onChange={(e) => setSector(e.target.value)}>
-            {/*  <option disabled selected value> --- </option> */}
             <option className='sector' value='kitchen'>Cozinha</option>
             <option className='sector' value='lounge'>Salão</option>
           </select>
         </div>
-
 
         {
           loading ? <div className="spinner-border text-danger" role="status"><span className="sr-only">Loading...</span></div>
