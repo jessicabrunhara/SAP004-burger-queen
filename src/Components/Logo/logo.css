@@ -27,11 +27,11 @@
     }
 
     .logo-register {
-        padding-top: 10px; 
-        margin: 15px;
+        padding-top: 5px; 
+        margin: 5px;
  }
     .logo-register img{
         width: auto;
-        height: 250px;
+        height: 210px;
 }
 }

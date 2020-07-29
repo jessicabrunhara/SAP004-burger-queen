@@ -84,4 +84,17 @@
         display: flex;
         font-size: 20px;
     }
+        .input-register{
+        display: flex;  
+        margin: 10px 0 10px 0;
+        width: 180px;
+        height: 30px;
+        padding: 5px 0px 0px 5px;
+        box-shadow: 0px 0px 10px 0px #fa9494 ;
+}
+
+.input-register::placeholder{
+    display: flex;
+    font-size: 20px;
+}
 }
