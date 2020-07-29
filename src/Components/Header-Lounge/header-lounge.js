@@ -1,5 +1,5 @@
 import React from 'react';
-import './header.css'
+import './header-lounge.css'
 import LogoPiscando from 'Images/gifheader.gif'
 
 
