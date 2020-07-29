@@ -16,3 +16,14 @@
     width: auto;
     height: 410px;
 }
+
+@media (max-width: 414px) {
+    .logo-login {
+        padding-top: 5px; 
+        margin: 5px;
+     }
+     .logo-login img{
+        width: auto;
+        height: 250px;
+    }
+}
