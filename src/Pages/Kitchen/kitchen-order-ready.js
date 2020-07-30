@@ -1,5 +1,5 @@
 import React from 'react';
-import Header from 'Components/header';
+import Header from 'Components/Header-Lounge/header-lounge';
 
 
 const KitchenOrderReady = () => {
