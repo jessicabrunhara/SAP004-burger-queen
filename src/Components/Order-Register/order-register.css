@@ -1,0 +1,29 @@
+.new-order-wrapper{
+display: flex;
+}
+.order-register-wrapper{
+    margin-top: 10px;
+    padding-right: 50px;
+    display: flex;
+    flex-direction: column;
+    margin-right: 50px;
+    margin-left: 300px;
+}
+.input-wrapper{
+    display: flex;
+    text-align: center;
+    align-items: center;
+}
+.input-new-order{
+
+}
+h1{
+    display: flex;
+    padding: 0;
+}
+.box{
+    width: 300px;
+    height: 200px;
+    border: 2px solid #fa9494;
+    margin-left: 40px;
+}
