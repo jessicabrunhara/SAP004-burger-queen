@@ -1,11 +1,118 @@
-.header-wrapper{
+.header-wrapper-lounge{
     display: flex;
+    flex-direction: column;
     background-color: #0A1936;
     color: whitesmoke;
     padding: 15px 0px 15px 0px;
     justify-content: center;
+    align-items: center;
 }
-.header-wrapper img{
-    width: 60px;
+.header-wrapper-lounge img{
+    width: 70px;
     align-self: center;
+}
+
+.btn-link-out{
+    position: fixed;
+    top: 0;
+    right: 0;
+    margin-top: 20px;
+}
+
+.btn-out{
+    display: flex;
+    background-color: #fa9494;
+    border: #fa9494 1.5px solid;
+    border-radius: 10px;
+    height: auto;
+    width: auto;
+    padding: 0px 20px 0px 20px;
+    font-size: 30px;
+    font-weight: 600;
+    margin: 10px 30px 0px 30px;
+    box-shadow: 0px 0px 10px 0px #fa9494;
+    transition: .2s ease-in;
+}
+
+.all-btn-links{
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.btn-routes {
+    display: flex;
+}
+
+.btn-links {
+    display: flex;
+    background-color: #fa9494;
+    border: #fa9494 1.5px solid;
+    border-radius: 10px;
+    height: auto;
+    width: auto;
+    padding: 0px 20px 0px 20px;
+    font-size: 30px;
+    font-weight: 600;
+    margin: 10px 30px 25px 30px;
+    box-shadow: 0px 0px 10px 0px #fa9494;
+    transition: .2s ease-in;
+}
+
+.btn-links:hover, .btn-out:hover {
+    background-color: whitesmoke;
+}
+
+.btn-links a, .btn-out a {
+    color: whitesmoke;
+    transition: .2s ease-in;
+}
+
+.btn-links a:hover, .btn-links a:active,
+.btn-out a:hover, .btn-out a:active {
+color: #fa9494;
+}
+
+@media (max-width: 768px) {
+.header-wrapper-lounge{
+    display: flex;
+    flex-direction: column;
+    background-color: #0A1936;
+    color: whitesmoke;
+    padding: 15px 0px 15px 0px;
+    justify-content: center;
+    align-items: center;
+}
+
+.header-wrapper-lounge img{
+    width: 70px;
+    align-self: center;
+}
+
+.all-btn-links{
+    display: flex;
+    flex-direction: column;
+}
+
+.btn-links {
+    height: 40px;
+    width: auto;
+    padding: 0px 5px 0px 5px;
+    font-size: 25px;
+    margin: 25px 10px 0px 10px;
+    box-shadow: 0px 0px 10px 0px #fa9494;
+    transition: .2s ease-in;
+}
+
+.btn-links:hover {
+    background-color: whitesmoke;
+}
+
+.btn-links a {
+    color: whitesmoke;
+    transition: .2s ease-in;
+}
+
+.btn-links a:hover, .nav-item a:active{
+color: #fa9494;
+}
 }
