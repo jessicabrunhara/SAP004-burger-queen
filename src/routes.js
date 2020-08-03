@@ -11,7 +11,8 @@ import Login from 'Pages/Login/';
 import Register from 'Pages/Register/';
 import LoungeOrderReady from 'Pages/Lounge/lounge-order-ready';
 import KitchenOrderReady from 'Pages/Kitchen/kitchen-order-ready';
-import FinishedOrder from 'Pages/Finished-Order/finished-order';
+import FinishedOrderLounge from 'Pages/Finished-Order/finished-order-lounge';
+import FinishedOrderKitchen from 'Pages/Finished-Order/finished-order-kitchen';
 
 export default function QueenRouter() {
   return (
@@ -23,7 +24,8 @@ export default function QueenRouter() {
         <Route path='/lounge-order-ready' component={LoungeOrderReady} />
         <Route path='/kitchen-new-order' component={KitchenNewOrder} />
         <Route path='/kitchen-order-ready' component={KitchenOrderReady} />
-        <Route path='/finished-order' component={FinishedOrder} />
+        <Route path='/finished-order-lounge' component={FinishedOrderLounge} />
+        <Route path='/finished-order-kitchen' component={FinishedOrderKitchen} />
         <Route path='*'>
           <div>Página não encontrada</div>
         </Route>
