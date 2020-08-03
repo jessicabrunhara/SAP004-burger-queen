@@ -1,118 +1,150 @@
 .header-wrapper-lounge{
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     background-color: #0A1936;
     color: whitesmoke;
-    padding: 15px 0px 15px 0px;
-    justify-content: center;
+    padding: 10px 0px 10px 0px;
     align-items: center;
+    justify-content: space-evenly;
 }
+
 .header-wrapper-lounge img{
-    width: 70px;
-    align-self: center;
-}
-
-.btn-link-out{
-    position: fixed;
-    top: 0;
-    right: 0;
-    margin-top: 20px;
-}
-
-.btn-out{
-    display: flex;
-    background-color: #fa9494;
-    border: #fa9494 1.5px solid;
-    border-radius: 10px;
-    height: auto;
-    width: auto;
-    padding: 0px 20px 0px 20px;
-    font-size: 30px;
-    font-weight: 600;
-    margin: 10px 30px 0px 30px;
-    box-shadow: 0px 0px 10px 0px #fa9494;
-    transition: .2s ease-in;
+    width: 60px;
+    align-self: flex-start;
+    padding-left: 20px;
+    justify-content: center;
 }
 
 .all-btn-links{
     display: flex;
-    justify-content: space-evenly;
+    margin-left: 200px;
 }
 
 .btn-routes {
     display: flex;
+    justify-content: space-between;
 }
 
-.btn-links {
+.btn-link-out {
     display: flex;
-    background-color: #fa9494;
+    align-items: flex-end;
+    padding-left: 60px;
+    margin-left: 150px;
+}
+
+.btn-links, .btn-out {
+    display: flex;
     border: #fa9494 1.5px solid;
-    border-radius: 10px;
     height: auto;
     width: auto;
-    padding: 0px 20px 0px 20px;
-    font-size: 30px;
+    padding: 0px 15px 2px 15px;
+    font-size: 20px;
     font-weight: 600;
-    margin: 10px 30px 25px 30px;
+    margin: 5px 30px 5px 30px;
     box-shadow: 0px 0px 10px 0px #fa9494;
     transition: .2s ease-in;
-}
-
-.btn-links:hover, .btn-out:hover {
-    background-color: whitesmoke;
-}
-
-.btn-links a, .btn-out a {
-    color: whitesmoke;
-    transition: .2s ease-in;
-}
-
-.btn-links a:hover, .btn-links a:active,
-.btn-out a:hover, .btn-out a:active {
-color: #fa9494;
-}
-
-@media (max-width: 768px) {
-.header-wrapper-lounge{
-    display: flex;
-    flex-direction: column;
-    background-color: #0A1936;
-    color: whitesmoke;
-    padding: 15px 0px 15px 0px;
-    justify-content: center;
-    align-items: center;
-}
-
-.header-wrapper-lounge img{
-    width: 70px;
-    align-self: center;
-}
-
-.all-btn-links{
-    display: flex;
-    flex-direction: column;
 }
 
 .btn-links {
-    height: 40px;
-    width: auto;
-    padding: 0px 5px 0px 5px;
-    font-size: 25px;
-    margin: 25px 10px 0px 10px;
-    box-shadow: 0px 0px 10px 0px #fa9494;
-    transition: .2s ease-in;
+    border-radius: 10px;
+    background-color: #fa9494;
+}
+
+.btn-out {
+    border-radius: 50%;
+    background-color: whitesmoke;
 }
 
 .btn-links:hover {
     background-color: whitesmoke;
 }
 
+ .btn-out:hover {
+    background-color: #a15454;
+ }
+
 .btn-links a {
     color: whitesmoke;
     transition: .2s ease-in;
 }
 
-.btn-links a:hover, .nav-item a:active{
-color: #fa9494;
+.btn-out a {
+    color: #fa9494;
+    transition: .2s ease-in;
+}
+
+.btn-links a:hover, .btn-links a:active {
+    color: #fa9494;
+}
+
+.btn-out a:hover, .btn-out a:active {
+    color: whitesmoke;
+}
+
+@media (max-width: 800px) {
+.header-wrapper-lounge{
+    padding: 10px 0px 10px 0px;
+    align-items: center;
+    justify-content: flex-start;
+}
+.logo-wrapper{
+    margin-left: 15px;
+}
+
+.logo-wrapper img{
+    width: 60px;
+    align-self: flex-start;
+    padding-left: 10px;
+    justify-content: center;
+}
+
+.all-btn-links{
+    margin-left: 80px;
+    padding: 0px 10px 0px 25px;
+}
+
+.btn-link-out {
+    display: flex;
+    align-items: center;
+    margin-left: 50px;
+    padding-left: 30px;
+    padding-right: 0px;
+}
+
+.btn-links, .btn-out {
+    margin: 5px 10px 5px 10px;
+    padding: 0px 10px 2px 10px;
+    font-weight: 500;
+}
+
+.btn-links {
+    height: 65px;
+    max-width: 120px;
+}
+}
+
+@media (max-width: 450px) {
+.header-wrapper-lounge {
+    display: flex;
+    flex-direction: row;
+    width: 700px;
+}
+
+.logo-wrapper {
+    margin-left: 15px;
+}
+
+.logo-wrapper img {
+    width: 80px;
+}
+
+.all-btn-links {
+    margin-left: 50px;
+    padding: 0px 10px 0px 15px;
+}
+
+.btn-links {
+    height: 75px;
+    max-width: 120px;
 }
 }
