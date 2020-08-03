@@ -6,7 +6,7 @@ import firebase from 'Config/firebase';
 import 'firebase/auth';
 
 
-const Header = () => {
+const HeaderLounge = () => {
 
   const signOut = () => {
     if (firebase.auth().currentUser) {
@@ -26,13 +26,12 @@ const Header = () => {
         <img src={LogoPiscando} />
       </div>
 
-
       <div className='all-btn-links'>
 
         <div className='btn-routes'>
           <button className='btn-links'><Link className='link' to='/lounge-new-order'>Novo Pedido</Link></button>
           <button className='btn-links'><Link className='link' to='/lounge-order-ready'>Pedido Pronto</Link></button>
-          <button className='btn-links'><Link className='link' to='/finished-order'>Pedido Finalizado</Link></button>
+          <button className='btn-links'><Link className='link' to='/finished-order-lounge'>Pedido Finalizado</Link></button>
         </div>
 
         <div className='btn-link-out'>
@@ -45,4 +44,4 @@ const Header = () => {
   );
 }
 
-export default Header;
+export default HeaderLounge;

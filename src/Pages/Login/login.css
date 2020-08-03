@@ -1,8 +1,8 @@
 .login-wrapper{
     display: flex;
     align-items: center;
-    background-image: url(../../Images/azul.jpg);
-    background-size: cover;
+    /* background-image: url(../../Images/azul.jpg); */
+    /* background-size: cover; */
     flex-direction: row;
     justify-content: space-evenly;
     height: 635px;
@@ -99,7 +99,7 @@ padding-top: 40px;
         padding: 10px;
         display: flex;
         align-items: center;
-        background-image: url(../../Images/azul.jpg);
+       /* background-image: url(../../Images/azul.jpg); */
         background-size: cover;
         flex-direction: column;
         justify-content: space-evenly;
