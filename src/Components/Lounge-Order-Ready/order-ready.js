@@ -1,6 +1,6 @@
 import React from 'react';
-import 'Components/Louge-Order-Ready/order-ready.css';
-import Button from 'Components/Button/button'
+import 'Components/Lounge-Order-Ready/order-ready.css';
+import Button from 'Components/Button/button';
 
 const OrderReady = () => {
 	return (

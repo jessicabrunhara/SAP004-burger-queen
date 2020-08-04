@@ -1,30 +1,9 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import './menu.css';
 import Button from 'Components/Button/button';
-import firebase from 'Config/firebase';
 
 
-const Menu = () => {
-
-  const [menuStore, setMenuStore] = useState([]);
-
-  let arrayMenu = [];
-
-  /* useEffect(() => {
-     firebase.firestore()
-       .collection('menu')
-       .get()
-       .then(async (result) => {
-         await result.docs.forEach(doc => {
-           arrayMenu.push({
-             id: doc.id,
-             ...doc.data()
-           })
-         })
-         setMenuStore(arrayMenu)
-       })
-   }); */
-
+const Menu = ({ id, name }) => {
 
   return (
     <div className='menu-wrapper'>
@@ -36,7 +15,7 @@ const Menu = () => {
           <div className='btn-wrapper'>
 
             <div>
-              {/* {menuStore.map(item => <Button key={item.id} name={item.name} className='btn-menu' type='button' />)} */}
+              <Button className='btn-menu' type='button'>{id} {name}</Button>
             </div>
 
           </div>
