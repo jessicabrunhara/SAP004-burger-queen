@@ -1,5 +1,6 @@
 import React from 'react';
 import HeaderLounge from 'Components/Header-Lounge/header-lounge';
+import OrderReady from 'Components/Louge-Order-Ready/order-ready'
 
 const LoungeOrderReady = () => {
 
@@ -7,7 +8,7 @@ const LoungeOrderReady = () => {
     <div>
       <HeaderLounge />
       <div>
-        <p>Olá, Novos Pedidos.</p>
+        <OrderReady />
       </div>
     </div>
   )
