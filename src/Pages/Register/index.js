@@ -71,11 +71,11 @@ const Register = () => {
   return (
     <div className='register-wrapper'>
       <div className="logo-wrapper">
-        <Logo className='logo-register' />
+        <Logo className='logonChange={(e) => setName(e.target.value)} o-register' />
       </div>
       <div className="form-wrapper">
         <form className='register-form'>
-          <Input className='input-register' onChange={(e) => setName(e.target.value)} type='text' placeholder='Nome Completo' />
+          <Input className='input-register' type='text' placeholder='Nome Completo' />
           <Input className='input-register' onChange={(e) => setEmail(e.target.value)} type='email' placeholder='email' />
           <Input className='input-register' onChange={(e) => setPassword(e.target.value)} type='password' placeholder='Senha' />
 
