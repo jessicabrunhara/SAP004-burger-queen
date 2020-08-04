@@ -12,7 +12,7 @@ const MyModal = (props) => {
             
             <Button onClick={() => setModalIsOpen(true)} className='btn-menu' name='Modal'/>
             <Modal isOpen={modalIsOpen} onRequestClose={()=> setModalIsOpen(false)} className='modal-wrapper'>
-            <Button onClick={() => setModalIsOpen(false)} className='btn-modal-out' name='X'/>
+            <Button onClick={() => setModalIsOpen(false)} className='btn-modal-out' > X</Button>
                 <p>Escolha aqui suas opões:  
                  
                 </p>
