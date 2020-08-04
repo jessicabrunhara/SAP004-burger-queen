@@ -1,16 +1,21 @@
 import React from 'react';
 import HeaderKitchen from 'Components/Header-Kitchen/header-kitchen';
+import FinalizedOrders from 'Components/Kitchen-Order-Ready/finished-order';
 
 
 const FinishedOrderKitchen = () => {
 
     return (
-        <div>
-            <HeaderKitchen />
+        <>
             <div>
-                <p>Olá, pedidos finalizados cozinha.</p>
+                <HeaderKitchen />
             </div>
-        </div>
+
+            <div>
+                <FinalizedOrders />
+            </div>
+
+        </>
     )
 }
 

@@ -1,6 +1,6 @@
 import React from 'react';
 import HeaderLounge from 'Components/Header-Lounge/header-lounge';
-import OrderReady from 'Components/Louge-Order-Ready/order-ready'
+import OrderReady from 'Components/Lounge-Order-Ready/order-ready'
 
 const LoungeOrderReady = () => {
 
