@@ -13,9 +13,10 @@ const MyModal = (props) => {
             <Button onClick={() => setModalIsOpen(true)} className='btn-menu' name='Modal'/>
             <Modal isOpen={modalIsOpen} onRequestClose={()=> setModalIsOpen(false)} className='modal-wrapper'>
             <Button onClick={() => setModalIsOpen(false)} className='btn-modal-out' name='X'/>
-                <p>Escolha aqui suas opões:
+                <p>Escolha aqui suas opões:  
                  
                 </p>
+                {props.children}
             </Modal>
             
                    

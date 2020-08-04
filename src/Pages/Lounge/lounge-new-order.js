@@ -36,6 +36,7 @@ const LoungeNewOrder = () => {
       </div> */}
 
       <div>
+        <Menu></Menu>
         <OrderRegister />
       </div>
 
