@@ -1,8 +1,6 @@
 .register-wrapper{
     display: flex;
     align-items: center;
-    background-image: url(../../Images/azul.jpg);
-    background-size: cover;
     flex-direction: row;
     justify-content: space-evenly;
     height: 635px;
