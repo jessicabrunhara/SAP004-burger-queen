@@ -1,6 +1,7 @@
-import React from 'react';
-import './menu.css'
-import Button from 'Components/Button/button'
+import React, { useState } from 'react';
+import './menu.css';
+import Button from 'Components/Button/button';
+import MyModal from 'Components/Modal/modal';
 
 
 const Menu = () => {
@@ -12,12 +13,15 @@ const Menu = () => {
           <div className='label'>Café da Manhã</div>
           <div className='btn-wrapper'>
             <div>
-              <Button className='btn-menu' type='button' name='Café Americano' />
+              <Button className='btn-menu' type='button' name='Café Americano'  />
               <label>R$5,00</label>
+              <MyModal>
+                <p>qualquer coisa aqui</p>
+              </MyModal>
             </div>
             <div>
-              <Button className='btn-menu' type='button' name='Café Com Leite' />
-              <label>R$7,00</label>
+            <Button onClick={() => <MyModal></MyModal>} type='button' className='btn-menu' name='Café Com Leite'/>
+              <label>Testando Modal </label>
             </div>
             <div>
               <Button className='btn-menu' type='button' name='Café Misto Quente' />

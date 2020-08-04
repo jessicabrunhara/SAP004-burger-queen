@@ -1,25 +1,32 @@
 import React, { useState } from 'react';
-import Modal from 'react-modal';
+import Modal from 'react-modal'
+import Button from 'Components/Button/button'
+import './modal.css'
 
-const Modal = (props) => {
+
+
+const MyModal = (props) => {
+       const [modalIsOpen, setModalIsOpen] = useState(false)
     return (
-        <div className='modal'>
-            <modal>
-                <p>Modal </p>
-            </modal>
-           
-        </div>
+        <div> 
+            
+            <Button onClick={() => setModalIsOpen(true)} className='btn-menu' name='Modal'/>
+            <Modal isOpen={modalIsOpen} onRequestClose={()=> setModalIsOpen(false)} className='modal-wrapper'>
+            <Button onClick={() => setModalIsOpen(false)} className='btn-modal-out' name='X'/>
+                <p>Escolha aqui suas opões:
+                 
+                </p>
+            </Modal>
+            
+                   
+                             
+        </div>        
+        
+       
     );
 };
+            
+
+export default MyModal;
 
 
-
-const Input = (props) => {
-    return (
-      <input type={props.type} className={props.className} name={props.name} value={props.value} id={props.id} placeholder={props.placeholder} onChange={props.onChange} />
-    );
-  };
-  
-  export default Input;
-
-export default Modal;
