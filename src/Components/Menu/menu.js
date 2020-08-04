@@ -3,7 +3,7 @@ import './menu.css';
 import Button from 'Components/Button/button';
 
 
-const Menu = ({ id, name }) => {
+const Menu = ({ items }) => {
 
   return (
     <div className='menu-wrapper'>
@@ -15,7 +15,7 @@ const Menu = ({ id, name }) => {
           <div className='btn-wrapper'>
 
             <div>
-              <Button className='btn-menu' type='button'>{id} {name}</Button>
+              {items.map((item, index) => <Button className='btn-menu' type='button' key={`btn-menu-${index}`}>{item.name}</Button>)}
             </div>
 
           </div>

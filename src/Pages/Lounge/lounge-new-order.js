@@ -4,38 +4,35 @@ import Menu from 'Components/Menu/menu';
 import OrderRegister from 'Components/Order-Register/order-register';
 import 'Components/Order-Register/order-register.css'
 import firebase from 'Config/firebase';
-
+import './lounge-new-order.css';
 
 const LoungeNewOrder = () => {
 
-  /* const [menuStore, setMenuStore] = useState([]);
- 
-   let arrayMenu = [];
+  const [menuStore, setMenuStore] = useState([]);
 
-   useEffect(() => {
-     firebase.firestore()
-       .collection('menu')
-       .get()
-       .then(async (result) => {
-         await result.docs.forEach(doc => {
-           arrayMenu.push({
-             id: doc.id,
-             ...doc.data()
-           })
-         })
-         setMenuStore(arrayMenu)
-       })
-   }); */
+  useEffect(() => {
+    firebase.firestore()
+      .collection('menu')
+      .get()
+      .then((result) => {
+        const arrayMenu = [];
+        result.docs.forEach(doc => {
+          arrayMenu.push({
+            id: doc.id,
+            ...doc.data()
+          })
+        })
+        setMenuStore(arrayMenu)
+      })
+  }, []);
+  console.log(menuStore);
 
   return (
     <div>
       <HeaderLounge />
 
-      {/*  <div className='new-order-wrapper'>
-        {menuStore.map(item => <Menu key={item.id} name={item.name} />)}
-      </div> */}
-
-      <div>
+      <div className='page-menu-wrapper'>
+        <Menu items={menuStore} />
         <OrderRegister />
       </div>
 
