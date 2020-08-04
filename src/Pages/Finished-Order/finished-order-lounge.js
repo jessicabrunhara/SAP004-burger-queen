@@ -1,17 +1,17 @@
 import React from 'react';
 import HeaderLounge from 'Components/Header-Lounge/header-lounge';
-import OrderReady from 'Components/Lounge-Order-Ready/order-ready'
 
-const LoungeOrderReady = () => {
+
+const FinishedOrderLounge = () => {
 
   return (
     <div>
       <HeaderLounge />
       <div>
-        <OrderReady />
+        <p>Olá, pedidos finalizados salão.</p>
       </div>
     </div>
   )
 }
 
-export default LoungeOrderReady;
+export default FinishedOrderLounge;

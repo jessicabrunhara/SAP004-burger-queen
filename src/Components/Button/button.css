@@ -15,6 +15,21 @@
     box-shadow: 0px 0px 10px 0px #fa9494;
 }
 
+.btn-menus {
+    display: flex;
+    background-color: #fa9494;
+    border: #fa9494 1.5px solid;
+    border-radius: 10px;
+    color: white;
+    height: 50px;
+    padding: 5px;
+    width: auto;
+    margin: 5px 0px 5px 0px;
+    font-size: 20px;
+    align-items: center;
+    justify-content: center;
+}
+
 @media (max-width: 768px) {
     .btn-std {
         display: flex;

@@ -1,17 +1,21 @@
 import React from 'react';
-import Header from 'Components/Header-Lounge/header-lounge';
-
+import HeaderKitchen from 'Components/Header-Kitchen/header-kitchen';
+import Button from 'Components/Button/button';
+import OrdersReceived from 'Components/Kitchen-Order-Ready/new-order';
 
 const KitchenNewOrder = () => {
 
   return (
-    <div>
-      <Header />
+    <>
       <div>
-        <p>Olá, Novos Pedidos.</p>
+        <HeaderKitchen />
       </div>
-    </div>
 
+      <div>
+        <OrdersReceived />
+      </div>
+
+    </>
   )
 }
 
