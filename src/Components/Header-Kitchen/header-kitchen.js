@@ -22,7 +22,7 @@ const HeaderKitchen = () => {
     return (
         <header className='header-wrapper-kitchen'>
 
-            <div className='logo-wrapper'>
+            <div className='logo-header-wrapper'>
                 <img src={LogoPiscando} />
             </div>
 

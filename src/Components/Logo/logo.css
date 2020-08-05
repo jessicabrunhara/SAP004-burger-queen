@@ -1,11 +1,15 @@
 
 .logo-login {
     padding-top: 50px; 
-    margin: 15px;
+    margin: 25px 15px 15px 130px;
  }
+
  .logo-login img{
     width: auto;
     height: 450px;
+}
+.logo-header-wrapper {
+    margin: 10px;
 }
 
 .logo-register {

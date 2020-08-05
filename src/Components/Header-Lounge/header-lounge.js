@@ -22,7 +22,7 @@ const HeaderLounge = () => {
   return (
     <header className='header-wrapper-lounge'>
 
-      <div className='logo-wrapper'>
+      <div className='logo-header-wrapper'>
         <img src={LogoPiscando} />
       </div>
 
