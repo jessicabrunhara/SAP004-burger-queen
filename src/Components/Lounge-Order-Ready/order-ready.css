@@ -1,8 +1,8 @@
 .order-ready-wrapper{
 	display: flex;
 	flex-direction: column;
-	height: auto;
-	width: 280px;
+	height: fit-content;
+    min-width: 280px;
 	border: 2px solid white;
 	margin: 25px 25px 15px 25px;
 	border-radius: 8%;
@@ -38,7 +38,7 @@
 	padding: 8px;
 	box-shadow: 0px 0px 5px 0px whitesmoke;
 	display: flex;
-  flex-direction: column;
+    flex-direction: column;
 }
 .ordered-wrapper{
 	display: flex;
