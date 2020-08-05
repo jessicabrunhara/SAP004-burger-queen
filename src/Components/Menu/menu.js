@@ -47,7 +47,7 @@ const Menu = ({ items }) => {
           <div className='total-value'>R$5,00</div>
         </div>
         <div className='btn-wrapper'>
-          <Button className='btn-std' name='Enviar' />
+          <Button className='btn-std'> Enviar</Button>
         </div>
       </div>
     </div>

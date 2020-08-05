@@ -28,7 +28,7 @@ const OrdersReceived = () => {
             </div>
 
             <div className='btn-wrapper'>
-                <Button className='btn-menus' type='button' name='Pronto para o salão' />
+                <Button className='btn-menus' type='button' >Pronto para o salão</Button>
             </div>
 
         </div>
