@@ -13,7 +13,6 @@ const Login = () => {
   const [msgType, setMsgType] = useState();
   const history = useHistory();
 
-
   const signIn = () => {
     firebase.auth().signInWithEmailAndPassword(email, password)
       .then(result => {
