@@ -22,7 +22,7 @@ const OrderReady = () => {
 				</div>
 			</div>
 			<div className='btn-wrapper'>
-				<Button className='btn-std' name='Entregar' />
+				<Button className='btn-std'> Entregar</Button>
 			</div>
 
 		</div>
