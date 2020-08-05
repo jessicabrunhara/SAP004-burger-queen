@@ -1,5 +1,7 @@
-.dois-lados{
+.order-style{
   display: flex;
+  padding: 0px 15px 0px 15px;
+  justify-content: space-around;
 }
 
 .menu-wrapper{
@@ -10,12 +12,14 @@
 }
 
 h1{
+  display: flex;
   padding: 10px;
 }
 
 .all-menu{
   display: flex;
   flex-direction: column;
+  max-width: 600px;
 }
 .btn-wrapper{
   display: flex;
@@ -35,12 +39,13 @@ h1{
 }
 
 .btn-menu{
-width: 100px;
-height: 80px;
+  width: 100px;
+  height: 80px;
   margin: 10px;
   padding: 5px;
   border-radius: 8px;
-  background-color: white
+  background-color: white;
+  margin: 15px
 }
 .caixona{
   width: 600px;
@@ -49,4 +54,57 @@ height: 80px;
 label{
   display: flex;
   justify-content: center;
+}
+.new-order-wrapper{
+  display: flex;
+  justify-content: space-between;
+  padding: 0px 20px 0px 20px
+  }
+  
+.order-table-wrapper{
+  display: flex;
+  flex-direction: column;
+  height: fit-content;
+  min-width: 420px;
+  border: 2px solid white;
+  margin: 95px 25px 15px 25px;
+  border-radius: 8%;
+  box-shadow: 0px 0px 20px 0px #fa9494;
+}
+.order-register-wrapper{
+  margin: 10px 50px 10px 50px;
+  padding-right: 50px;
+  display: flex;
+  flex-direction: column;
+}
+.input-wrapper{
+  display: flex;
+  text-align: center;
+  align-items: center;
+}
+.input-style{
+  color: black;
+  margin: 4px;
+  padding: 2px;
+}
+  
+.box{
+  width: 300px;
+  height: 200px;
+  border: 2px solid #fa9494;
+  margin-left: 40px;
+}
+  
+.value-wrapper{
+  display: flex;
+  justify-content: space-around;
+  padding: 6px;
+  border: 3px solid whitesmoke;
+  border-radius: 5%;
+  background-color: whitesmoke;
+  margin: 10px 20px 10px 20px;
+}
+  
+.total-value{
+  display: flex;
 }
