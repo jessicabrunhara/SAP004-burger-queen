@@ -5,14 +5,10 @@ import Button from 'Components/Button/button';
 import Input from 'Components/Input/input';
 import MyModal from 'Components/Modal/modal';
 
-const Menu = ({ items }) => {
+const Menu = ({ items, id }) => {
 
   const [menuItem, setMenuItem] = useState([]);
-
-  /* const orderTable = () => {
-     setMenuItem(menuItem + 1);
-   } */
-
+  const [quantify, setQuantify] = useState(1);
 
   return (
     <div className='order-style'>
@@ -47,8 +43,15 @@ const Menu = ({ items }) => {
 
         <div className='order-information-wrapper'>
           <div className='ordered-wrapper'>
-            <div className='quantify-ordered'>{menuItem.map(product => <p>{product.name} {product.price}</p>)}</div>
-            <div className='item-ordered'></div>
+            {menuItem.map(product =>
+              <div className='item-ordered'>
+                <p>{product.name}</p>
+                <Button onClick={() => setQuantify(quantify + 1)}>+</Button>
+                <div className='quantify-ordered'>{quantify}</div>
+                <Button onClick={() => setQuantify(quantify - 1)}>-</Button>
+                <div className='price-ordered'>{product.price}</div>
+              </div>
+            )}
           </div>
         </div>
 
