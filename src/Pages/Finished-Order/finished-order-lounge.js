@@ -1,5 +1,6 @@
 import React from 'react';
 import HeaderLounge from 'Components/Header-Lounge/header-lounge';
+import FinalizedOrders from 'Components/Kitchen-Order-Ready/finished-order';
 
 
 const FinishedOrderLounge = () => {
@@ -8,7 +9,7 @@ const FinishedOrderLounge = () => {
     <div>
       <HeaderLounge />
       <div>
-        <p>Olá, pedidos finalizados salão.</p>
+        <FinalizedOrders />
       </div>
     </div>
   )
