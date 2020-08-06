@@ -26,7 +26,7 @@ const Menu = ({ items }) => {
             <div className='btn-wrapper'>
               {items.filter(item => item.breakfast === false && item.hamburger === false).map((product, index) => <Button className='btn-menu' type='button' key={`btn-menu-${index}`}>{product.name} <br></br> R$ {product.price} </Button>)}
 
-              {items.filter(item => item.breakfast === false && item.hamburger === true).map((product, index) => <MyModal className='btn-menu' type='button' key={`btn-menu-${index}`}>{product.name} <br></br> R$ {product.price} </MyModal>)}
+              {items.filter(item => item.breakfast === false && item.hamburger === true).map((product, index) => <MyModal className='btn-menu' type='button' key={`btn-menu-${index}`} adds={product.adds} options={product.options} >{product.name} <br></br> R$ {product.price} </MyModal>)}
 
             </div>
           </div>
