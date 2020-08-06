@@ -13,6 +13,7 @@ const Menu = ({ items }) => {
      setMenuItem(menuItem + 1);
    } */
 
+
   return (
     <div className='order-style'>
       <div className='menu-wrapper'>
@@ -20,14 +21,14 @@ const Menu = ({ items }) => {
         <div className='all-menu'>
 
           <div className='menu-breakfast'>
-            <div className='label'>Café da Manhã</div>
+            <div className='label-menu'>Café da Manhã</div>
             <div className='btn-wrapper'>
               {items.filter(item => item.breakfast === true).map((product, index) => <Button onClick={() => setMenuItem([...menuItem, product])} className='btn-menu' type='button' key={`btn-menu-${index}`}>{product.name} <br></br> R$ {product.price} </Button>)}
             </div>
           </div>
 
           <div className='menu-lunch'>
-            <div className='label'>Almoço/Jantar</div>
+            <div className='label-menu'>Almoço/Jantar</div>
             <div className='btn-wrapper'>
               {items.filter(item => item.breakfast === false && item.hamburger === false).map((product, index) => <Button onClick={() => setMenuItem([...menuItem, product])} className='btn-menu' type='button' key={`btn-menu-${index}`}>{product.name} <br></br> R$ {product.price} </Button>)}
 
@@ -40,8 +41,8 @@ const Menu = ({ items }) => {
 
       <div className='order-table-wrapper'>
         <div className='table-wrapper'>
-          <Input className='input-style' placeholder='Mesa'>Mesa:</Input>
-          <Input className='input-style' placeholder='Nome'>Cliente: </Input>
+          <Input className='input-style' placeholder='Mesa' required >Mesa:</Input>
+          <Input className='input-style' placeholder='Nome' required >Cliente: </Input>
         </div>
 
         <div className='order-information-wrapper'>
