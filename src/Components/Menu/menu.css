@@ -108,3 +108,10 @@ label{
 .total-value{
   display: flex;
 }
+.item-ordered{
+  display: flex;
+}
+.ordered-wrapper{
+  display: flex;
+  flex-direction: column;
+}
