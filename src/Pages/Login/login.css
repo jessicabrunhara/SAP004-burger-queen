@@ -32,13 +32,14 @@ margin: 0px 160px 0px 0px;
     margin-top: 20px;
     display: flex;
     font-size: 20px;
-    color: white;
+    font-weight: 600;
+    color:  #fa9494;
 }
 
 .register-link :last-child {
     padding-left: 10px;
     text-decoration-line: underline;
-    color: white;
+    color:  #fa9494;
     transition: .2s;
 
 }
@@ -53,12 +54,13 @@ margin: 0px 160px 0px 0px;
 @media (max-width: 768px) {
 .login-wrapper{
     display: flex;
+    background-color: #009d8c;
     flex-direction: column;
     align-items: center;
-    background-image: url(../../Images/azul2.jpg);
-    background-size: cover;
-    background-repeat: repeat;
     height: 1024px;  
+}
+.logo-wrapper{
+    display: flex;
 }
 
 .logo-login {
@@ -103,8 +105,6 @@ margin: 0px 160px 0px 0px;
         padding: 10px;
         display: flex;
         align-items: center;
-       /* background-image: url(../../Images/azul.jpg); */
-        background-size: cover;
         flex-direction: column;
         justify-content: space-evenly;
         height: auto;

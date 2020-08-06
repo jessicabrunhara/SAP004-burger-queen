@@ -13,7 +13,8 @@
 }
 
 .logo-register {
-    margin: 15px;
+    padding-top: 50px; 
+    margin: 25px 15px 15px 130px;
  }
  .logo-register img{
     width: auto;

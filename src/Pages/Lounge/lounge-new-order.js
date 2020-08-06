@@ -35,3 +35,9 @@ const LoungeNewOrder = () => {
 }
 
 export default LoungeNewOrder;
+
+/*
+const arrayMenu = [];
+        result.docs.map(doc => {
+          {...doc.data() }
+*/

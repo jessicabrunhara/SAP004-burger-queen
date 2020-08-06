@@ -26,7 +26,7 @@ flex-direction: column;
 
 .options-wrapper{
     display: flex;
-    color: white;
+    color:#fa9494;
     font-size: 20px;
     margin: 20px 0px 10px 0px;
     align-items: center;
@@ -59,15 +59,15 @@ flex-direction: column;
     margin: 0px 0px 20px 0px;
     display: flex;
     font-size: 20px;
-    color: white;
-    font-weight: 500;
+    color: #fa9494;
+    font-weight: 600;
     justify-content: center;
 }
 
 .login-link :last-child {
     padding-left: 10px;
     text-decoration-line: underline;
-    color: white;
+    color: #fa9494;
     transition: .2s;
 
 }
@@ -85,9 +85,6 @@ flex-direction: column;
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-image: url(../../Images/azul2.jpg);
-    background-size: cover;
-    background-repeat: repeat;
     height: 1024px;  
 }
 
