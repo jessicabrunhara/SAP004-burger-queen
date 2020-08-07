@@ -9,6 +9,8 @@ const Menu = ({ items, id }) => {
 
   const [menuItem, setMenuItem] = useState([]);
   const [quantify, setQuantify] = useState(1);
+  const [table, setTable] = useState();
+  const [client, setClient] = useState();
 
   return (
     <div className='order-style'>
@@ -24,7 +26,7 @@ const Menu = ({ items, id }) => {
           </div>
 
           <div className='menu-lunch'>
-            <div className='label-menu'>Almoço/Jantar</div>
+            <div className='label-menu'>Almoço / Jantar</div>
             <div className='btn-wrapper'>
               {items.filter(item => item.breakfast === false && item.hamburger === false).map((product, index) => <Button onClick={() => setMenuItem([...menuItem, product])} className='btn-menu' type='button' key={`btn-menu-${index}`}>{product.name} <br></br> R$ {product.price} </Button>)}
 
@@ -37,8 +39,8 @@ const Menu = ({ items, id }) => {
 
       <div className='order-table-wrapper'>
         <div className='table-wrapper'>
-          <Input className='input-style' placeholder='Mesa' required >Mesa:</Input>
-          <Input className='input-style' placeholder='Nome' required >Cliente: </Input>
+          <Input onChange={(e) => setTable(e.target.value)} className='input-style' placeholder='Mesa' required >Mesa:</Input>
+          <Input onChange={(e) => setClient(e.target.value)} className='input-style' placeholder='Nome' required >Cliente: </Input>
         </div>
 
         <div className='order-information-wrapper'>
@@ -46,9 +48,11 @@ const Menu = ({ items, id }) => {
             {menuItem.map(product =>
               <div className='item-ordered'>
                 <p>{product.name}</p>
-                <Button onClick={() => setQuantify(quantify + 1)}>+</Button>
-                <div className='quantify-ordered'>{quantify}</div>
-                <Button onClick={() => setQuantify(quantify - 1)}>-</Button>
+                <div className='btn-order-wrapper'>
+                  <Button className='btn-add' onClick={() => setQuantify(quantify + 1)}>+</Button>
+                  <div className='quantify-ordered'>{quantify}</div>
+                  <Button className='btn-add' onClick={() => setQuantify(quantify - 1)}>-</Button>
+                </div>
                 <div className='price-ordered'>{product.price}</div>
               </div>
             )}
@@ -63,7 +67,7 @@ const Menu = ({ items, id }) => {
           <Button className='btn-std'> Enviar</Button>
         </div>
       </div>
-    </div>
+    </div >
   )
 };
 
