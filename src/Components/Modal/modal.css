@@ -21,44 +21,53 @@
 	justify-content: center;
 	margin-left: 225px;
 	border-radius: 25%;
+	font-weight: 700;
+	color: white;
 }
 
-
-
-input[type='radio']:checked:after {
-	width: 20px;
-	height: 20px;
+.radio-modal[type='radio']:checked:after {
+	width: 18px;
+	height: 18px;
 	border-radius: 15px;
 	top: -3px;
 	left: -5px;
 	position: relative;
-	background-color: #fa9494;
+	background-color: #009d8c;
 	content: '';
 	display: inline-block;
 	visibility: visible;
-	}
-
-h2{ /* Escolha a opção */
-		font-size: 22px;
-		color: #fa9494;
-
 }
 
 
-h3{ /* Escolha a opção */
-	font-size: 20px;
-	color: #fa9494;
-
-}
-
-aria-label{ /* label */
-	font-size: 16px;
+.modal-options {
+	color: #009d8c;
+	background-color: whitesmoke;
+	border-radius: 5px;
+	text-align: center;
+	margin: 10px 0 10px 0;
+	font-size: 18px;
 	font-weight: 700;
+}
+
+aria-label {
+	/* label */
+	font-size: 18px;
+	font-weight: 600;
 	padding-left: 25px;
 
 }
 
-p{ /* X pra sair */
-	font-weight: 700;
+
+
+input[type='checkbox']:checked:after {
+	width: 20px;
+	height: 20px;
+	top: -3px;
+	left: -5px;
+	position: relative;
+	background-color: #009d8c; 
 	color: white;
+	content: '';
+	display: inline-block;
+	visibility: visible;
 }

@@ -124,7 +124,7 @@ label{
   display: flex;
   height: 25px;
   width: 25px;
-  background-color: #009d8c;
+/*   background-color: #009d8c; */
   color: white;
   font-size: 24px;
   font-weight: 500;
@@ -135,7 +135,7 @@ label{
   border-radius: 5px;
 }
 
-p{
+.item-ordered p{
   margin: 2px;
   width: 190px;
 }

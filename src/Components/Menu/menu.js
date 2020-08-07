@@ -47,7 +47,7 @@ const Menu = ({ items, id }) => {
           <div className='ordered-wrapper'>
             {menuItem.map(product =>
               <div className='item-ordered'>
-                <p>{product.name}</p>
+                <p >{product.name}</p>
                 <div className='btn-order-wrapper'>
                   <Button className='btn-add' onClick={() => setQuantify(quantify + 1)}>+</Button>
                   <div className='quantify-ordered'>{quantify}</div>
