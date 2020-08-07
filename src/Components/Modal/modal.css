@@ -1,8 +1,8 @@
-.modal-wrapper{
+.modal-wrapper {
 	display: flex;
 	background-color: white;
 	flex-direction: column;
-	height: 250px;
+	height: 300px;
 	width: 280px;
 	border: 2px solid #fa9494;
 	margin: 25px 25px 15px 25px;
@@ -13,14 +13,52 @@
 
 
 .btn-modal-out {
-    display: flex;
+	display: flex;
 	width: 30px;
-    background-color: #fa9494;
-    border: #fa9494 1.5px solid;
-    height: 30px;
-    font-size: 18px;
-    font-weight: 500;
-	   justify-content: center;
+	background-color: #fa9494;
+	border: #fa9494 1.5px solid;
+	height: 30px;
+	justify-content: center;
 	margin-left: 225px;
 	border-radius: 25%;
-  }
+}
+
+
+
+input[type='radio']:checked:after {
+	width: 20px;
+	height: 20px;
+	border-radius: 15px;
+	top: -3px;
+	left: -5px;
+	position: relative;
+	background-color: #fa9494;
+	content: '';
+	display: inline-block;
+	visibility: visible;
+	}
+
+h2{ /* Escolha a opção */
+		font-size: 22px;
+		color: #fa9494;
+
+}
+
+
+h3{ /* Escolha a opção */
+	font-size: 20px;
+	color: #fa9494;
+
+}
+
+aria-label{ /* label */
+	font-size: 16px;
+	font-weight: 700;
+	padding-left: 25px;
+
+}
+
+p{ /* X pra sair */
+	font-weight: 700;
+	color: white;
+}

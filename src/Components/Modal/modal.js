@@ -13,15 +13,15 @@ const MyModal = (props) => {
             <Button onClick={() => setModalIsOpen(true)} className='btn-menu'>{props.children}</Button>
 
             <Modal {...props} isOpen={modalIsOpen} onRequestClose={() => setModalIsOpen(false)} className='modal-wrapper'>
-                <Button onClick={() => setModalIsOpen(false)} className='btn-modal-out'>X</Button>
-                <p>Escolha aqui suas opões: </p>
+                <Button onClick={() => setModalIsOpen(false)} className='btn-modal-out'><p>X</p></Button>
+                <h2>Escolha aqui suas opões: </h2>
                 {props.options.map(option =>
                     <>
-                        <Input type='radio' name='options' value={option}></Input>
-                        <label htmlFor={option}>{option}</label>
+                        <span><Input type='radio' name='options' value={option}></Input>
+                        <aria-label className= 'radio-label' htmlFor={option}>{option}</aria-label></span>
                     </>
                 )}
-
+                <h3>Gostaria de adicionar algo mais? </h3>
                 {/* props.adds.map(item =>
                     <>
                         <Input type='checkbox' name={item}></Input>
