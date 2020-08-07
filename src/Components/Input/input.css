@@ -70,9 +70,8 @@
 }
 }
 
-@media (max-width: 414px) {
+@media (max-width: 450px) {
     .input-login {
-        border-radius: 5px;
         margin: 10px 0 10px 0;
         width: 180px;
         height: 30px;
@@ -82,9 +81,9 @@
 
     .input-login::placeholder {
         display: flex;
-        font-size: 20px;
+        font-size: 15px;
     }
-        .input-register{
+    .input-register{
         display: flex;  
         margin: 10px 0 10px 0;
         width: 180px;
@@ -93,8 +92,8 @@
         box-shadow: 0px 0px 10px 0px #fa9494 ;
 }
 
-.input-register::placeholder{
-    display: flex;
-    font-size: 20px;
+    .input-register::placeholder{
+        display: flex;
+        font-size: 20px;
 }
 }
