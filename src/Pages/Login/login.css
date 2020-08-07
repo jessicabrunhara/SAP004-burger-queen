@@ -59,14 +59,20 @@ margin: 0px 160px 0px 0px;
     align-items: center;
     height: 1024px;  
 }
+
 .logo-wrapper{
     display: flex;
+    height: auto;
+    width: 400px;
+    clip-path: none;
+    margin-left: 0px;
 }
-
-.logo-login {
-    padding-top: 50px; 
-    margin: 15px;
- }
+ 
+.form-wrapper{
+    display: flex;
+    padding-top: 25px;
+    margin: 0px 0px 0px 0px;
+}
  .login-form {
     flex-direction: column;
     display: flex;
@@ -78,7 +84,7 @@ margin: 0px 160px 0px 0px;
 .register-link{
     margin-top: 20px;
     display: flex;
-    font-size: 15px;
+    font-size: 30px;
     color: white;
 }
 
@@ -95,26 +101,36 @@ margin: 0px 160px 0px 0px;
 .register-link :last-child:hover {
     color: #fa9494;
 }
-
- 
 }
 
 @media (max-width: 414px) {
-         .login-wrapper{
-        margin-top: 5px;
-        padding: 10px;
-        display: flex;
-        align-items: center;
-        flex-direction: column;
-        justify-content: space-evenly;
+    .login-wrapper{
+        background-color: #009d8c;
+        padding: 30px 10px 45px 10px;
+        width: 100%;
         height: auto;
         text-align: center;
+        margin-bottom: 0px;
     }
 
-    .logo-login {
-        padding-top: 20px; 
-        margin: 15px;
-     }
+    .logo-wrapper{
+        display: flex;
+        height: auto;
+        width: 200px;
+        clip-path: none;
+        justify-content: center;
+        margin-left: 0px;
+}
 
-
+    .form-wrapper{
+        display: flex;
+        padding-top: 35px;
+        margin: 10px 0px 0px 0px;
+}
+    .register-link{
+    margin-top: 20px;
+    display: flex;
+    font-size: 20px;
+    color: white;
+}
 }

@@ -1,4 +1,3 @@
-
 .logo-login {
     padding-top: 50px; 
     margin: 25px 15px 15px 130px;
@@ -21,10 +20,21 @@
     height: 450px;
 }
 
+@media (max-width: 768px) {
+    .logo-login {
+        padding-top: 40px; 
+        margin: 25px 25px 15px 15px;
+    }
+    .logo-register {
+        padding-top: 15px; 
+        margin: 15px 25px 15px 15px;
+    }
+}
+
 @media (max-width: 450px) {
     .logo-login {
-        padding-top: 5px; 
-        margin: 5px;
+        padding-top: 10px; 
+        margin: 5px 5px 5px 0px;
      }
      .logo-login img{
         width: auto;
@@ -33,10 +43,10 @@
 
     .logo-register {
         padding-top: 5px; 
-        margin: 5px;
+        margin: 5px 5px 5px 0px;
  }
     .logo-register img{
         width: auto;
-        height: 210px;
+        height: 200px;
 }
 }
