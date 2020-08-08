@@ -22,9 +22,23 @@ const Menu = ({ items }) => {
   }
 
   const addNewItem = (product) => {
+    for (let i = 0; i < menuItem.length; i++) {
+      if (menuItem[i].name === product.name) {
+        return
+      }
+    }
     product.quantity = 1
     setMenuItem([...menuItem, product])
   }
+
+  /* const searchIndex = (item) => {
+    return value
+      .map((a) => {
+        return a.item;
+      })
+      .indexOf(item);
+  }; */
+
 
   // Descubra o valor total dos itens selecionados
   let total = 0
