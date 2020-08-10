@@ -44,7 +44,8 @@ h1 {
 }
 
 .btn-menu {
-  width: 100px;
+  display: flex;
+  width: 150px;
   height: 80px;
   margin: 10px;
   padding: 5px;
@@ -56,6 +57,10 @@ h1 {
 label {
   display: flex;
   justify-content: center;
+}
+
+.icon-btn {
+  height: 40px;
 }
 
 .new-order-wrapper {
