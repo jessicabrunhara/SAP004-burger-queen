@@ -1,16 +1,23 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './menu.css';
 import '../Lounge-Order-Ready/order-ready.css'
 import Button from 'Components/Button/button';
 import Input from 'Components/Input/input';
 import MyModal from 'Components/Modal/modal';
+import firebase from 'Config/firebase';
 
 const Menu = ({ items }) => {
 
   const [menuItem, setMenuItem] = useState([]);
+  // const [urlImage, setUrlImage] = useState('');
   const [table, setTable] = useState();
   const [client, setClient] = useState();
   const [resume, setResume] = useState(0);
+
+  /* useEffect(() => {
+     firebase.storage().ref(`images/${img}`).getDownloadURL().then(url => setUrlImage(url)).catch(error => console.log(error));
+   }, []); */
+
 
   const changeQuantity = (product, change) => {
     product.quantity += change
@@ -55,16 +62,16 @@ const Menu = ({ items }) => {
           <div className='menu-breakfast'>
             <div className='label-menu'>Café da Manhã</div>
             <div className='btn-wrapper'>
-              {items.filter(item => item.breakfast === true).map((product, index) => <Button onClick={() => addNewItem(product)} className='btn-menu' type='button' key={`btn-menu-${index}`}>{product.name} <br></br> R$ {product.price} </Button>)}
+              {items.filter(item => item.breakfast === true).map((product, index) => <Button onClick={() => addNewItem(product)} className='btn-menu' type='button' key={`btn-menu-${index}`}> {<img src={product.icon} className='icon-btn' alt='Icone do produto' />} {product.name} <br></br> R$ {product.price},00 </Button>)}
             </div>
           </div>
 
           <div className='menu-lunch'>
             <div className='label-menu'>Almoço / Jantar</div>
             <div className='btn-wrapper'>
-              {items.filter(item => item.breakfast === false && item.hamburger === false).map((product, index) => <Button onClick={() => addNewItem(product)} className='btn-menu' type='button' key={`btn-menu-${index}`}>{product.name} <br></br> R$ {product.price} </Button>)}
+              {items.filter(item => item.breakfast === false && item.hamburger === false).map((product, index) => <Button onClick={() => addNewItem(product)} className='btn-menu' type='button' key={`btn-menu-${index}`}> {<img src={product.icon} className='icon-btn' alt='Icone do produto' />} {product.name} <br></br> R$ {product.price},00 </Button>)}
 
-              {items.filter(item => item.breakfast === false && item.hamburger === true).map((product, index) => <MyModal className='btn-menu' type='button' key={`btn-menu-${index}`} adds={product.adds} options={product.options} >{product.name} <br></br> R$ {product.price} </MyModal>)}
+              {items.filter(item => item.breakfast === false && item.hamburger === true).map((product, index) => <MyModal className='btn-menu' type='button' key={`btn-menu-${index}`} adds={product.adds} options={product.options} > {<img src={product.icon} className='icon-btn' alt='Icone do produto' />} {product.name} <br></br> R$ {product.price},00 </MyModal>)}
 
             </div>
           </div>

@@ -3,7 +3,6 @@ import HeaderLounge from 'Components/Header-Lounge/header-lounge';
 import Menu from 'Components/Menu/menu';
 import firebase from 'Config/firebase';
 import './lounge-new-order.css';
-import MyModal from 'Components/Modal/modal';
 
 const LoungeNewOrder = () => {
 
