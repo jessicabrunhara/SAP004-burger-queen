@@ -1,73 +1,46 @@
-.input-login {
+.input-login,
+.input-register {
     display: flex;
     background-color: white;
     border: #fa9494 1.5px solid;
     border-radius: 10px;
-    margin: 30px 0 30px 0;
-    width: 300px;
     height: 40px;
-    padding: 12px 0px 0px 10px;
+    width: 300px;
     box-shadow: 0px 0px 20px 0px #fa9494;
-
 }
 
-.input-login::placeholder {
+.input-login {
+    margin: 30px 0 30px 0;
+    padding: 12px 0px 0px 10px;
+}
+
+.input-login::placeholder,
+.input-register::placeholder {
     display: flex;
     font-size: 30px;
 }
 
-.input-register{
-    display: flex;
-    background-color: white; 
-    border: #fa9494 1.5px solid;  
-    border-radius: 10px;
+.input-register {
     margin: 20px 0 20px 0;
-    width: 300px;
     height: 40px;
     padding: 12px 0px 0px 10px;
-    box-shadow: 0px 0px 20px 0px #fa9494 ;
-}
-
-.input-register::placeholder{
-    display: flex;
-    font-size: 30px;
 }
 
 @media (max-width: 768px) {
     .input-login {
-        display: flex;
-        background-color: white;
-        border: #fa9494 1.5px solid;
-        border-radius: 10px;
         margin: 30px 0 30px 0;
         width: 350px;
         height: 50px;
         padding: 12px 0px 0px 10px;
-        box-shadow: 0px 0px 20px 0px #fa9494;
-
     }
 
-    .input-login::placeholder {
-        display: flex;
-        font-size: 30px;
-    }
-
-    .input-register{
-        display: flex;
-        background-color: white; 
-        border: #fa9494 1.5px solid;  
-        border-radius: 10px;
+    .input-register {
         margin: 15px 0 15px 0;
         width: 350px;
         height: 50px;
         padding: 8px 0px 0px 8px;
-        box-shadow: 0px 0px 15px 0px #fa9494 ;
-}
+    }
 
-.input-register::placeholder{
-    display: flex;
-    font-size: 30px;
-}
 }
 
 @media (max-width: 450px) {
@@ -76,24 +49,18 @@
         width: 180px;
         height: 30px;
         padding: 5px 0px 0px 5px;
-        box-shadow: 0px 0px 10px 0px #fa9494;
     }
 
-    .input-login::placeholder {
-        display: flex;
-        font-size: 15px;
+    .input-login::placeholder,
+    .input-register::placeholder {
+        font-size: 18px;
     }
-    .input-register{
-        display: flex;  
+
+    .input-register {
         margin: 10px 0 10px 0;
         width: 180px;
         height: 30px;
         padding: 5px 0px 0px 5px;
-        box-shadow: 0px 0px 10px 0px #fa9494 ;
-}
+    }
 
-    .input-register::placeholder{
-        display: flex;
-        font-size: 20px;
-}
 }
