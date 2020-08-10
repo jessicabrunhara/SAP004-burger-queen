@@ -4,27 +4,23 @@ import '../Lounge-Order-Ready/order-ready.css'
 import Button from 'Components/Button/button';
 import Input from 'Components/Input/input';
 import MyModal from 'Components/Modal/modal';
-import firebase from 'Config/firebase';
 
 const Menu = ({ items }) => {
 
   const [menuItem, setMenuItem] = useState([]);
-  // const [urlImage, setUrlImage] = useState('');
   const [table, setTable] = useState();
   const [client, setClient] = useState();
   const [resume, setResume] = useState(0);
-
-  /* useEffect(() => {
-     firebase.storage().ref(`images/${img}`).getDownloadURL().then(url => setUrlImage(url)).catch(error => console.log(error));
-   }, []); */
 
 
   const changeQuantity = (product, change) => {
     product.quantity += change
 
-    // Abaixo é importante usar "[...menuItem]" em vez de "menuItem"
-    // Se for usado apenas "menuItem", o React não vai perceber que houve uma mudança no array
-    // E, por isso, não vai recarregar o componente
+    if (product.quantity <= 0) {
+      const i = menuItem.indexOf(product)
+      menuItem.splice(i, 1)
+    }
+
     setMenuItem([...menuItem])
   }
 
@@ -38,16 +34,6 @@ const Menu = ({ items }) => {
     setMenuItem([...menuItem, product])
   }
 
-  /* const searchIndex = (item) => {
-    return value
-      .map((a) => {
-        return a.item;
-      })
-      .indexOf(item);
-  }; */
-
-
-  // Descubra o valor total dos itens selecionados
   let total = 0
   menuItem.map(product => {
     total += product.price * product.quantity
