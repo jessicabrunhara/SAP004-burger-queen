@@ -4,6 +4,10 @@
   justify-content: space-around;
 }
 
+.order-information-wrapper {
+  min-height: 250px;
+}
+
 .menu-wrapper {
   display: flex;
   flex-direction: column;
@@ -49,10 +53,6 @@ h1 {
   margin: 15px
 }
 
-.caixona {
-  width: 600px;
-}
-
 label {
   display: flex;
   justify-content: center;
@@ -68,9 +68,10 @@ label {
   display: flex;
   flex-direction: column;
   height: fit-content;
-  min-width: 420px;
+  min-height: 300px;
+  min-width: 440px;
   border: 2px solid white;
-  margin: 95px 25px 15px 25px;
+  margin: 30px 25px 0px 25px;
   border-radius: 8%;
   box-shadow: 0px 0px 20px 0px #fa9494;
 }
@@ -163,4 +164,73 @@ label {
   display: flex;
   flex-direction: row;
   align-items: center;
+}
+
+@media (max-width: 800px) {
+  .order-table-wrapper {
+    min-width: 400px
+  }
+
+  .order-information-wrapper {
+    min-width: 200px;
+    min-height: 450px;
+  }
+
+  .btn-menu {
+    margin: 5px;
+  }
+
+  .label-menu {
+    padding: 5px;
+    margin: 10px;
+    width: 220px;
+  }
+
+  .btn-wrapper {
+    width: auto;
+  }
+
+  .order-style {
+    margin-top: 50px;
+    height: fit-content;
+
+  }
+}
+
+@media (max-width: 414px) {
+  .order-style {
+   /*  margin-top: 0px 10px; */
+    height: fit-content;
+    flex-direction: column;
+
+  }
+  .order-table-wrapper {
+    min-width: 320px;
+    margin: 5px 10px;
+    align-items: center;
+  }
+
+  .order-information-wrapper {
+    min-height: 50px;
+  }
+
+  .btn-menu {
+    margin: 10px;
+    width: 130px;
+    height: auto;
+    padding: 5px;
+    
+  }
+
+  .label-menu {
+    padding: 5px;
+    margin: 10px;
+    min-width: 300px;
+  }
+
+  .btn-wrapper {
+    min-width: 320px;
+   }
+
+ 
 }
