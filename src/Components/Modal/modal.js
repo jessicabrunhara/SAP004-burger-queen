@@ -6,7 +6,20 @@ import Input from 'Components/Input/input';
 
 const MyModal = (props) => {
     const [modalIsOpen, setModalIsOpen] = useState(false)
-    console.log(props)
+    const [burgerOption, setBurgerOption] = useState('')
+    const [adds, setAdds] = useState([])
+
+    const onClickAdd = (e) => {
+        const selectedAdd = e.target.value
+        if (e.target.checked) {
+            setAdds(selectedAdd)
+        } else {
+            setAdds([...adds, selectedAdd])
+        }
+    }
+    const sendAdds = () => {
+        console.log('adiciona aí')
+    }
 
     return (
         <div>
@@ -17,38 +30,27 @@ const MyModal = (props) => {
                 <div className='modal-options'>Opções do Hambúrguer</div>
                 {props.options.map(option =>
                     <>
-                        <span><Input type='radio' className='radio-modal'name='options' value={option}></Input>
-                        <aria-label htmlFor={option}>{option}</aria-label></span>
+                        <span><Input type='radio' onChange={(e) => {
+                            setBurgerOption(e.target.value)
+                            console.log(e.target.value)
+                        }} className='radio-modal' name='options' value={option} />
+                            <aria-label htmlFor={option}>{option}</aria-label></span>
                     </>
                 )}
                 <div className='modal-options'>Adicionais: </div>
-                <span>
-                            
-                    <Input type='checkbox'></Input>
-                    <aria-label className= 'radio-label'> Ovo </aria-label></span>
 
-                
-                {/* props.adds.map(item =>
+                {/* <span>
+                     <Input type='checkbox'></Input>
+                    <aria-label className='radio-label'> Ovo </aria-label></span> */}
+
+                {Object.entries(props.adds).map(item =>
                     <>
-                        <Input type='checkbox' name={item}></Input>
-                        <label htmlFor={item}>{[adds]}</label>
-                    </>
-                )*/ }
-
-                {Object.entries(adds =>
-
-                    <>
-                        <Input type='checkbox' name={[]}></Input>
-                        <label htmlFor={[]}>{[adds].map(item => [item])}</label>
+                        <Input type='checkbox' value={item[0]} onChange={onClickAdd} />
+                        <label htmlFor={[]}>{item[0]} {item[1]}</label>
                     </>
                 )}
 
-
-                {/* <Input type='checkbox' name='egg'></Input>
-                <label htmlFor='egg'>Ovo {[props.adds].map(item => [item.egg])}</label>
-
-                <Input type='checkbox' name='cheese'></Input>
-                <label htmlFor='cheese'>Queijo {[props.adds].map(item => [item.cheese])}</label> */}
+                <Button onClick={sendAdds} type='button'>Adicionar</Button>
 
             </Modal>
         </div>
