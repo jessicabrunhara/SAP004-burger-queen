@@ -11,15 +11,15 @@ const MyModal = (props) => {
 
     const onClickAdd = (e) => {
         const selectedAdd = e.target.value
-        if (selectedAdd) {
-            // selectedAdd.filter(e => e.value)
-            console.log(selectedAdd)
+        if (e.target.checked) {
+            setAdds(selectedAdd)
         } else {
             setAdds([...adds, selectedAdd])
         }
     }
-
-    console.log(props)
+    const sendAdds = () => {
+        console.log('adiciona aí')
+    }
 
     return (
         <div>
@@ -50,13 +50,7 @@ const MyModal = (props) => {
                     </>
                 )}
 
-                {/* <Input type='checkbox' name='egg'></Input>
-                <label htmlFor='egg'>Ovo {[props.adds].map(item => [item.egg])}</label>
-
-                <Input type='checkbox' name='cheese'></Input>
-                <label htmlFor='cheese'>Queijo {[props.adds].map(item => [item.cheese])}</label> */}
-
-                <Button type='button'>Adicionar</Button>
+                <Button onClick={sendAdds} type='button'>Adicionar</Button>
 
             </Modal>
         </div>
