@@ -38,13 +38,13 @@
     border-radius: 20px;
     -moz-border-radius: 20px;
     -webkit-border-radius: 20px;
-    height: 50px;
-    padding: 0px;
     margin: 10px;
     width: 250px;
     height: 50px;
     align-items: center;
     border-radius: 8px;
+    justify-content: space-between;
+    padding: 5px 20px;
   
   }
   
