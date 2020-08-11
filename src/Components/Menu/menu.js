@@ -48,6 +48,7 @@ const Menu = ({ items }) => {
     setMenuItem([...menuItem, product])
   }
 
+  
   let total = 0
   menuItem.map(product => {
     total += product.price * product.quantity
@@ -56,9 +57,7 @@ const Menu = ({ items }) => {
   return (
     <div className='order-style'>
       <div className='menu-wrapper'>
-        <h1>Menu</h1>
         <div className='all-menu'>
-
           <div className='menu-breakfast'>
             <div className='label-menu'>Café da Manhã</div>
             <div className='btn-wrapper'>
@@ -77,8 +76,9 @@ const Menu = ({ items }) => {
           </div>
         </div >
       </div>
-
+     
       <div className='order-table-wrapper'>
+     
         <div className='table-wrapper'>
           <Input onChange={(e) => setTable(e.target.value)} className='input-style' placeholder='Mesa' required >Mesa:</Input>
           <Input onChange={(e) => setClient(e.target.value)} className='input-style' placeholder='Nome' required >Cliente: </Input>
@@ -90,9 +90,9 @@ const Menu = ({ items }) => {
               <div className='item-ordered'>
                 <p>{product.name}</p>
                 <div className='btn-order-wrapper'>
-                  <Button className='btn-add' onClick={() => changeQuantity(product, 1)}>+</Button>
+                  <Button className='btn-add' onClick={() => changeQuantity(product, 1)}><i className="fas fa-plus"></i></Button>
                   <div className='quantify-ordered'>{product.quantity}</div>
-                  <Button className='btn-add' onClick={() => changeQuantity(product, -1)}>-</Button>
+                  <Button className='btn-add' onClick={() => changeQuantity(product, -1)}><i className="fas fa-minus"></i></Button>
                 </div>
                 <div className='price-ordered'>{product.quantity * product.price}</div>
               </div>

@@ -1,103 +1,114 @@
-.order-style {
+.order-style,
+.menu-wrapper,
+.all-menu,
+.label-menu,
+.btn-menu,
+.new-order-wrapper,
+.input-wrapper,
+.order-table-wrapper,
+.order-register-wrapper,
+.total-value,
+.item-ordered,
+.value-wrapper,
+.ordered-wrapper,
+.btn-add,
+.btn-order-wrapper {
   display: flex;
-  padding: 0px 15px 0px 15px;
+}
+
+.menu-wrapper,
+.all-menu,
+.order-table-wrapper,
+.order-register-wrapper,
+.ordered-wrapper {
+  flex-direction: column;
+}
+
+.order-style,
+.value-wrapper {
   justify-content: space-around;
 }
 
+.label-menu,
+.btn-add {
+  justify-content: center;
+
+}
+
+.order-style {
+  padding: 0px 15px 0px 15px;
+}
+
 .order-information-wrapper {
-  min-height: 250px;
+  min-height: 150px;
 }
 
 .menu-wrapper {
-  display: flex;
-  flex-direction: column;
   text-align: center;
-  padding: 10px;
 }
 
-h1 {
-  display: flex;
-  padding: 10px;
-}
 
 .all-menu {
-  display: flex;
-  flex-direction: column;
   max-width: 600px;
-}
-
-.btn-wrapper {
-  display: flex;
-  flex-wrap: wrap;
 }
 
 .label-menu {
   padding: 5px;
   background-color: #fa9494;
-  display: flex;
   border: 2px solid #fa9494;
-  width: 150px;
+  border-radius: 10px;
+  width: 535px;
   color: white;
-  justify-content: center;
   font-size: 20px;
   margin: 10px;
+  box-shadow: 0px 0px 10px 0px #fa9494;
 }
 
-.btn-menu {
-  display: flex;
-  width: 150px;
-  height: 80px;
-  margin: 10px;
-  padding: 5px;
-  border-radius: 8px;
-  background-color: white;
-  margin: 15px
-}
 
+
+/* 
 label {
   display: flex;
   justify-content: center;
-}
+} */
 
 .icon-btn {
   height: 40px;
 }
 
 .new-order-wrapper {
-  display: flex;
   justify-content: space-between;
   padding: 0px 20px 0px 20px
 }
 
 .order-table-wrapper {
-  display: flex;
-  flex-direction: column;
+  background: #f2f2f2;
   height: fit-content;
   min-height: 300px;
   min-width: 440px;
-  border: 2px solid white;
-  margin: 30px 25px 0px 25px;
+  margin: 70px 25px 0px 25px;
   border-radius: 8%;
-  box-shadow: 0px 0px 20px 0px #fa9494;
+  border: 0px solid #ffffff;
+  box-shadow: 0px 0px 20px #000000;
 }
 
 .order-register-wrapper {
   margin: 10px 50px 10px 50px;
   padding-right: 50px;
-  display: flex;
-  flex-direction: column;
 }
 
 .input-wrapper {
-  display: flex;
   text-align: center;
   align-items: center;
 }
 
 .input-style {
   color: black;
-  margin: 4px;
+  margin: 8px;
   padding: 2px;
+  border-radius: 8px;
+  border: 0px solid #ffffff;
+  box-shadow: 0px 0px 3px #000000;
 }
 
 .box {
@@ -108,44 +119,33 @@ label {
 }
 
 .value-wrapper {
-  display: flex;
-  justify-content: space-around;
+  align-items: center;
   padding: 6px;
-  border: 3px solid whitesmoke;
-  border-radius: 5%;
-  background-color: whitesmoke;
-  margin: 10px 20px 10px 20px;
-}
-
-.total-value {
-  display: flex;
+  width: 300px;
+  color: black;
+  margin: 60px;
+  padding: 2px;
+  border-radius: 8px;
+  border: 0px solid #ffffff;
+  box-shadow: 0px 0px 3px #000000;
 }
 
 .item-ordered {
-  display: flex;
   align-items: center;
   justify-content: space-between;
   font-size: 20px;
-
 }
-
-.ordered-wrapper {
-  display: flex;
-  flex-direction: column;
-}
-
 
 .btn-add {
-  display: flex;
   height: 25px;
   width: 25px;
   background-color: #009d8c;
   color: white;
-  font-size: 24px;
+  font-size: 13px;
   font-weight: 500;
   align-items: center;
   justify-content: center;
-  padding: 1px 1px 7px 1px;
+  padding: 1px 1px 1px 1px;
   margin: 4px;
   border-radius: 5px;
 }
@@ -166,14 +166,15 @@ label {
 }
 
 .btn-order-wrapper {
-  display: flex;
   flex-direction: row;
   align-items: center;
 }
 
+
+
 @media (max-width: 800px) {
   .order-table-wrapper {
-    min-width: 400px
+    min-width: 300px
   }
 
   .order-information-wrapper {
@@ -181,15 +182,16 @@ label {
     min-height: 450px;
   }
 
-  .btn-menu {
+  .btn-menu,
+  .label-menu {
     margin: 5px;
   }
 
   .label-menu {
-    padding: 5px;
-    margin: 10px;
-    width: 220px;
+    font-size: 18px;
+    width: 520px;
   }
+
 
   .btn-wrapper {
     width: auto;
@@ -198,17 +200,19 @@ label {
   .order-style {
     margin-top: 50px;
     height: fit-content;
+    flex-direction: column;
 
   }
 }
 
 @media (max-width: 414px) {
   .order-style {
-   /*  margin-top: 0px 10px; */
+    /*  margin-top: 0px 10px; */
     height: fit-content;
     flex-direction: column;
 
   }
+
   .order-table-wrapper {
     min-width: 320px;
     margin: 5px 10px;
@@ -224,7 +228,7 @@ label {
     width: 130px;
     height: auto;
     padding: 5px;
-    
+
   }
 
   .label-menu {
@@ -235,7 +239,7 @@ label {
 
   .btn-wrapper {
     min-width: 320px;
-   }
+  }
 
- 
+
 }
