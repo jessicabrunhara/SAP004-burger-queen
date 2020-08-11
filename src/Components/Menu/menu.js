@@ -4,6 +4,7 @@ import '../Lounge-Order-Ready/order-ready.css'
 import Button from 'Components/Button/button';
 import Input from 'Components/Input/input';
 import MyModal from 'Components/Modal/modal';
+import firebase from 'Config/firebase'
 
 const Menu = ({ items }) => {
 
@@ -12,6 +13,19 @@ const Menu = ({ items }) => {
   const [client, setClient] = useState();
   const [resume, setResume] = useState(0);
 
+  function sendOrder(table, client) {
+    const orderPromise = firebase.firestore().collection('orders').add({
+      client,
+      table,
+      menuItem,
+      state: 'preparing'
+    });
+    orderPromise.then(() => {
+      alert('seu pedido foi enviado!')
+    }).catch(() => {
+      alert('deu ruim');
+    })
+  }
 
   const changeQuantity = (product, change) => {
     product.quantity += change
@@ -91,7 +105,7 @@ const Menu = ({ items }) => {
           <div className='total-value'>{total}</div>
         </div>
         <div className='btn-wrapper'>
-          <Button className='btn-std'> Enviar</Button>
+          <Button onClick={() => sendOrder(table, client)} className='btn-std'> Enviar</Button>
         </div>
       </div>
     </div >
