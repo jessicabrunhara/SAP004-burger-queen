@@ -1,7 +1,43 @@
-.order-style {
+.order-style,
+.menu-wrapper,
+.all-menu,
+.label-menu,
+.btn-menu,
+.new-order-wrapper,
+.input-wrapper,
+.order-table-wrapper,
+.order-register-wrapper,
+.total-value,
+.item-ordered,
+.value-wrapper,
+.ordered-wrapper,
+.btn-add,
+.btn-order-wrapper {
   display: flex;
-  padding: 0px 15px 0px 15px;
+}
+
+.menu-wrapper,
+.all-menu,
+.order-table-wrapper,
+.order-register-wrapper,
+.ordered-wrapper {
+  flex-direction: column;
+}
+
+.order-style,
+.btn-menu,
+.value-wrapper {
   justify-content: space-around;
+}
+
+.label-menu,
+.btn-add {
+  justify-content: center;
+
+}
+
+.order-style {
+  padding: 0px 15px 0px 15px;
 }
 
 .order-information-wrapper {
@@ -9,83 +45,45 @@
 }
 
 .menu-wrapper {
-  display: flex;
-  flex-direction: column;
   text-align: center;
 }
 
-h1 {
-  display: flex;
- }
 
 .all-menu {
-  display: flex;
-  flex-direction: column;
   max-width: 600px;
 }
 
 .label-menu {
   padding: 5px;
   background-color: #fa9494;
-  display: flex;
   border: 2px solid #fa9494;
   border-radius: 10px;
   width: 535px;
   color: white;
-  justify-content: center;
   font-size: 20px;
   margin: 10px;
-  box-shadow: 0px 0px 20px 0px #fa9494;
+  box-shadow: 0px 0px 10px 0px #fa9494;
 }
 
-.btn-menu {
-  color: #000000;
-  background: #f2f2f2;
-  border: 0px solid #ffffff;
-  text-shadow: -1px 1px 0px #fff;
-  box-shadow: 0px 0px 7px #000000;
-  -moz-box-shadow: 0px 0px 7px #000000;
-  -webkit-box-shadow: 0px 0px 7px #000000;
-  border-radius: 20px;
-  -moz-border-radius: 20px;
-  -webkit-border-radius: 20px;
-  height: 50px;
-  padding: 0px;
-  margin: 10px;
-  width: 250px;
-  height: 50px;
-  align-items: center;
-  display: flex;
-  justify-content: space-around;
-  border-radius: 8px;
 
-}
 
-.btn-menu:active {
-  cursor: pointer;
-  position: relative;
-  top: 2px;
-}
-
+/* 
 label {
   display: flex;
   justify-content: center;
-}
+} */
 
 .icon-btn {
   height: 40px;
 }
 
 .new-order-wrapper {
-  display: flex;
   justify-content: space-between;
   padding: 0px 20px 0px 20px
 }
 
 .order-table-wrapper {
   background: #f2f2f2;
-  display: flex;
-  flex-direction: column;
   height: fit-content;
   min-height: 300px;
   min-width: 440px;
@@ -98,12 +96,9 @@ label {
 .order-register-wrapper {
   margin: 10px 50px 10px 50px;
   padding-right: 50px;
-  display: flex;
-  flex-direction: column;
 }
 
 .input-wrapper {
-  display: flex;
   text-align: center;
   align-items: center;
 }
@@ -125,8 +120,6 @@ label {
 }
 
 .value-wrapper {
-  display: flex;
-  justify-content: space-around;
   align-items: center;
   padding: 6px;
   width: 300px;
@@ -136,38 +129,24 @@ label {
   border-radius: 8px;
   border: 0px solid #ffffff;
   box-shadow: 0px 0px 3px #000000;
-
-}
-
-.total-value {
-  display: flex;
 }
 
 .item-ordered {
-  display: flex;
   align-items: center;
   justify-content: space-between;
   font-size: 20px;
-
 }
-
-.ordered-wrapper {
-  display: flex;
-  flex-direction: column;
-}
-
 
 .btn-add {
-  display: flex;
   height: 25px;
   width: 25px;
   background-color: #009d8c;
   color: white;
-  font-size: 24px;
+  font-size: 13px;
   font-weight: 500;
   align-items: center;
   justify-content: center;
-  padding: 1px 1px 7px 1px;
+  padding: 1px 1px 1px 1px;
   margin: 4px;
   border-radius: 5px;
 }
@@ -188,7 +167,6 @@ label {
 }
 
 .btn-order-wrapper {
-  display: flex;
   flex-direction: row;
   align-items: center;
 }
@@ -197,7 +175,7 @@ label {
 
 @media (max-width: 800px) {
   .order-table-wrapper {
-    min-width: 400px
+    min-width: 300px
   }
 
   .order-information-wrapper {
@@ -205,15 +183,14 @@ label {
     min-height: 450px;
   }
 
-  .btn-menu {
+  .btn-menu,
+  .label-menu {
     margin: 5px;
   }
 
   .label-menu {
     font-size: 18px;
     width: 520px;
-    margin: 5px;
-
   }
 
 
@@ -224,6 +201,7 @@ label {
   .order-style {
     margin-top: 50px;
     height: fit-content;
+    flex-direction: column;
 
   }
 }

@@ -1,5 +1,5 @@
 .btn-std,
-.btn-menus {
+.btn-order-kitchen {
     background-color: #fa9494;
     border: #fa9494 1.5px solid;
     display: flex;
@@ -19,7 +19,7 @@
     font-size: 30px;
 }
 
-.btn-menus {
+.btn-order-kitchen {
     height: 50px;
     padding: 5px;
     width: auto;
@@ -27,10 +27,37 @@
     font-size: 20px;
 }
 
+.btn-menu {
+    color: #000000;
+    background: #f2f2f2;
+    border: 0px solid #ffffff;
+    text-shadow: -1px 1px 0px #fff;
+    box-shadow: 0px 0px 7px #000000;
+    -moz-box-shadow: 0px 0px 7px #000000;
+    -webkit-box-shadow: 0px 0px 7px #000000;
+    border-radius: 20px;
+    -moz-border-radius: 20px;
+    -webkit-border-radius: 20px;
+    height: 50px;
+    padding: 0px;
+    margin: 10px;
+    width: 250px;
+    height: 50px;
+    align-items: center;
+    border-radius: 8px;
+  
+  }
+  
+  .btn-menu:active {
+    cursor: pointer;
+    position: relative;
+    top: 2px;
+  }
+
+
 .btn-wrapper {
     display: flex;
     align-self: center;
-
     margin: 0px 0px 5px 0px;
     flex-wrap: wrap;
 

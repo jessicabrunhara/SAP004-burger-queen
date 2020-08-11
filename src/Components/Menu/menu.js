@@ -43,9 +43,7 @@ const Menu = ({ items }) => {
   return (
     <div className='order-style'>
       <div className='menu-wrapper'>
-         <h1>Menu</h1> 
-              <div className='all-menu'>
-
+        <div className='all-menu'>
           <div className='menu-breakfast'>
             <div className='label-menu'>Café da Manhã</div>
             <div className='btn-wrapper'>
@@ -78,9 +76,9 @@ const Menu = ({ items }) => {
               <div className='item-ordered'>
                 <p>{product.name}</p>
                 <div className='btn-order-wrapper'>
-                  <Button className='btn-add' onClick={() => changeQuantity(product, 1)}>+</Button>
+                  <Button className='btn-add' onClick={() => changeQuantity(product, 1)}><i className="fas fa-plus"></i></Button>
                   <div className='quantify-ordered'>{product.quantity}</div>
-                  <Button className='btn-add' onClick={() => changeQuantity(product, -1)}>-</Button>
+                  <Button className='btn-add' onClick={() => changeQuantity(product, -1)}><i className="fas fa-minus"></i></Button>
                 </div>
                 <div className='price-ordered'>{product.quantity * product.price}</div>
               </div>
