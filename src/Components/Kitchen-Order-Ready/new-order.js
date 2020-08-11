@@ -2,15 +2,19 @@ import React from 'react';
 import Button from 'Components/Button/button';
 import './kitchen-order-ready.css';
 
-const OrdersReceived = () => {
+const OrdersReceived = ({ id, time, table, client }) => {
+
+    // const date = new Date(time.seconds * 1000);
+    // ${ date.toLocaleString('pt-BR') }
+
 
     return (
         <div className='order-ready-wrapper'>
 
             <div className='table-wrapper'>
-                <div className='time-wrapper'>Data e hora</div>
-                <div className='table-number'>Mesa: </div>
-                <div className='client-information'>Cliente: </div>
+                <div className='time-wrapper'>{time}</div>
+                <div className='table-number'>Mesa: {table}</div>
+                <div className='client-information'>Cliente: {client}</div>
             </div>
 
             <div className='order-information-wrapper'>
