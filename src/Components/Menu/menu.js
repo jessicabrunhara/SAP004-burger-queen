@@ -34,6 +34,7 @@ const Menu = ({ items }) => {
     setMenuItem([...menuItem, product])
   }
 
+  
   let total = 0
   menuItem.map(product => {
     total += product.price * product.quantity
@@ -42,8 +43,8 @@ const Menu = ({ items }) => {
   return (
     <div className='order-style'>
       <div className='menu-wrapper'>
-        <h1>Menu</h1>
-        <div className='all-menu'>
+         <h1>Menu</h1> 
+              <div className='all-menu'>
 
           <div className='menu-breakfast'>
             <div className='label-menu'>Café da Manhã</div>
@@ -63,8 +64,9 @@ const Menu = ({ items }) => {
           </div>
         </div >
       </div>
-
+     
       <div className='order-table-wrapper'>
+     
         <div className='table-wrapper'>
           <Input onChange={(e) => setTable(e.target.value)} className='input-style' placeholder='Mesa' required >Mesa:</Input>
           <Input onChange={(e) => setClient(e.target.value)} className='input-style' placeholder='Nome' required >Cliente: </Input>
