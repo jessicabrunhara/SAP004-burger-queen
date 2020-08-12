@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import './menu.css';
 import '../Lounge-Order-Ready/order-ready.css'
 import Button from 'Components/Button/button';
@@ -9,18 +9,21 @@ import firebase from 'Config/firebase'
 const Menu = ({ items }) => {
 
   const [menuItem, setMenuItem] = useState([]);
-  const [table, setTable] = useState();
-  const [client, setClient] = useState();
-  // const [resume, setResume] = useState(0);
+  const [table, setTable] = useState('');
+  const [client, setClient] = useState('');
 
   function sendOrder(table, client) {
     const orderPromise = firebase.firestore().collection('orders').add({
       client,
       table,
       menuItem,
-      state: 'preparing'
+      state: 'Preparando',
+      time: Date.now()
     });
     orderPromise.then(() => {
+      setMenuItem([])
+      setTable('')
+      setClient('')
       alert('seu pedido foi enviado!')
     }).catch(() => {
       alert('deu ruim');
@@ -70,7 +73,7 @@ const Menu = ({ items }) => {
             <div className='btn-wrapper'>
               {items.filter(item => item.breakfast === false && item.hamburger === false).map((product, index) => <Button onClick={() => addNewItem(product)} className='btn-menu' type='button' key={`btn-menu-${index}`}> {<img src={product.icon} className='icon-btn' alt='Icone do produto' />} {product.name} <br></br> R$ {product.price},00 </Button>)}
 
-              {items.filter(item => item.breakfast === false && item.hamburger === true).map((product, index) => <MyModal className='btn-menu' type='button' key={`btn-menu-${index}`} adds={product.adds} options={product.options} > {<img src={product.icon} className='icon-btn' alt='Icone do produto' />} {product.name} <br></br> R$ {product.price},00 </MyModal>)}
+              {items.filter(item => item.breakfast === false && item.hamburger === true).map((product, index) => <MyModal className='btn-menu' type='button' key={`btn-menu-${index}`} adds={product.adds} options={product.options} addNewItem={addNewItem} product={product} > {<img src={product.icon} className='icon-btn' alt='Icone do produto' />} {product.name} <br></br> R$ {product.price},00 </MyModal>)}
 
             </div>
           </div>
@@ -80,8 +83,8 @@ const Menu = ({ items }) => {
       <div className='order-table-wrapper'>
 
         <div className='table-wrapper'>
-          <Input onChange={(e) => setTable(e.target.value)} className='input-style' placeholder='Mesa' required >Mesa:</Input>
-          <Input onChange={(e) => setClient(e.target.value)} className='input-style' placeholder='Nome' required >Cliente: </Input>
+          <Input value={table} onChange={(e) => setTable(e.target.value)} type='text' className='input-style' placeholder='Mesa' required >Mesa:</Input>
+          <Input value={client} onChange={(e) => setClient(e.target.value)} type='text' className='input-style' placeholder='Nome' required >Cliente: </Input>
         </div>
 
         <div className='order-information-wrapper'>
@@ -90,9 +93,9 @@ const Menu = ({ items }) => {
               <div className='item-ordered'>
                 <p>{product.name}</p>
                 <div className='btn-order-wrapper'>
-                  <Button className='btn-add' onClick={() => changeQuantity(product, 1)}><i className="fas fa-plus"></i></Button>
+                  <Button className='btn-add' type='button' onClick={() => changeQuantity(product, 1)}><i className="fas fa-plus"></i></Button>
                   <div className='quantify-ordered'>{product.quantity}</div>
-                  <Button className='btn-add' onClick={() => changeQuantity(product, -1)}><i className="fas fa-minus"></i></Button>
+                  <Button className='btn-add' type='button' onClick={() => changeQuantity(product, -1)}><i className="fas fa-minus"></i></Button>
                 </div>
                 <div className='price-ordered'>{product.quantity * product.price}</div>
               </div>
@@ -105,7 +108,7 @@ const Menu = ({ items }) => {
           <div className='total-value'>{total}</div>
         </div>
         <div className='btn-wrapper'>
-          <Button onClick={() => sendOrder(table, client)} className='btn-std'> Enviar</Button>
+          <Button onClick={() => sendOrder(table, client)} type='button' className='btn-std'> Enviar</Button>
         </div>
       </div>
     </div >

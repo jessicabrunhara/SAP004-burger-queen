@@ -12,12 +12,17 @@ const MyModal = (props) => {
     const onClickAdd = (e) => {
         const selectedAdd = e.target.value
         if (e.target.checked) {
-            setAdds(selectedAdd)
-        } else {
             setAdds([...adds, selectedAdd])
+        } else {
+            console.log('qualquer coisa')
+            setAdds([selectedAdd])
+
         }
     }
     const sendAdds = () => {
+        console.log(props.product.price)
+        console.log(adds)
+        props.addNewItem({ ...props.product, adds, burgerOption, price: props.product.price + adds.length })
         console.log('adiciona aí')
     }
 
@@ -58,5 +63,3 @@ const MyModal = (props) => {
 };
 
 export default MyModal;
-
-
