@@ -11,7 +11,6 @@ const Menu = ({ items }) => {
   const [menuItem, setMenuItem] = useState([]);
   const [table, setTable] = useState('');
   const [client, setClient] = useState('');
-  // const [resume, setResume] = useState(0);
 
   function sendOrder(table, client) {
     const orderPromise = firebase.firestore().collection('orders').add({
@@ -23,6 +22,8 @@ const Menu = ({ items }) => {
     });
     orderPromise.then(() => {
       setMenuItem([])
+      setTable('')
+      setClient('')
       alert('seu pedido foi enviado!')
     }).catch(() => {
       alert('deu ruim');
@@ -82,8 +83,8 @@ const Menu = ({ items }) => {
       <div className='order-table-wrapper'>
 
         <div className='table-wrapper'>
-          <Input onChange={(e) => setTable(e.target.value)} type='text' className='input-style' placeholder='Mesa' required >Mesa:</Input>
-          <Input onChange={(e) => setClient(e.target.value)} type='text' className='input-style' placeholder='Nome' required >Cliente: </Input>
+          <Input value={table} onChange={(e) => setTable(e.target.value)} type='text' className='input-style' placeholder='Mesa' required >Mesa:</Input>
+          <Input value={client} onChange={(e) => setClient(e.target.value)} type='text' className='input-style' placeholder='Nome' required >Cliente: </Input>
         </div>
 
         <div className='order-information-wrapper'>
