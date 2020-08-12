@@ -58,5 +58,3 @@ const MyModal = (props) => {
 };
 
 export default MyModal;
-
-

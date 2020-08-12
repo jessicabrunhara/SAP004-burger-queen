@@ -18,7 +18,8 @@ const Menu = ({ items }) => {
       client,
       table,
       menuItem,
-      state: 'preparing'
+      state: 'Preparando',
+      time: Date.now()
     });
     orderPromise.then(() => {
       alert('seu pedido foi enviado!')
