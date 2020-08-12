@@ -11,6 +11,7 @@ const KitchenNewOrder = () => {
     firebase.firestore()
       .collection('orders')
       .orderBy('time', 'asc')
+      .where('state', '==', 'Preparando')
       .get()
       .then((result) => {
         const arrayOrder = [];
