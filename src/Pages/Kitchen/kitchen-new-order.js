@@ -10,6 +10,7 @@ const KitchenNewOrder = () => {
   useEffect(() => {
     firebase.firestore()
       .collection('orders')
+      .orderBy('time', 'asc')
       .get()
       .then((result) => {
         const arrayOrder = [];
@@ -31,7 +32,7 @@ const KitchenNewOrder = () => {
       </div>
 
       <div>
-        {orderLounge.map(item => <OrdersReceived key={item.id} id={item.id} time={item.time} table={item.table} client={item.client} />)}
+        {orderLounge.map(item => <OrdersReceived key={item.id} time={item.time} table={item.table} client={item.client} menuItem={item.menuItem} state={item.state} idDoc={item.id} />)}
       </div>
 
     </>
