@@ -90,6 +90,10 @@
     display: flex;
   }
 
+  .icon-btn {
+    height: 40px;
+  }
+
 @media (max-width: 768px) {
     .btn-std {
         border-radius: 10px;
@@ -98,6 +102,14 @@
         width: 200px;
         margin: 30px 0px 15px 0px;
         font-size: 30px;
+    }
+
+    .btn-menu{
+    width: 150px;
+    }
+
+    .btn-wrapper{
+    width: 690px;
     }
 }
 
@@ -110,4 +122,8 @@
         margin: 15px 0px 5px 0px;
         font-size: 20px;
     }
+
+    .btn-wrapper {
+        min-width: 320px;
+      }
 }

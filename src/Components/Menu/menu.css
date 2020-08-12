@@ -53,16 +53,14 @@
   background-color: #fa9494;
   border: 2px solid #fa9494;
   border-radius: 10px;
-  width: 535px;
+  width: 520px;
   color: white;
   font-size: 20px;
   margin: 10px;
   box-shadow: 0px 0px 10px 0px #fa9494;
 }
 
-.icon-btn {
-  height: 40px;
-}
+
 
 .new-order-wrapper {
   justify-content: space-between;
@@ -141,31 +139,28 @@
 
 @media (max-width: 800px) {
   .order-table-wrapper {
-    min-width: 300px
+    min-width: 300px;
+    max-width: 580px;
+    margin-left: 70px;
   }
 
   .order-information-wrapper {
     min-width: 200px;
-    min-height: 450px;
+    min-height: 50px;
   }
 
    .label-menu {
-    margin: 5px;
-  }
-
-  .label-menu {
     font-size: 18px;
+    margin: 5px;
     width: 520px;
   }
 
 
-  .btn-wrapper {
-    width: auto;
-  }
 
   .order-style {
-    margin-top: 50px;
+    margin-top: 5px;
     height: fit-content;
+    width: 680px;
     flex-direction: column;
 
   }
@@ -193,10 +188,6 @@
     padding: 5px;
     margin: 10px;
     min-width: 300px;
-  }
-
-  .btn-wrapper {
-    min-width: 320px;
   }
 
 
