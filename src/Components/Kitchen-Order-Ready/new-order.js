@@ -54,7 +54,7 @@ const OrdersReceived = ({ idDoc, state, time, table, client, menuItem }) => {
             </div>
 
             <div className='btn-wrapper'>
-                <Button onClick={() => { upDateStatus(idDoc) }} className='btn-order-kitchen' type='button' >Enviar para o salão</Button>
+                <Button onClick={() => { upDateStatus(idDoc) }} className='btn-order-kitchen' type='button' children={'Enviar para o salão'} />
             </div>
 
         </div>
