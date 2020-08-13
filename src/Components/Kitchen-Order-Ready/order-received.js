@@ -2,9 +2,11 @@ import React from 'react';
 import Button from 'Components/Button/button';
 import './kitchen-order-ready.css';
 import firebase from 'Config/firebase';
+import growl from 'growl-alert';
+import 'growl-alert/dist/growl-alert.css';
+
 
 const OrdersReceived = ({ idDoc, state, time, table, client, menuItem }) => {
-  console.log(idDoc)
 
   const upDateStatus = (id) => {
     firebase.firestore().collection('orders')
@@ -13,9 +15,9 @@ const OrdersReceived = ({ idDoc, state, time, table, client, menuItem }) => {
         state: 'Pedido Pronto',
         endTime: Date.now(),
       }).then(() => {
-        alert('pedido enviado para salao!')
+        growl({ text: 'Pedido enviado para o salão!', type: 'success', fadeAway: true, fadeAwayTimeout: 2000 });
       }).catch(() => {
-        alert('deu ruim');
+        growl({ text: 'Erro ao enviar o seu pedido, tente novamente', type: 'error', fadeAway: true, fadeAwayTimeout: 2000 });
       })
   }
 
