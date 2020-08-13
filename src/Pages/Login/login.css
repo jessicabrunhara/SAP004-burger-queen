@@ -52,7 +52,6 @@
     color: #fa9494;
 }
 
-
 @media (max-width: 768px) {
     .login-wrapper {
         display: flex;
@@ -140,3 +139,20 @@
         color: white;
     }
 }
+
+/*@media only screen and (min-width: 1500px) and (min-height: 1000px){
+1920x1080
+.logo-wrapper {
+    display: flex;
+    height: 140vh;
+    width: 80vw;
+    -webkit-clip-path: polygon(0px 0px, 45vw 0px, 290vw 900vw, 0px 100%);
+    clip-path: polygon(0px 0px, 45vw 0px, 290vw 900vw, 0px 100%);
+    background: #009d8c;
+}
+
+.logo-login {
+    padding-top: 600px;
+    margin: 100px 15px 15px 350px;
+}
+}*/
