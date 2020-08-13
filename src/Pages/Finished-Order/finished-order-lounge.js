@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import HeaderLounge from 'Components/Header-Lounge/header-lounge';
 import FinalizedOrders from 'Components/Kitchen-Order-Ready/finished-order';
-import firebase from 'Config/firebase'
+import firebase from 'Config/firebase';
 
 
 const FinishedOrderLounge = () => {
