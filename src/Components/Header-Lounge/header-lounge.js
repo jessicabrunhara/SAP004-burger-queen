@@ -29,9 +29,9 @@ const HeaderLounge = () => {
       <div className='all-btn-links'>
 
         <div className='btn-routes'>
-          <button className='btn-links'><Link className='link' to='/lounge-new-order'>Novo Pedido</Link></button>
-          <button className='btn-links'><Link className='link' to='/lounge-order-ready'>Pedido Pronto</Link></button>
-          <button className='btn-links'><Link className='link' to='/finished-order-lounge'>Pedido Finalizado</Link></button>
+          <button className='btn-links'><Link className='link' to='/lounge-new-order' children={'Menu'}></Link></button>
+          <button className='btn-links'><Link className='link' to='/lounge-order-ready' children={'Prontos para Entregar'}></Link></button>
+          <button className='btn-links'><Link className='link' to='/finished-order-lounge' children={'Pedidos Finalizados'}></Link></button>
         </div>
 
         <div className='btn-link-out'>

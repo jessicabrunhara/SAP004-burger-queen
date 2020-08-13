@@ -5,6 +5,8 @@ import Button from 'Components/Button/button';
 import Input from 'Components/Input/input';
 import MyModal from 'Components/Modal/modal';
 import firebase from 'Config/firebase'
+import growl from 'growl-alert';
+import 'growl-alert/dist/growl-alert.css';
 
 const Menu = ({ items }) => {
 
@@ -13,21 +15,26 @@ const Menu = ({ items }) => {
   const [client, setClient] = useState('');
 
   function sendOrder(table, client) {
-    const orderPromise = firebase.firestore().collection('orders').add({
-      client,
-      table,
-      menuItem,
-      state: 'Preparando',
-      time: Date.now()
-    });
-    orderPromise.then(() => {
-      setMenuItem([])
-      setTable('')
-      setClient('')
-      alert('seu pedido foi enviado!')
-    }).catch(() => {
-      alert('deu ruim');
-    })
+    if (table && client != '') {
+      const orderPromise = firebase.firestore().collection('orders').add({
+        client,
+        table,
+        menuItem,
+        state: 'Preparando',
+        time: Date.now()
+      });
+      orderPromise.then(() => {
+        setMenuItem([])
+        setTable('')
+        setClient('')
+        growl({ text: 'Pedido enviado para a cozinha!', type: 'success', fadeAway: true, fadeAwayTimeout: 2000 });
+      }).catch(() => {
+        growl({ text: 'Erro ao enviar o seu pedido, tente novamente', type: 'warning', fadeAway: true, fadeAwayTimeout: 2000 });
+      })
+    } else {
+      growl({ text: 'Preencha o número da mesa e o nome do cliente', type: 'warning', fadeAway: true, fadeAwayTimeout: 2000 });
+
+    }
   }
 
   const changeQuantity = (product, change) => {
@@ -83,7 +90,7 @@ const Menu = ({ items }) => {
       <div className='order-table-wrapper'>
 
         <div className='table-wrapper'>
-          <Input value={client} onChange={(e) => setClient(e.target.value)} type='text' className='input-style' placeholder='Nome' required >Cliente: </Input>
+          <Input value={client} onChange={(e) => setClient(e.target.value)} type='text' className='input-style' placeholder='Nome' required="required" requiredTxt='Preencha o nome do cliente'>Cliente: </Input>
           <Input value={table} onChange={(e) => setTable(e.target.value)} type='number' className='input-style' placeholder='Mesa' required >Mesa:</Input>
         </div>
 
@@ -108,7 +115,7 @@ const Menu = ({ items }) => {
           <div className='total-value'>{total},00 </div>
         </div>
         <div className='btn-send-wrapper'>
-          <Button onClick={() => sendOrder(table, client)} type='button' className='btn-std'> Enviar</Button>
+          <Button onClick={() => sendOrder(table, client)} type='button' className='btn-std' children={'Enviar'}></Button>
         </div>
       </div>
     </div >

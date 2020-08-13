@@ -2,6 +2,9 @@ import React from 'react';
 import Button from 'Components/Button/button';
 import 'Components/Lounge-Order-Ready/order-ready.css';
 import firebase from 'Config/firebase';
+import growl from 'growl-alert';
+import 'growl-alert/dist/growl-alert.css';
+
 
 const OrderReady = ({ idDoc, state, time, table, client, menuItem }) => {
   console.log(idDoc)
@@ -13,9 +16,9 @@ const OrderReady = ({ idDoc, state, time, table, client, menuItem }) => {
         state: 'Pedido Finalizado',
         endTime: Date.now(),
       }).then(() => {
-        alert('pedido entregue para o cliente!')
+        growl({ text: 'Pedido entregue para o cliente!', type: 'success', fadeAway: true, fadeAwayTimeout: 2000 });
       }).catch(() => {
-        alert('deu ruim');
+        growl({ text: 'Erro ao enviar o seu pedido, tente novamente', type: 'error', fadeAway: true, fadeAwayTimeout: 2000 });
       })
   }
 
@@ -50,7 +53,7 @@ const OrderReady = ({ idDoc, state, time, table, client, menuItem }) => {
         </div>
       </div>
       <div className='btn-wrapper'>
-        <Button onClick={() => { upDateStatus(idDoc) }} className='btn-std'> Entregar</Button>
+        <Button onClick={() => { upDateStatus(idDoc) }} className='btn-std' children={'Entregar'}> </Button>
       </div>
     </div>
   )

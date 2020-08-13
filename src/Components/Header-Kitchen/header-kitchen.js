@@ -29,12 +29,12 @@ const HeaderKitchen = () => {
       <div className='all-btn-links'>
 
         <div className='btn-routes'>
-          <button className='btn-links'><Link className='link' to='/kitchen-new-order'>Pedido Cozinha</Link></button>
-          <button className='btn-links'><Link className='link' to='/finished-order-kitchen'>Pedido Finalizado</Link></button>
+          <button className='btn-links'><Link className='link' to='/kitchen-new-order' children={'Pedidos Recebidos'}></Link></button>
+          <button className='btn-links'><Link className='link' to='/finished-order-kitchen' children={'Pedidos Finalizados'}></Link></button>
         </div>
 
         <div className='btn-link-out'>
-          <button className='btn-out' onClick={signOut}><Link className='link' to='/'>Sair</Link></button>
+          <button className='btn-out' onClick={signOut}><Link className='link' to='/' children={'Sair'}></Link></button>
         </div>
 
       </div>
