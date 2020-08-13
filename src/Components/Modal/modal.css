@@ -2,7 +2,7 @@
 	display: flex;
 	background-color: white;
 	flex-direction: column;
-	height: 330px;
+	height: 350px;
 	width: 350px;
 	border: 2px solid #fa9494;
 	margin: 25px 25px 15px 25px;
@@ -38,7 +38,14 @@
 	display: inline-block;
 	visibility: visible;
 }
-
+.radio-modal{
+margin-left: 8px;
+}
+.modal-close{
+	padding: 0px;
+	margin: 0px;
+	align-self: center;
+}
 
 .modal-options {
 	color: #009d8c;
@@ -47,16 +54,15 @@
 	text-align: center;
 	margin: 10px 0 10px 0;
 	font-size: 18px;
-	font-weight: 700;
+	font-weight: 800;
+	padding: 4px 0px;
 }
 
 aria-label {
 	font-size: 18px;
 	font-weight: 600;
-	padding-left: 25px;
+	padding-left: 15px;
 }
-
-
 
 input[type='checkbox']:checked:after {
 	width: 20px;
@@ -85,4 +91,15 @@ input[type='checkbox']:checked:after {
 	font-size: 18px;
 	font-weight: 600;
 
+}
+.send-btn-modal{
+	background-color: #fa9494;
+	border: #fa9494 1.5px solid;
+	font-weight: 700;
+	color: white;
+	border-radius: 9px;
+	width: 180px;
+	align-self: center;
+	padding: 3px 0px;
+	font-size: 18px;
 }
