@@ -73,6 +73,9 @@
     display: flex
   }
   
+.send-btn-modal{
+  margin-top: 7px;
+}
 
 .btn-add {
     height: 25px;
