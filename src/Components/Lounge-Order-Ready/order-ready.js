@@ -49,7 +49,6 @@ const OrderReady = ({ idDoc, state, time, table, client, menuItem }) => {
           )}
         </div>
       </div>
-
       <div className='btn-wrapper'>
         <Button onClick={() => { upDateStatus(idDoc) }} className='btn-std'> Entregar</Button>
       </div>
