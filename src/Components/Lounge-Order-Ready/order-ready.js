@@ -38,7 +38,7 @@ const OrderReady = ({ idDoc, state, time, table, client, menuItem }) => {
         <div className='client-information'>Status: {state}</div>
       </div>
 
-      <div className='order-information-wrapper'>
+      <div className='lounge-order-info'>
 
         <div className='ordered-wrapper'>
           {menuItem.map(element =>

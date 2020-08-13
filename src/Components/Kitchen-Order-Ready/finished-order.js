@@ -24,7 +24,7 @@ const FinalizedOrders = ({ idDoc, state, time, table, client, menuItem }) => {
           <div className='client-information'>Status: {state}</div>
         </div>
 
-        <div className='order-information-wrapper'>
+        <div className='kitchen-order-info'>
 
           <div className='ordered-wrapper'>
             {menuItem.map(element =>

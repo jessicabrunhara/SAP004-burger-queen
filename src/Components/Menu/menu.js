@@ -83,8 +83,8 @@ const Menu = ({ items }) => {
       <div className='order-table-wrapper'>
 
         <div className='table-wrapper'>
-          <Input value={table} onChange={(e) => setTable(e.target.value)} type='text' className='input-style' placeholder='Mesa' required >Mesa:</Input>
           <Input value={client} onChange={(e) => setClient(e.target.value)} type='text' className='input-style' placeholder='Nome' required >Cliente: </Input>
+          <Input value={table} onChange={(e) => setTable(e.target.value)} type='number' className='input-style' placeholder='Mesa' required >Mesa:</Input>
         </div>
 
         <div className='order-information-wrapper'>
@@ -97,7 +97,7 @@ const Menu = ({ items }) => {
                   <div className='quantify-ordered'>{product.quantity}</div>
                   <Button className='btn-add' type='button' onClick={() => changeQuantity(product, -1)}><i className="fas fa-minus"></i></Button>
                 </div>
-                <div className='price-ordered'>{product.quantity * product.price}</div>
+                <div className='price-ordered'>{product.quantity * product.price},00 </div>
               </div>
             )}
           </div>
@@ -105,9 +105,9 @@ const Menu = ({ items }) => {
 
         <div className='value-wrapper'>
           <div className='total-value'>Total</div>
-          <div className='total-value'>{total}</div>
+          <div className='total-value'>{total},00 </div>
         </div>
-        <div className='btn-wrapper'>
+        <div className='btn-send-wrapper'>
           <Button onClick={() => sendOrder(table, client)} type='button' className='btn-std'> Enviar</Button>
         </div>
       </div>
