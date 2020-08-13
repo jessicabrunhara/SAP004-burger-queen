@@ -6,12 +6,13 @@
 .input-wrapper,
 .order-table-wrapper,
 .order-register-wrapper,
+.order-information-wrapper,
 .total-value,
 .item-ordered,
 .value-wrapper,
-.ordered-wrapper{
+.ordered-wrapper {
   display: flex;
-}
+} 
 
 .menu-wrapper,
 .all-menu,
@@ -26,7 +27,7 @@
   justify-content: space-around;
 }
 
-.label-menu{
+.label-menu {
   justify-content: center;
 }
 
@@ -35,13 +36,18 @@
 }
 
 .order-information-wrapper {
-  min-height: 150px;
+  min-height: 200px;
+  padding: 8px 20px 8px 8px;
+ 	margin: 6px 15px 15px 15px;
+	border: 3px solid whitesmoke;
+	border-radius: 8px;
+	box-shadow: 0px 0px 5px 0px whitesmoke;
+  flex-direction: column;
 }
-
+   
 .menu-wrapper {
   text-align: center;
 }
-
 
 .all-menu {
   max-width: 600px;
@@ -59,8 +65,6 @@
   margin: 10px;
   box-shadow: 0px 0px 10px 0px #fa9494;
 }
-
-
 
 .new-order-wrapper {
   justify-content: space-between;
@@ -105,14 +109,13 @@
 
 .value-wrapper {
   align-items: center;
-  padding: 6px;
   width: 300px;
   color: black;
-  margin: 60px;
   padding: 2px;
   border-radius: 8px;
   border: 0px solid #ffffff;
   box-shadow: 0px 0px 3px #000000;
+  align-self: center;
 }
 
 .item-ordered {
@@ -135,7 +138,9 @@
   text-align: end;
 }
 
-
+input[type=number]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+}
 
 @media (max-width: 800px) {
   .order-table-wrapper {
@@ -149,10 +154,10 @@
     min-height: 50px;
   }
 
-   .label-menu {
+  .label-menu {
     font-size: 18px;
     margin: 5px;
-    width: 520px;
+    width: 330px;
   }
 
   .order-style {
@@ -166,16 +171,15 @@
 
 @media (max-width: 414px) {
   .order-style {
-    /*  margin-top: 0px 10px; */
     height: fit-content;
     flex-direction: column;
-
   }
 
   .order-table-wrapper {
-    min-width: 320px;
-    margin: 5px 10px;
     align-items: center;
+    margin: 30px 45px;
+    min-width: 320px;
+    min-height: fit-content;
   }
 
   .order-information-wrapper {
@@ -189,4 +193,6 @@
   }
 
 
+
+  
 }

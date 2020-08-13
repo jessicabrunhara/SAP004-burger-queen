@@ -1,132 +1,139 @@
 .btn-std,
 .btn-order-kitchen {
-    background-color: #fa9494;
-    border: #fa9494 1.5px solid;
-    display: flex;
-    border-radius: 10px;
-    color: white;
-    align-items: center;
-    justify-content: center;
-    box-shadow: 0px 0px 10px 0px #fa9494;
-    font-weight: 500;
+  background-color: #fa9494;
+  border: #fa9494 1.5px solid;
+  display: flex;
+  border-radius: 10px;
+  color: white;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0px 0px 10px 0px #fa9494;
+  font-weight: 500;
 }
 
 .btn-std {
-    height: 40px;
-    padding: 10px;
-    width: 150px;
-    margin: 30px 0px 15px 0px;
-    font-size: 30px;
+  height: 40px;
+  padding: 10px;
+  width: 150px;
+  margin: 30px 0px 15px 0px;
+  font-size: 30px;
 }
 
+
+
 .btn-order-kitchen {
-    height: 50px;
-    padding: 5px;
-    width: auto;
-    margin: 0px 0px 5px 0px;
-    font-size: 20px;
+  height: 50px;
+  padding: 5px;
+  width: auto;
+  margin: 0px 0px 5px 0px;
+  font-size: 20px;
 }
 
 .btn-menu {
-    color: #000000;
-    background: #f2f2f2;
-    border: 0px solid #ffffff;
-    text-shadow: -1px 1px 0px #fff;
-    box-shadow: 0px 0px 7px #000000;
-    -moz-box-shadow: 0px 0px 7px #000000;
-    -webkit-box-shadow: 0px 0px 7px #000000;
-    border-radius: 20px;
-    -moz-border-radius: 20px;
-    -webkit-border-radius: 20px;
-    width: 250px;
-    align-items: center;
-    border-radius: 8px;
-    justify-content: space-between;
-    padding: 5px 20px;
-    margin: 5px;
-    margin: 10px;
-    padding: 5px;
-    display: flex;
-    }
+  color: #000000;
+  background: #f2f2f2;
+  border: 0px solid #ffffff;
+  text-shadow: -1px 1px 0px #fff;
+  box-shadow: 0px 0px 7px #000000;
+  -moz-box-shadow: 0px 0px 7px #000000;
+  -webkit-box-shadow: 0px 0px 7px #000000;
+  border-radius: 20px;
+  -moz-border-radius: 20px;
+  -webkit-border-radius: 20px;
+  width: 250px;
+  align-items: center;
+  border-radius: 8px;
+  justify-content: space-between;
+  padding: 5px 20px;
+  margin: 5px;
+  margin: 10px;
+  padding: 5px;
+  display: flex;
+}
 
-  
-
-  
-  .btn-menu:active {
-    cursor: pointer;
-    position: relative;
-    top: 2px;
-  }
-
+.btn-menu:active {
+  cursor: pointer;
+  position: relative;
+  top: 2px;
+}
 
 .btn-wrapper {
-    display: flex;
-    align-self: center;
-    margin: 0px 0px 5px 0px;
-    flex-wrap: wrap;
+  display: flex;
+  align-self: center;
+  margin: 0px 0px 5px 0px;
+  flex-wrap: wrap;
 
 }
 
+.btn-send-wrapper{
+  display: flex;
+  align-self: center;
+  margin: 0px 0px 5px 0px;
+  flex-wrap: wrap;
+}
+
 .btn-order-wrapper {
-    flex-direction: row;
-    align-items: center;
-    display: flex
-  }
-  
-.send-btn-modal{
+  flex-direction: row;
+  align-items: center;
+  display: flex
+}
+
+.send-btn-modal {
   margin-top: 7px;
 }
 
 .btn-add {
-    height: 25px;
-    width: 25px;
-    background-color: #009d8c;
+  height: 25px;
+  width: 25px;
+  background-color: #009d8c;
+  color: white;
+  font-size: 13px;
+  font-weight: 500;
+  align-items: center;
+  justify-content: center;
+  padding: 1px 1px 1px 1px;
+  margin: 4px;
+  border-radius: 5px;
+  justify-content: center;
+  display: flex;
+}
+
+.icon-btn {
+  height: 40px;
+}
+
+@media (max-width: 800px) {
+  .btn-std {
+    border-radius: 10px;
     color: white;
-    font-size: 13px;
-    font-weight: 500;
-    align-items: center;
-    justify-content: center;
-    padding: 1px 1px 1px 1px;
-    margin: 4px;
-    border-radius: 5px;
-    justify-content: center;
+    padding: 10px;
+    width: 200px;
+    margin: 30px 0px 15px 0px;
+    font-size: 30px;
     display: flex;
   }
 
-  .icon-btn {
-    height: 40px;
+  .btn-menu {
+    width: 160px;
   }
 
-@media (max-width: 768px) {
-    .btn-std {
-        border-radius: 10px;
-        color: white;
-        padding: 10px;
-        width: 200px;
-        margin: 30px 0px 15px 0px;
-        font-size: 30px;
-    }
-
-    .btn-menu{
-    width: 150px;
-    }
-
-    .btn-wrapper{
-    width: 690px;
-    }
+  .btn-wrapper {
+    width: 730px;
+    margin: 5px 13px;
+  }
 }
 
 @media (max-width: 414px) {
-    .btn-std {
-        border: 1px;
-        height: 30px;
-        padding: 5px;
-        width: 180px;
-        margin: 15px 0px 5px 0px;
-        font-size: 20px;
-    }
+  .btn-std {
+    border: 1px;
+    height: 30px;
+    padding: 5px;
+    width: 180px;
+    margin: 15px 0px 5px 0px;
+    font-size: 20px;
+  }
 
-    .btn-wrapper {
-        min-width: 320px;
-      }
+  .btn-wrapper {
+    min-width: 320px;
+  }
 }
