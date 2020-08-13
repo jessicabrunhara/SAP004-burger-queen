@@ -2,34 +2,43 @@ import React from 'react';
 import './kitchen-order-ready.css';
 
 
-const FinalizedOrders = () => {
+const FinalizedOrders = ({ idDoc, state, time, table, client, menuItem }) => {
 
-    return (
-        <>
-            <div className='order-ready-wrapper'>
+  const formatDate = (dateOrder) => {
+    if (dateOrder != null) {
+      const options = {
+        year: 'numeric', month: 'short', day: 'numeric', hour: '2-digit', minute: '2-digit',
+        second: '2-digit'
+      };
+      return new Date(dateOrder).toLocaleString([], options);
+    }
+  }
 
-                <div className='table-wrapper'>
-                    <div className='time-wrapper'>Data e hora</div>
-                    <div className='table-number'>Mesa: </div>
-                    <div className='client-information'>Cliente: </div>
-                </div>
+  return (
+    <>
+      <div className='order-ready-wrapper'>
+        <div className='table-wrapper'>
+          <div className='time-wrapper'>{formatDate(time)}</div>
+          <div className='table-number'>Mesa:{table} </div>
+          <div className='client-information'>Cliente:{client} </div>
+          <div className='client-information'>Status: {state}</div>
+        </div>
 
-                <div className='order-information-wrapper'>
+        <div className='order-information-wrapper'>
 
-                    <div className='ordered-wrapper'>
-                        <div className='quantify-ordered'>1 x</div>
-                        <div className='item-ordered'>Descrição do pedido finalizado</div>
-                    </div>
+          <div className='ordered-wrapper'>
+            {menuItem.map(element =>
+              <>
+                <div className='quantify-ordered'>{element.quantity}</div>
+                <div className='item-ordered'>{element.name}<span>R${element.price},00</span></div>
+              </>
+            )}
+          </div>
 
-                    <div className='ordered-wrapper'>
-                        <div className='quantify-ordered'>1 x</div>
-                        <div className='item-ordered'>Descrição do pedido finalizado</div>
-                    </div>
-
-                </div>
-            </div>
-        </>
-    )
+        </div>
+      </div>
+    </>
+  )
 }
 
 export default FinalizedOrders;

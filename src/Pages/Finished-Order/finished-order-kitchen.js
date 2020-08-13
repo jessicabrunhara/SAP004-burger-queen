@@ -1,22 +1,40 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import HeaderKitchen from 'Components/Header-Kitchen/header-kitchen';
 import FinalizedOrders from 'Components/Kitchen-Order-Ready/finished-order';
+import firebase from 'Config/firebase';
 
 
 const FinishedOrderKitchen = () => {
+  const [finalizedOrder, setFinalizedOrder] = useState([]);
 
-    return (
-        <>
-            <div>
-                <HeaderKitchen />
-            </div>
+  useEffect(() => {
+    firebase.firestore()
+      .collection('orders')
+      .orderBy('time', 'asc')
+      .where('state', '==', 'Pedido Finalizado')
+      .get()
+      .then((result) => {
+        const arrayOrderReady = [];
+        result.docs.forEach(doc => {
+          arrayOrderReady.push({
+            id: doc.id,
+            ...doc.data()
+          })
+        })
+        setFinalizedOrder(arrayOrderReady)
+      })
+  }, []);
 
-            <div>
-                <FinalizedOrders />
-            </div>
-
-        </>
-    )
+  return (
+    <div>
+      <div>
+        <HeaderKitchen />
+      </div>
+      <div>
+        {finalizedOrder.map(item => <FinalizedOrders key={item.id} time={item.time} table={item.table} client={item.client} menuItem={item.menuItem} state={item.state} idDoc={item.id} />)}
+      </div>
+    </div>
+  )
 }
 
 export default FinishedOrderKitchen;
