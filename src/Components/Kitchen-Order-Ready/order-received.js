@@ -1,19 +1,19 @@
 import React from 'react';
 import Button from 'Components/Button/button';
-import 'Components/Lounge-Order-Ready/order-ready.css';
+import './kitchen-order-ready.css';
 import firebase from 'Config/firebase';
 
-const OrderReady = ({ idDoc, state, time, table, client, menuItem }) => {
+const OrdersReceived = ({ idDoc, state, time, table, client, menuItem }) => {
   console.log(idDoc)
 
   const upDateStatus = (id) => {
     firebase.firestore().collection('orders')
       .doc(id)
       .update({
-        state: 'Pedido Finalizado',
+        state: 'Pedido Pronto',
         endTime: Date.now(),
       }).then(() => {
-        alert('pedido entregue para o cliente!')
+        alert('pedido enviado para salao!')
       }).catch(() => {
         alert('deu ruim');
       })
@@ -49,12 +49,13 @@ const OrderReady = ({ idDoc, state, time, table, client, menuItem }) => {
           )}
         </div>
       </div>
+
       <div className='btn-wrapper'>
-        <Button onClick={() => { upDateStatus(idDoc) }} className='btn-std'> Entregar</Button>
+        <Button onClick={() => { upDateStatus(idDoc) }} className='btn-order-kitchen' type='button' children={'Pronto para servir'} />
       </div>
+
     </div>
   )
-
 }
 
-export default OrderReady;
+export default OrdersReceived;
