@@ -32,7 +32,7 @@ const HeaderLounge = () => {
         <div className='btn-routes'>
           <Button className='btn-links'><Link className='link' to='/lounge-new-order' children={'Novo Pedido'} /></Button>
           <Button className='btn-links'><Link className='link' to='/lounge-order-ready' children={'Pedidos Prontos'} /></Button>
-          <Button className='btn-links'><Link className='link' to='/finished-order-lounge' children={'Histórico de Pedidos'} /></Button>
+          <Button className='btn-links'><Link className='link' to='/finished-lounge' children={'Histórico de Pedidos'} /></Button>
         </div>
 
         <div className='btn-link-out'>

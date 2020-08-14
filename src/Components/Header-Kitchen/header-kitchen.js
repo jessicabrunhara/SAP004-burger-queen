@@ -31,7 +31,7 @@ const HeaderKitchen = () => {
 
         <div className='btn-routes'>
           <Button className='btn-links'><Link className='link' to='/kitchen-new-order' children={'Pedidos Recebidos'} /></Button>
-          <Button className='btn-links'><Link className='link' to='/finished-order-kitchen' children={'Pedidos Finalizados'} /></Button>
+          <Button className='btn-links'><Link className='link' to='/finished-kitchen' children={'Pedidos Finalizados'} /></Button>
         </div>
 
         <div className='btn-link-out'>
