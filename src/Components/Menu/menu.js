@@ -97,7 +97,7 @@ const Menu = ({ items }) => {
       <div className='order-table-wrapper'>
 
         <div className='table-wrapper'>
-          <div>Atendente: {userLounge && userLounge.displayName}</div>
+          <div className='display-name-lounge'>Atendente: {userLounge && userLounge.displayName}</div>
           <Input value={client} onChange={(e) => setClient(e.target.value)} type='text' className='input-style' placeholder='Nome' required="required" requiredTxt='Preencha o nome do cliente'>Cliente: </Input>
           <Input value={table} onChange={(e) => setTable(e.target.value)} type='number' className='input-style' placeholder='Mesa' required >Mesa:</Input>
         </div>
@@ -105,10 +105,12 @@ const Menu = ({ items }) => {
         <div className='order-information-wrapper'>
           <div className='ordered-wrapper'>
             {menuItem.map(product =>
-              <div className='item-ordered'>
-                <p>{product.name}</p>
-                <p>{product.adds}</p>
-                <p>{product.burgerOption}</p>
+              <div className='item-ordered'> 
+                <div className='all-products-name'>
+                <p className='product-name'>{product.name}</p>
+                <p className='product-name'>{product.adds}</p>
+                  <p className='product-name'>{product.burgerOption}</p>
+                  </div>
                 <div className='btn-order-wrapper'>
                   <Button className='btn-add' type='button' onClick={() => changeQuantity(product, 1)}><i className="fas fa-plus"></i></Button>
                   <div className='quantify-ordered'>{product.quantity}</div>
@@ -125,8 +127,8 @@ const Menu = ({ items }) => {
           <div className='total-value'>{total},00 </div>
         </div>
         <div className='btn-send-wrapper'>
-          <Button onClick={clearOrder} type='button' className='btn-clear' children={'Cancelar'} />
           <Button onClick={() => sendOrder(table, client)} type='button' className='btn-std' children={'Enviar'} />
+          <Button onClick={clearOrder} type='button' className='btn-clear' children={'Cancelar'} />
         </div>
       </div>
     </div >
