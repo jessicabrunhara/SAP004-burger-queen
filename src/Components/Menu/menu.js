@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import './menu.css';
-import '../Lounge-Order-Ready/order-ready.css'
+import '../Lounge/order-ready.css'
 import Button from 'Components/Button/button';
 import Input from 'Components/Input/input';
 import MyModal from 'Components/Modal/modal';

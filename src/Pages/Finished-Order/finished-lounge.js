@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import HeaderLounge from 'Components/Header-Lounge/header-lounge';
-import FinalizedOrders from 'Components/Kitchen-Order-Ready/finished-order';
+import FinalizedOrders from 'Components/Kitchen/finished-order';
 import firebase from 'Config/firebase';
 
 
-const FinishedOrderLounge = () => {
+const FinishedLounge = () => {
   const [finalizedOrder, setFinalizedOrder] = useState([]);
 
   useEffect(() => {
@@ -35,4 +35,4 @@ const FinishedOrderLounge = () => {
   )
 }
 
-export default FinishedOrderLounge;
+export default FinishedLounge;

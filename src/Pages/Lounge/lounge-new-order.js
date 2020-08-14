@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import HeaderLounge from 'Components/Header-Lounge/header-lounge';
 import Menu from 'Components/Menu/menu';
 import firebase from 'Config/firebase';
-import './lounge-new-order.css';
+import './lounge.css';
 
 const LoungeNewOrder = () => {
 
