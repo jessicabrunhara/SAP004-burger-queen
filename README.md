@@ -2,26 +2,25 @@
 <img src="./src/images/4.gif " width="200" heigth="200" >
 </p>
 
-
+***
 ### Índice
 * [1. Apresentação](#1-apresentacao)
 * [2. Resumo do projeto](#2-resumo-do-projeto)
 * [3. MVP - Mínimo Produto Viável](#3-minimo-produto-viavel)
 * [4. Planejamento](#4-planejamento)
 * [5. Considerações Gerais](#5-consideracoes-gerais)
-
-
 ***
 
 ## 1. Apresentação   
-A página da aplicação pode ser acessada atraves do Link: [Burger Queen](https://burger-queen-f1fd7.web.app//)
+
+A página da aplicação pode ser acessada atraves do Link: [Burger Queen](https://burger-queen-f1fd7.web.app//). Interface de pedidos _serverless_ para o restaurante fast-food Burger Queen utilizando React.js.
+***
 
 ## 2. Resumo do projeto
-
 Um pequeno restaurante de hambúrgueres, que está crescendo, necessita de uma interface em que se possa realizar pedidos utilizando um _tablet_ e enviá-los
 para a cozinha para que sejam preparados de forma ordenada e eficiente.
 
-Estas são as informações que temos do cliente:
+**_Estas são as informações que temos do cliente:_**
 
 > Somos **Burger Queen**, um fast food 24hrs.
 >
@@ -66,10 +65,11 @@ um com todos os seus _produtos_. O atendente deve poder escolher que _produtos_
 adicionar e a interface deve mostrar o _resumo do pedido_ com o custo total.
 
 
+***
 ## 3. MVP - Mínimo Produto Viável
 
 ### Definição do produto
-O _Product Owner_ nos apresentou este _backlog_ que é o resultado do seu trabalho com o cliente até hoje.
+O [Product Owner](https://www.desenvolvimentoagil.com.br/scrum/product_owner) nos apresentou este _backlog_ que é o resultado do seu trabalho com o cliente até hoje.
 
 ***
 
@@ -134,7 +134,7 @@ O Floxograma do projeto foi o primeiro passo do nosso planejamento.
 <img src="./public/img/prototipo" width="600" heigth="600">
 </p>
 
-Foi utilizada a ferramenta trello, para o acompanhamento das tarefas em cada Sprint.
+Foi utilizada a ferramenta trello, para o planejamento e acompanhamento das tarefas em cada Sprint e reuniões diárias [dailys](https://www.desenvolvimentoagil.com.br/scrum/daily_scrum) para o melhor aproveitamento do tempo e gestão de impedimentos na equipe. 
 
 
 ***
@@ -164,7 +164,7 @@ O protótipo também foi essencial no planejamento, para que a equipe tivesse a 
 * Interface foi pensada específicamente para rodar em **tablets**.
 * Aplicativo Web **responsivo**.
 * O aplicativo é um _Single Page App_.
-* Segue as recomendações de PWAs.
+
 
 Ferramentas e bibliotecas: 
  * JavaScript (ES6 +)
@@ -184,3 +184,6 @@ Desenvolvido por:
 * [Daiane Vieira](https://github.com/daianevieira07)
 * [Gisele Cesar](https://github.com/gisele-cesar)
 * [Jéssica Brunhara](https://github.com/jessicabrunhara)
+
+
+***
