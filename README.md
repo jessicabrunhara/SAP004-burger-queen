@@ -1,5 +1,5 @@
 <p align="center">
-![](file:///C:/Users/Dai/Desktop/SAP004-burger-queen/src/Images/gifteste.gif)
+<img src="./src/Images/4.gif " width="200" heigth="200" >
 </p>
 
 ***
@@ -142,22 +142,22 @@ O protótipo também foi essencial no planejamento, para que a equipe tivesse a 
 
 
 #### Página de Login para o Tablet
-<img src="./src/images/logintablet.png" width="600" />
+<img src="./src/Images/logintablet.png" width="600" />
 
 
 #### Página de Login para Web
-<img src="./src/images/loginweb.png" width="600" />
+<img src="./src/Images/loginweb.png" width="600" />
 
 
 #### Página de Menu para o Tablet
-<img src="./src/images/menutablet.png" width="600" />
+<img src="./src/Images/menutablet.png" width="600" />
 
 #### Página de Menu para Web
-<img src="./src/images/menuweb.png" width="600" />
+<img src="./src/Images/menuweb.png" width="600" />
 
 
 #### Página de Pedidos
-<img src="./src/images/pedidofeito.png" width="600" />
+<img src="./src/Images/pedidofeito.png" width="600" />
 ***
 
 ## 5. Considerações Gerais
