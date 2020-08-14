@@ -32,22 +32,26 @@ const OrdersReceived = ({ idDoc, state, time, table, client, menuItem }) => {
   }
 
   return (
-    <div className='order-ready-wrapper'>
-      <div className='table-wrapper'>
-        <div className='time-wrapper'>{formatDate(time)}</div>
-        <div className='table-number'>Mesa: {table}</div>
-        <div className='client-information'>Cliente: {client}</div>
-        <div className='client-information'>Status: {state}</div>
+    <div className='kitchen-order-wrapper'>
+      <div className='kitchen-table-wrapper'>
+        <div className='kitchen-time-wrapper'>{formatDate(time)}</div>
+        <div className='client-table-wrapper'>
+          <div className='kitchen-table-information-a'><span className='strong-kitchen'>Cliente: </span>{client} </div>
+          <div className='kitchen-table-information'><span className='strong-kitchen'>Mesa: </span> {table} </div>
+        </div>
+        <div className='kitchen-table-information'><span className='strong-kitchen'>Status: </span>{state}</div>
+        <div className='kitchen-table-information'><span className='strong-kitchen'>Atendente: </span> Oioioi</div>
       </div>
 
       <div className='kitchen-order-info'>
 
-        <div className='ordered-wrapper'>
+        <div className='kitchen-ordered-wrapper'>
           {menuItem.map(element =>
-            <>
-              <div className='quantify-ordered'>{element.quantity}</div>
-              <div className='item-ordered'>{element.name}<span>R${element.price},00</span></div>
-            </>
+            <div className='items-wrapper'>
+              <div className='kitchen-quantify-ordered'>{element.quantity}</div>
+              <div className='kitchen-item-ordered'>{element.name}</div>
+              <div className='kitchen-price-ordered'>R${element.price},00</div>
+            </div>
           )}
         </div>
       </div>

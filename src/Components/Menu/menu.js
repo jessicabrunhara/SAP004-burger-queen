@@ -90,8 +90,8 @@ const Menu = ({ items }) => {
       <div className='order-table-wrapper'>
 
         <div className='table-wrapper'>
-          <Input value={client} onChange={(e) => setClient(e.target.value)} type='text' className='input-style' placeholder='Nome' required="required" requiredTxt='Preencha o nome do cliente'>Cliente: </Input>
-          <Input value={table} onChange={(e) => setTable(e.target.value)} type='number' className='input-style' placeholder='Mesa' required >Mesa:</Input>
+          <Input value={client} onChange={(e) => setClient(e.target.value)} type='text' className='input-style' placeholder='Nome'>Cliente: </Input>
+          <Input value={table} onChange={(e) => setTable(e.target.value)} type='number' className='input-style' placeholder='Mesa' >Mesa:</Input>
         </div>
 
         <div className='order-information-wrapper'>
