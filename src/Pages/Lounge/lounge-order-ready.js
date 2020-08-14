@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import HeaderLounge from 'Components/Header-Lounge/header-lounge';
-import OrderReady from 'Components/Lounge-Order-Ready/order-ready'
+import OrderReady from 'Components/Lounge/order-ready'
 import firebase from 'Config/firebase';
+import './lounge.css';
 
 const LoungeOrderReady = () => {
 

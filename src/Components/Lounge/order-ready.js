@@ -1,21 +1,22 @@
 import React from 'react';
 import Button from 'Components/Button/button';
-import './kitchen-order-ready.css';
+import 'Components/Lounge/order-ready.css';
 import firebase from 'Config/firebase';
 import growl from 'growl-alert';
 import 'growl-alert/dist/growl-alert.css';
 
 
-const OrdersReceived = ({ idDoc, state, time, table, client, menuItem }) => {
+const OrderReady = ({ idDoc, state, time, table, client, menuItem }) => {
+  console.log(idDoc)
 
   const upDateStatus = (id) => {
     firebase.firestore().collection('orders')
       .doc(id)
       .update({
-        state: 'Pedido Pronto',
+        state: 'Pedido Finalizado',
         endTime: Date.now(),
       }).then(() => {
-        growl({ text: 'Pedido enviado para o salão!', type: 'success', fadeAway: true, fadeAwayTimeout: 2000 });
+        growl({ text: 'Pedido entregue para o cliente!', type: 'success', fadeAway: true, fadeAwayTimeout: 2000 });
       }).catch(() => {
         growl({ text: 'Erro ao enviar o seu pedido, tente novamente', type: 'error', fadeAway: true, fadeAwayTimeout: 2000 });
       })
@@ -40,7 +41,7 @@ const OrdersReceived = ({ idDoc, state, time, table, client, menuItem }) => {
         <div className='client-information'>Status: {state}</div>
       </div>
 
-      <div className='kitchen-order-info'>
+      <div className='lounge-order-info'>
 
         <div className='ordered-wrapper'>
           {menuItem.map(element =>
@@ -51,13 +52,12 @@ const OrdersReceived = ({ idDoc, state, time, table, client, menuItem }) => {
           )}
         </div>
       </div>
-
       <div className='btn-wrapper'>
-        <Button onClick={() => { upDateStatus(idDoc) }} className='btn-order-kitchen' type='button' children={'Pronto para servir'} />
+        <Button onClick={() => { upDateStatus(idDoc) }} className='btn-std' children={'Entregar'}> </Button>
       </div>
-
     </div>
   )
+
 }
 
-export default OrdersReceived;
+export default OrderReady;

@@ -66,6 +66,8 @@
 .btn-links a {
     color: whitesmoke;
     transition: .2s ease-in;
+    text-decoration: none;
+    
 }
 
 .btn-out a {

@@ -1,5 +1,5 @@
 import React from 'react';
-import './kitchen-order-ready.css';
+import './kitchen.css';
 
 
 const FinalizedOrders = ({ idDoc, state, time, table, client, menuItem }) => {

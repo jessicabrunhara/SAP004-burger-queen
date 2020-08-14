@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import HeaderKitchen from 'Components/Header-Kitchen/header-kitchen';
-import OrdersReceived from 'Components/Kitchen-Order-Ready/order-received';
+import OrdersReceived from 'Components/Kitchen/order-received';
 import firebase from 'Config/firebase';
 
 const KitchenNewOrder = () => {
