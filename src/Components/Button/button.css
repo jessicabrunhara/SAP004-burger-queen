@@ -136,14 +136,14 @@
   .btn-wrapper {
     min-width: 320px;
     width: auto;
-      margin: 5px 13px;
-    
+    margin: 5px 13px;
+
   }
 
   .btn-menu {
     width: 240px;
     margin: 10px;
-      display: flex;
+    display: flex;
     font: 20px;
   }
 
