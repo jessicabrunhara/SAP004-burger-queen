@@ -1,19 +1,21 @@
 .logo-login {
-    padding-top: 50px; 
-    margin: 25px 15px 15px 130px;
+    display: flex;
+    align-items: center;
+    margin: 0 20%;
  }
 
  .logo-login img{
     width: auto;
     height: 450px;
 }
-.logo-header-wrapper {
+.logo-header-wrapper { 
     margin: 10px;
 }
 
 .logo-register {
-    padding-top: 50px; 
-    margin: 25px 15px 15px 130px;
+    display: flex;
+    align-items: center;
+    margin: 0 20%;
  }
  .logo-register img{
     width: auto;

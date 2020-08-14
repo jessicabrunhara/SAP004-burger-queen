@@ -27,16 +27,20 @@ const LoungeOrderReady = () => {
   }, []);
   console.log(orderReady);
 
+  function removeOrder(id) {
+    setOrderReady(orderReady.filter(item => item.id !== id))
+  }
+
   return (
     <div>
       <div>
         <HeaderLounge />
       </div>
-      <div>
-        {orderReady.map(item => <OrderReady key={item.id} time={item.time} table={item.table} client={item.client} menuItem={item.menuItem} state={item.state} idDoc={item.id} />)}
+      <div className='order-list'>
+        {orderReady.map(item => <OrderReady key={item.id} time={item.time} table={item.table} client={item.client} menuItem={item.menuItem} state={item.state} idDoc={item.id} removeOrder={removeOrder} />)}
       </div>
     </div>
   )
 }
 
-export default LoungeOrderReady;
+export default LoungeOrderReady; 

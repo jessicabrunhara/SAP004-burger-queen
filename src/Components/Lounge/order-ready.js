@@ -3,10 +3,10 @@ import Button from 'Components/Button/button';
 import 'Components/Lounge/order-ready.css';
 import firebase from 'Config/firebase';
 import growl from 'growl-alert';
-import 'growl-alert/dist/growl-alert.css';
+import 'growl-alert/dist/growl-alert.css'; 
 
 
-const OrderReady = ({ idDoc, state, time, table, client, menuItem }) => {
+const OrderReady = ({ idDoc, state, time, table, client, menuItem, removeOrder }) => {
 
   const upDateStatus = (id) => {
     firebase.firestore().collection('orders')
@@ -15,6 +15,7 @@ const OrderReady = ({ idDoc, state, time, table, client, menuItem }) => {
         state: 'Pedido Finalizado',
         endTime: Date.now(),
       }).then(() => {
+        removeOrder(id)
         growl({ text: 'Pedido entregue para o cliente!', type: 'success', fadeAway: true, fadeAwayTimeout: 2000 });
       }).catch(() => {
         growl({ text: 'Erro ao enviar o seu pedido, tente novamente', type: 'error', fadeAway: true, fadeAwayTimeout: 2000 });

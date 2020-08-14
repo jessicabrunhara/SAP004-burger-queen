@@ -10,6 +10,6 @@ const Logo = (props) => {
     </div>
 
   );
-}
+} 
 
 export default Logo;
