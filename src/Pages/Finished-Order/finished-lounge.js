@@ -28,9 +28,7 @@ const FinishedLounge = () => {
   return (
     <div>
       <HeaderLounge />
-      <div>
-        {finalizedOrder.map(item => <FinalizedOrders key={item.id} time={item.time} table={item.table} client={item.client} menuItem={item.menuItem} state={item.state} idDoc={item.id} />)}
-      </div>
+      {finalizedOrder.map(item => <FinalizedOrders key={item.id} time={item.time} table={item.table} client={item.client} menuItem={item.menuItem} state={item.state} idDoc={item.id} />)}
     </div>
   )
 }
