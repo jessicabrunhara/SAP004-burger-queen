@@ -77,10 +77,19 @@
   flex-wrap: wrap;
 
 }
+
+.btn-wrapper-lounge-order-ready {
+  display: flex;
+  justify-content: center;
+  margin-top: auto;
+  margin-bottom: 15px;
+}
+
 .btn-wrapper-order-received{
   display: flex;
   justify-content: center;
-  
+  margin-top: auto;
+  margin-bottom: 15px;
 }
 
 .btn-send-wrapper {

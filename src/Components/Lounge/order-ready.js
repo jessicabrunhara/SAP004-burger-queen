@@ -62,7 +62,7 @@ const OrderReady = ({ idDoc, state, time, table, client, menuItem, removeOrder }
           )}
         </div>
       </div>
-      <div className='btn-wrapper'>
+      <div className='btn-wrapper-lounge-order-ready'>
         <Button onClick={() => { upDateStatus(idDoc) }} className='btn-std' children={'Entregar'} />
       </div>
     </div>

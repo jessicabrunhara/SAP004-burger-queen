@@ -25,8 +25,8 @@ display: flex;
 
 .kitchen-order-wrapper{
 	background: #f2f2f2;
-	min-height: 400px;
-	width: 300px;
+	height: 500px;
+	width: 380px;
 	margin: 30px 25px 0px 25px;
 	border-radius: 20px;
 	border: 0px solid #ffffff;
@@ -58,10 +58,13 @@ display: flex;
 .kitchen-order-info{
   display: flex;
   align-items: center;
-	margin: 6px 15px 15px 15px;
-	border: 3px solid whitesmoke;
-	border-radius: 8px;
-	box-shadow: 0px 0px 5px 0px whitesmoke;
+  margin: 6px 15px 15px 15px;
+  border: 3px solid whitesmoke;
+  border-radius: 8px;
+  box-shadow: 0px 0px 5px 0px whitesmoke;
+  overflow-y: auto;
+  max-height: 200px;
+  background-color: white;
 }
 
 .btn-std{
@@ -94,4 +97,11 @@ display: flex;
 .kitchen-item-add{
   margin-left: 5px;
   width: 200px;
+}
+
+@media (max-width: 800px) {
+.kitchen-order-wrapper {
+  width: 300px;
+}
+
 }
