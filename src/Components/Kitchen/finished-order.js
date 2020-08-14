@@ -27,7 +27,14 @@ const FinalizedOrders = ({ idDoc, state, time, table, client, menuItem }) => {
         <div className='kitchen-order-info'>
 
           <div className='ordered-wrapper'>
-            {menuItem.map(element =>
+            {menuItem.filter(item => item.hamburger === true).map(element =>
+              <>
+                <div className='quantify-ordered'>{element.quantity}</div>
+                <div className='item-ordered'>{element.name}<span>R${element.price},00</span></div>
+                <div className='item-ordered'>Sabor: {element.burgerOption}<span>adicional: {element.adds}</span></div>
+              </>
+            )}
+            {menuItem.filter(item => item.hamburger === false).map(element =>
               <>
                 <div className='quantify-ordered'>{element.quantity}</div>
                 <div className='item-ordered'>{element.name}<span>R${element.price},00</span></div>

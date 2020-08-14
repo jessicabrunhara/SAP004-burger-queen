@@ -19,7 +19,22 @@
   font-size: 30px;
 }
 
-
+.btn-clear {
+  height: 48px;
+  padding: 10px;
+  width: 150px;
+  margin: 30px 0px 15px 0px;
+  font-size: 30px;
+  background-color: rgb(141, 140, 140);
+  border: rgb(141, 140, 140) 1.5px solid;
+  display: flex;
+  border-radius: 10px;
+  color: white;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0px 0px 10px 0px rgb(141, 140, 140);
+  font-weight: 500;
+}
 
 .btn-order-kitchen {
   height: 50px;
@@ -65,9 +80,9 @@
 
 .btn-send-wrapper {
   display: flex;
-  align-self: center;
   margin: 0px 0px 5px 0px;
-  flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-items: center;
 }
 
 .btn-order-wrapper {

@@ -13,6 +13,8 @@ const Menu = ({ items }) => {
   const [menuItem, setMenuItem] = useState([]);
   const [table, setTable] = useState('');
   const [client, setClient] = useState('');
+  const userLounge = firebase.auth().currentUser;
+  console.log(menuItem)
 
   function sendOrder(table, client) {
     if (table && client != '') {
@@ -33,8 +35,13 @@ const Menu = ({ items }) => {
       })
     } else {
       growl({ text: 'Preencha o número da mesa e o nome do cliente', type: 'warning', fadeAway: true, fadeAwayTimeout: 2000 });
-
     }
+  }
+
+  function clearOrder() {
+    setMenuItem([])
+    setTable('')
+    setClient('')
   }
 
   const changeQuantity = (product, change) => {
@@ -90,6 +97,7 @@ const Menu = ({ items }) => {
       <div className='order-table-wrapper'>
 
         <div className='table-wrapper'>
+          <div>Atendente: {userLounge && userLounge.displayName}</div>
           <Input value={client} onChange={(e) => setClient(e.target.value)} type='text' className='input-style' placeholder='Nome' required="required" requiredTxt='Preencha o nome do cliente'>Cliente: </Input>
           <Input value={table} onChange={(e) => setTable(e.target.value)} type='number' className='input-style' placeholder='Mesa' required >Mesa:</Input>
         </div>
@@ -99,6 +107,8 @@ const Menu = ({ items }) => {
             {menuItem.map(product =>
               <div className='item-ordered'>
                 <p>{product.name}</p>
+                <p>{product.adds}</p>
+                <p>{product.burgerOption}</p>
                 <div className='btn-order-wrapper'>
                   <Button className='btn-add' type='button' onClick={() => changeQuantity(product, 1)}><i className="fas fa-plus"></i></Button>
                   <div className='quantify-ordered'>{product.quantity}</div>
@@ -115,7 +125,8 @@ const Menu = ({ items }) => {
           <div className='total-value'>{total},00 </div>
         </div>
         <div className='btn-send-wrapper'>
-          <Button onClick={() => sendOrder(table, client)} type='button' className='btn-std' children={'Enviar'}></Button>
+          <Button onClick={clearOrder} type='button' className='btn-clear' children={'Cancelar'} />
+          <Button onClick={() => sendOrder(table, client)} type='button' className='btn-std' children={'Enviar'} />
         </div>
       </div>
     </div >
