@@ -131,7 +131,7 @@ Eu como garçom/garçonete quero ver os pedidos que estão prontos para entregá
 
 O Floxograma do projeto foi o primeiro passo do nosso planejamento.
 #### Página de Pedidos
-<img src="./src/images/fluxograma.png" width="600" heigth="500px">
+<img src="./src/Images/fluxograma.png" width="600" heigth="500px">
 
 Foi utilizada a ferramenta trello, para o planejamento e acompanhamento das tarefas em cada Sprint e reuniões diárias [dailys](https://www.desenvolvimentoagil.com.br/scrum/daily_scrum) para o melhor aproveitamento do tempo e gestão de impedimentos na equipe. 
 
