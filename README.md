@@ -130,33 +130,34 @@ Eu como garçom/garçonete quero ver os pedidos que estão prontos para entregá
 ## 4. Planejamento
 
 O Floxograma do projeto foi o primeiro passo do nosso planejamento.
-<p align="center">
-<img src="./public/img/prototipo" width="600" heigth="600">
-</p>
+#### Página de Pedidos
+<img src="./src/images/fluxograma.png" width="600" heigth="500px">
 
 Foi utilizada a ferramenta trello, para o planejamento e acompanhamento das tarefas em cada Sprint e reuniões diárias [dailys](https://www.desenvolvimentoagil.com.br/scrum/daily_scrum) para o melhor aproveitamento do tempo e gestão de impedimentos na equipe. 
 
 
 ***
 ### Protótipo
-
 O protótipo também foi essencial no planejamento, para que a equipe tivesse a mesma visão do MVP.
 
-<p align="center">
-<img src="./public/img/prototipo" width="600" heigth="600">
-</p>
 
-#### Página de novo pedido
-![Página de novo pedido](public/images.gif)
-
-#### Página da cozinha
-![Página da Cozinha](public/images/.png)
-
-#### Paleta de cores utilizada
-![Palheta de cores](public/images.png)
+#### Página de Login para o Tablet
+<img src="./src/images/logintablet.png" width="600" 
 
 
+#### Página de Login para Web
+<img src="./src/images/loginweb.png" width="600" 
 
+
+#### Página de Menu para o Tablet
+<img src="./src/images/menutablet.png" width="600" 
+
+#### Página de Menu para Web
+<img src="./src/images/menuweb.png" width="600" 
+
+
+#### Página de Pedidos
+<img src="./src/images/pedidofeito.png" width="600" 
 ***
 
 ## 5. Considerações Gerais
