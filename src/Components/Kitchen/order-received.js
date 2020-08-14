@@ -41,32 +41,34 @@ const OrdersReceived = ({ idDoc, state, time, table, client, menuItem, removeOrd
           <div className='kitchen-table-information'><span className='strong-kitchen'>Mesa: </span> {table} </div>
         </div>
         <div className='kitchen-table-information'><span className='strong-kitchen'>Status: </span>{state}</div>
-        <div className='kitchen-table-information'><span className='strong-kitchen'>Atendente: </span> Oioioi</div>
+        <div className='kitchen-table-information'><span className='strong-kitchen'>Atendente: </span> </div>
       </div>
 
       <div className='kitchen-order-info'>
 
-        <div className='kitchen-ordered-wrapper'> 
+        <div className='kitchen-ordered-wrapper'>
           {menuItem.filter(item => item.hamburger === true).map(element =>
             <div className='items-wrapper'>
-              <div className='kitchen-quantify-ordered'>{element.quantity}</div>
-              <div className='kitchen-item-ordered'>{element.name}</div>
-              <div className='kitchen-item-ordered'>Sabor: {element.burgerOption}</div>
-                <div className='kitchen-item-ordered'>adicional: {element.adds}</div>
-              <div className='kitchen-price-ordered'>R${element.price},00</div>
+              <div className='kitchen-name-quantity'>
+                <div className='kitchen-quantify-ordered'>{element.quantity}</div>
+                <div className='kitchen-item-ordered'>{element.name}</div>
+              </div>
+              <div className='kitchen-item-add'>- Sabor: {element.burgerOption}</div>
+              <div className='kitchen-item-add'>- Adicional: {element.adds}</div>
             </div>
           )}
           {menuItem.filter(item => item.hamburger === false).map(element =>
             <div className='items-wrapper'>
-              <div className='kitchen-quantify-ordered'>{element.quantity}</div>
-              <div className='kitchen-item-ordered'>{element.name}</div>
-              <div className='kitchen-price-ordered'>R${element.price},00</div>
+              <div className='kitchen-name-quantity'>
+                <div className='kitchen-quantify-ordered'>{element.quantity}</div>
+                <div className='kitchen-item-ordered'>{element.name}</div>
+              </div>
             </div>
           )}
         </div>
       </div>
 
-      <div className='btn-wrapper'>
+      <div className='btn-wrapper-order-received'>
         <Button onClick={() => { upDateStatus(idDoc) }} className='btn-order-kitchen' type='button' children={'Pronto para servir'} />
       </div>
 

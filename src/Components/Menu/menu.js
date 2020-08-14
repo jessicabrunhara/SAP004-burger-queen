@@ -14,7 +14,6 @@ const Menu = ({ items }) => {
   const [table, setTable] = useState('');
   const [client, setClient] = useState('');
   const userLounge = firebase.auth().currentUser;
-  console.log(menuItem)
 
   function sendOrder(table, client) {
     if (table && client != '') {
@@ -105,12 +104,12 @@ const Menu = ({ items }) => {
         <div className='order-information-wrapper'>
           <div className='ordered-wrapper'>
             {menuItem.map(product =>
-              <div className='item-ordered'> 
+              <div className='item-ordered'>
                 <div className='all-products-name'>
-                <p className='product-name'>{product.name}</p>
-                <p className='product-name'>{product.adds}</p>
+                  <p className='product-name'>{product.name}</p>
+                  <p className='product-name'>{product.adds}</p>
                   <p className='product-name'>{product.burgerOption}</p>
-                  </div>
+                </div>
                 <div className='btn-order-wrapper'>
                   <Button className='btn-add' type='button' onClick={() => changeQuantity(product, 1)}><i className="fas fa-plus"></i></Button>
                   <div className='quantify-ordered'>{product.quantity}</div>
