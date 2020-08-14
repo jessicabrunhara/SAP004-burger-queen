@@ -1,8 +1,8 @@
-.modal-wrapper, .btn-modal-out, .send-btn-modal  {
+.modal-wrapper, .send-btn-modal  {
 	border: 2px solid #fa9494;
 	}
 
-.modal-wrapper {
+.modal-wrapper { 
 	display: flex;
 	background-color: white;
 	flex-direction: column;
@@ -12,13 +12,17 @@
 	border-radius: 8%;
 	box-shadow: 0px 0px 20px 0px #fa9494;
 	padding: 10px;
-}
+	position: relative;
+    left: 15%;
+    top: 0%;
+	}
 
 
 .btn-modal-out {
 	display: flex;
 	width: 30px;
-	background-color: #fa9494;
+	background-color: #8d8c8c;
+	border: solid #8d8c8c;
 	height: 30px;
 	justify-content: center;
 	align-self: flex-end;
@@ -101,4 +105,13 @@ input[type='checkbox']:checked:after {
 	align-self: center;
 	padding: 3px 0px;
 	font-size: 18px;
+}
+
+
+@media (max-width: 800px) {
+	.modal-wrapper{
+	position: relative;
+    left: 0%;
+    top: 20%;
+	}
 }

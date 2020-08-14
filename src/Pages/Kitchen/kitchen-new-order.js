@@ -2,8 +2,9 @@ import React, { useState, useEffect } from 'react';
 import HeaderKitchen from 'Components/Header-Kitchen/header-kitchen';
 import OrdersReceived from 'Components/Kitchen/order-received';
 import firebase from 'Config/firebase';
+import '../Lounge/lounge.css'
 
-const KitchenNewOrder = () => {
+const KitchenNewOrder = () => { 
 
   const [orderLounge, setOrderLounge] = useState([]);
 
@@ -24,7 +25,10 @@ const KitchenNewOrder = () => {
         setOrderLounge(arrayOrder)
       })
   }, []);
-  console.log(orderLounge);
+
+  function removeOrder(id) {
+    setOrderLounge(orderLounge.filter(item => item.id !== id))
+  }
 
   return (
     <>
@@ -32,8 +36,8 @@ const KitchenNewOrder = () => {
         <HeaderKitchen />
       </div>
 
-      <div>
-        {orderLounge.map(item => <OrdersReceived key={item.id} time={item.time} table={item.table} client={item.client} menuItem={item.menuItem} state={item.state} idDoc={item.id} />)}
+      <div className='order-list'>
+        {orderLounge.map(item => <OrdersReceived key={item.id} time={item.time} table={item.table} client={item.client} menuItem={item.menuItem} state={item.state} idDoc={item.id} removeOrder={removeOrder} />)}
       </div>
 
     </>

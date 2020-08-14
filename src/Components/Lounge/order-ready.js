@@ -6,8 +6,7 @@ import growl from 'growl-alert';
 import 'growl-alert/dist/growl-alert.css';
 
 
-const OrderReady = ({ idDoc, state, time, table, client, menuItem }) => {
-  console.log(idDoc)
+const OrderReady = ({ idDoc, state, time, table, client, menuItem, removeOrder }) => {
 
   const upDateStatus = (id) => {
     firebase.firestore().collection('orders')
@@ -16,6 +15,7 @@ const OrderReady = ({ idDoc, state, time, table, client, menuItem }) => {
         state: 'Pedido Finalizado',
         endTime: Date.now(),
       }).then(() => {
+        removeOrder(id)
         growl({ text: 'Pedido entregue para o cliente!', type: 'success', fadeAway: true, fadeAwayTimeout: 2000 });
       }).catch(() => {
         growl({ text: 'Erro ao enviar o seu pedido, tente novamente', type: 'error', fadeAway: true, fadeAwayTimeout: 2000 });
@@ -33,31 +33,40 @@ const OrderReady = ({ idDoc, state, time, table, client, menuItem }) => {
   }
 
   return (
-    <div className='order-ready-wrapper'>
-      <div className='table-wrapper'>
-        <div className='time-wrapper'>{formatDate(time)}</div>
-        <div className='table-number'>Mesa: {table}</div>
-        <div className='client-information'>Cliente: {client}</div>
-        <div className='client-information'>Status: {state}</div>
+    <div className='lounge-order-wrapper'>
+      <div className='lounge-table-wrapper'>
+        <div className='lounge-time-wrapper'>{formatDate(time)}</div>
+        <div className='client-table-wrapper'>
+          <div className='lounge-table-information-a'><span className='strong-lounge'>Cliente: </span>{client} </div>
+          <div className='lounge-table-information'><span className='strong-lounge'>Mesa: </span> {table} </div>
+        </div>
+        <div className='lounge-table-information'><span className='strong-lounge'>Status: </span>{state}</div>
+        <div className='lounge-table-information'><span className='strong-lounge'>Atendente: </span> </div>
       </div>
 
       <div className='lounge-order-info'>
 
-        <div className='ordered-wrapper'>
-          {menuItem.map(element =>
-            <>
-              <div className='quantify-ordered'>{element.quantity}</div>
-              <div className='item-ordered'>{element.name}<span>R${element.price},00</span></div>
-            </>
+        <div className='lounge-ordered-wrapper'>
+          {menuItem.filter(item => item.hamburger === true).map(element =>
+            <div className='items-wrapper'>
+              <div className='lounge-quantify-ordered'>{element.quantity}</div>
+              <div className='lounge-item-ordered'>{element.name}</div>
+              <div className='lounge-item-ordered'>Sabor: {element.burgerOption}<span>adicional: {element.adds}</span></div>
+            </div>
+          )}
+          {menuItem.filter(item => item.hamburger === false).map(element =>
+            <div className='items-wrapper'>
+              <div className='lounge-quantify-ordered'>{element.quantity}</div>
+              <div className='lounge-item-ordered'>{element.name}</div>
+            </div>
           )}
         </div>
       </div>
       <div className='btn-wrapper'>
-        <Button onClick={() => { upDateStatus(idDoc) }} className='btn-std' children={'Entregar'}> </Button>
+        <Button onClick={() => { upDateStatus(idDoc) }} className='btn-std' children={'Entregar'} />
       </div>
     </div>
   )
-
 }
 
 export default OrderReady;

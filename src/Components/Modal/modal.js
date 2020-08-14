@@ -23,6 +23,7 @@ const MyModal = (props) => {
     console.log(props.product.price)
     console.log(adds)
     props.addNewItem({ ...props.product, adds, burgerOption, price: props.product.price + adds.length })
+    setModalIsOpen(false)
     console.log('adiciona aí')
   }
 

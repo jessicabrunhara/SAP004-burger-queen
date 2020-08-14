@@ -4,18 +4,21 @@
 .label-menu,
 .new-order-wrapper,
 .input-wrapper,
-.order-table-wrapper,
+.order-table-wrapper, 
+.table-wrapper,
 .order-register-wrapper,
 .order-information-wrapper,
 .total-value,
 .item-ordered,
 .value-wrapper,
-.ordered-wrapper {
+.ordered-wrapper,
+.input-style {
   display: flex;
 }
 
 .menu-wrapper,
 .all-menu,
+.table-wrapper,
 .order-table-wrapper,
 .order-register-wrapper,
 .ordered-wrapper {
@@ -33,6 +36,7 @@
 
 .order-information-wrapper {
   min-height: 150px;
+  max-width: 400px;
   padding: 8px 20px 8px 8px;
   margin: 6px 15px 15px 15px;
   border: 3px solid whitesmoke;
@@ -76,6 +80,7 @@
   border-radius: 8%;
   border: 0px solid #ffffff;
   box-shadow: 0px 0px 10px rgb(53, 52, 52);
+  padding: 10px 20px;
 }
 
 .order-register-wrapper {
@@ -90,7 +95,7 @@
 
 .input-style {
   color: black;
-  margin: 8px;
+  margin: 18px 18px 0px 18px;
   padding: 2px;
   border-radius: 8px;
   border: 0px solid #ffffff;
@@ -115,15 +120,23 @@
   align-self: center;
 }
 
+.all-products-name {
+  display: flex;
+}
+
 .item-ordered {
   align-items: center;
   justify-content: space-between;
   font-size: 20px;
 }
 
-.item-ordered p {
+/*  .item-ordered p, .product-name {
   margin: 2px;
-  width: 190px;
+ }  */
+
+.display-name-lounge {
+  margin: 5px 0 0 20px;
+  font-weight: 500;
 }
 
 .quantify-ordered {
@@ -163,6 +176,11 @@ input[type=number]::-webkit-inner-spin-button {
     flex-direction: column;
 
   }
+
+  .item-ordered {
+    display: flex;
+    justify-content: space-between;
+  }
 }
 
 @media (max-width: 414px) {
@@ -191,7 +209,6 @@ input[type=number]::-webkit-inner-spin-button {
     text-align: center;
     justify-content: center;
     align-self: center;
-    width: 550px;     /********************************/
+    width: 550px;
   }
 }
-
