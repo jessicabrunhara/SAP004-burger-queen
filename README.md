@@ -1,6 +1,5 @@
 <p align="center">
-![](./src/images/4.gif)
-<img src="./src/images/4.gif " width="200" heigth="200" >
+![](file:///C:/Users/Dai/Desktop/SAP004-burger-queen/src/Images/gifteste.gif)
 </p>
 
 ***
