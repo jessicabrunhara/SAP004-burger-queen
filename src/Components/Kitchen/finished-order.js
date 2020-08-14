@@ -31,17 +31,22 @@ const FinalizedOrders = ({ idDoc, state, time, table, client, menuItem }) => {
         <div className='kitchen-ordered-wrapper'>
           {menuItem.filter(item => item.hamburger === true).map(element =>
             <div className='items-wrapper'>
-              <div className='kitchen-quantify-ordered'>{element.quantity}</div>
-              <div className='kitchen-item-ordered'>{element.name}</div>
-              <div className='kitchen-item-ordered'>Sabor: {element.burgerOption}<span>adicional: {element.adds}</span></div>
-              <div className='kitchen-price-ordered'>R${element.price},00</div>
+              <div className='kitchen-name-quantity'>
+                <div className='kitchen-quantify-ordered'>{element.quantity}</div>
+                <div className='kitchen-item-ordered'>{element.name}</div>
+                <div className='kitchen-price-ordered'>R${element.price},00</div>
+              </div>
+              <div className='kitchen-item-add'>- Sabor: {element.burgerOption}</div>
+              <div className='kitchen-item-add'>- Adicional: {element.adds}</div>
             </div>
           )}
           {menuItem.filter(item => item.hamburger === false).map(element =>
             <div className='items-wrapper'>
-              <div className='kitchen-quantify-ordered'>{element.quantity}</div>
-              <div className='kitchen-item-ordered'>{element.name}</div>
-              <div className='kitchen-price-ordered'>R${element.price},00</div>
+              <div className='kitchen-name-quantity'>
+                <div className='kitchen-quantify-ordered'>{element.quantity}</div>
+                <div className='kitchen-item-ordered'>{element.name}</div>
+                <div className='kitchen-price-ordered'>R${element.price},00</div>
+              </div>
             </div>
           )}
         </div>
