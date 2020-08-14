@@ -23,7 +23,7 @@ const FinalizedOrders = ({ idDoc, state, time, table, client, menuItem }) => {
           <div className='kitchen-table-information'><span className='strong-kitchen'>Mesa: </span> {table} </div>
         </div>
         <div className='kitchen-table-information'><span className='strong-kitchen'>Status: </span>{state}</div>
-        <div className='kitchen-table-information'><span className='strong-kitchen'>Atendente: </span> Oioioi</div>
+        <div className='kitchen-table-information'><span className='strong-kitchen'>Atendente: </span></div>
       </div>
 
       <div className='kitchen-order-info'>

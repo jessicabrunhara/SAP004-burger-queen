@@ -3,7 +3,7 @@ import Button from 'Components/Button/button';
 import 'Components/Lounge/order-ready.css';
 import firebase from 'Config/firebase';
 import growl from 'growl-alert';
-import 'growl-alert/dist/growl-alert.css'; 
+import 'growl-alert/dist/growl-alert.css';
 
 
 const OrderReady = ({ idDoc, state, time, table, client, menuItem, removeOrder }) => {
@@ -41,7 +41,7 @@ const OrderReady = ({ idDoc, state, time, table, client, menuItem, removeOrder }
           <div className='lounge-table-information'><span className='strong-lounge'>Mesa: </span> {table} </div>
         </div>
         <div className='lounge-table-information'><span className='strong-lounge'>Status: </span>{state}</div>
-        <div className='lounge-table-information'><span className='strong-lounge'>Atendente: </span> Oioioi</div>
+        <div className='lounge-table-information'><span className='strong-lounge'>Atendente: </span> </div>
       </div>
 
       <div className='lounge-order-info'>
