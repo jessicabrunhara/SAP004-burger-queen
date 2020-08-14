@@ -7,7 +7,6 @@ import 'growl-alert/dist/growl-alert.css';
 
 
 const OrderReady = ({ idDoc, state, time, table, client, menuItem }) => {
-  console.log(idDoc)
 
   const upDateStatus = (id) => {
     firebase.firestore().collection('orders')
@@ -47,7 +46,14 @@ const OrderReady = ({ idDoc, state, time, table, client, menuItem }) => {
       <div className='lounge-order-info'>
 
         <div className='lounge-ordered-wrapper'>
-          {menuItem.map(element =>
+          {menuItem.filter(item => item.hamburger === true).map(element =>
+            <div className='items-wrapper'>
+              <div className='lounge-quantify-ordered'>{element.quantity}</div>
+              <div className='lounge-item-ordered'>{element.name}</div>
+              <div className='lounge-item-ordered'>Sabor: {element.burgerOption}<span>adicional: {element.adds}</span></div>
+            </div>
+          )}
+          {menuItem.filter(item => item.hamburger === false).map(element =>
             <div className='items-wrapper'>
               <div className='lounge-quantify-ordered'>{element.quantity}</div>
               <div className='lounge-item-ordered'>{element.name}</div>
@@ -56,11 +62,10 @@ const OrderReady = ({ idDoc, state, time, table, client, menuItem }) => {
         </div>
       </div>
       <div className='btn-wrapper'>
-        <Button onClick={() => { upDateStatus(idDoc) }} className='btn-std' children={'Entregar'}></Button>
+        <Button onClick={() => { upDateStatus(idDoc) }} className='btn-std' children={'Entregar'} />
       </div>
     </div>
   )
-
 }
 
 export default OrderReady;

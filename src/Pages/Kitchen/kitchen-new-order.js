@@ -24,7 +24,10 @@ const KitchenNewOrder = () => {
         setOrderLounge(arrayOrder)
       })
   }, []);
-  console.log(orderLounge);
+
+  function removeOrder(id) {
+    setOrderLounge(orderLounge.filter(item => item.id !== id))
+  }
 
   return (
     <>
@@ -33,7 +36,7 @@ const KitchenNewOrder = () => {
       </div>
 
       <div>
-        {orderLounge.map(item => <OrdersReceived key={item.id} time={item.time} table={item.table} client={item.client} menuItem={item.menuItem} state={item.state} idDoc={item.id} />)}
+        {orderLounge.map(item => <OrdersReceived key={item.id} time={item.time} table={item.table} client={item.client} menuItem={item.menuItem} state={item.state} idDoc={item.id} removeOrder={removeOrder} />)}
       </div>
 
     </>

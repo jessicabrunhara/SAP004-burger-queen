@@ -17,6 +17,16 @@ const Register = () => {
   const [loading, setLoading] = useState(false);
   const [sector, setSector] = useState('kitchen');
 
+  const createProfile = {
+    newProfile(name) {
+      return firebase
+        .auth()
+        .currentUser.updateProfile({
+          displayName: name,
+        });
+    },
+  };
+
   function populateUser() {
     const user = firebase.auth().currentUser
 
@@ -27,6 +37,7 @@ const Register = () => {
     });
 
     sectorPromise.then(() => {
+      createProfile.newProfile(name)
       setMsgType('sucesso');
       setLoading(false);
     }).catch((error) => {

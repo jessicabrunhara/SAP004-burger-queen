@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import Button from 'Components/Button/button';
 import './kitchen.css';
 import firebase from 'Config/firebase';
@@ -6,7 +6,7 @@ import growl from 'growl-alert';
 import 'growl-alert/dist/growl-alert.css';
 
 
-const OrdersReceived = ({ idDoc, state, time, table, client, menuItem }) => {
+const OrdersReceived = ({ idDoc, state, time, table, client, menuItem, removeOrder }) => {
 
   const upDateStatus = (id) => {
     firebase.firestore().collection('orders')
@@ -15,6 +15,7 @@ const OrdersReceived = ({ idDoc, state, time, table, client, menuItem }) => {
         state: 'Pedido Pronto',
         endTime: Date.now(),
       }).then(() => {
+        removeOrder(id)
         growl({ text: 'Pedido enviado para o salão!', type: 'success', fadeAway: true, fadeAwayTimeout: 2000 });
       }).catch(() => {
         growl({ text: 'Erro ao enviar o seu pedido, tente novamente', type: 'error', fadeAway: true, fadeAwayTimeout: 2000 });
@@ -46,7 +47,15 @@ const OrdersReceived = ({ idDoc, state, time, table, client, menuItem }) => {
       <div className='kitchen-order-info'>
 
         <div className='kitchen-ordered-wrapper'>
-          {menuItem.map(element =>
+          {menuItem.filter(item => item.hamburger === true).map(element =>
+            <div className='items-wrapper'>
+              <div className='kitchen-quantify-ordered'>{element.quantity}</div>
+              <div className='kitchen-item-ordered'>{element.name}</div>
+              <div className='kitchen-item-ordered'>Sabor: {element.burgerOption}<span>adicional: {element.adds}</span></div>
+              <div className='kitchen-price-ordered'>R${element.price},00</div>
+            </div>
+          )}
+          {menuItem.filter(item => item.hamburger === false).map(element =>
             <div className='items-wrapper'>
               <div className='kitchen-quantify-ordered'>{element.quantity}</div>
               <div className='kitchen-item-ordered'>{element.name}</div>
@@ -60,7 +69,7 @@ const OrdersReceived = ({ idDoc, state, time, table, client, menuItem }) => {
         <Button onClick={() => { upDateStatus(idDoc) }} className='btn-order-kitchen' type='button' children={'Pronto para servir'} />
       </div>
 
-    </div>
+    </div >
   )
 }
 
