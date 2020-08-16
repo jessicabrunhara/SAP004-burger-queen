@@ -122,17 +122,19 @@
 
 .all-products-name {
   display: flex;
+  min-width: 200px;
+ flex-direction: column;
 }
 
 .item-ordered {
-  align-items: center;
+  align-items: flex-start;
   justify-content: space-between;
   font-size: 20px;
 }
 
-/*  .item-ordered p, .product-name {
-  margin: 2px;
- }  */
+ .product-name {
+  margin: 0px;
+ }  
 
 .display-name-lounge {
   margin: 5px 0 0 20px;
@@ -147,6 +149,22 @@
   width: 20px;
   text-align: end;
 }
+
+.products-and-add-option {
+  display: flex;
+  flex-direction: column;
+}
+
+.all-add-option {
+  display: flex;
+  flex-direction: column;
+}
+
+.product-add-option {
+  margin: 0px;
+  font-size: 16px;
+}
+
 
 input[type=number]::-webkit-inner-spin-button {
   -webkit-appearance: none;

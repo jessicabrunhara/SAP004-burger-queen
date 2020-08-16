@@ -4,7 +4,7 @@ import OrdersReceived from 'Components/Kitchen/order-received';
 import firebase from 'Config/firebase';
 import '../Lounge/lounge.css'
 
-const KitchenNewOrder = () => { 
+const KitchenNewOrder = () => {
 
   const [orderLounge, setOrderLounge] = useState([]);
 
@@ -37,9 +37,8 @@ const KitchenNewOrder = () => {
       </div>
 
       <div className='order-list'>
-        {orderLounge.map(item => <OrdersReceived key={item.id} time={item.time} table={item.table} client={item.client} menuItem={item.menuItem} state={item.state} idDoc={item.id} removeOrder={removeOrder} />)}
+        {orderLounge.map(item => <OrdersReceived key={item.id} time={item.time} table={item.table} client={item.client} menuItem={item.menuItem} state={item.state} idDoc={item.id} waiterName={item.waiterName} removeOrder={removeOrder} />)}
       </div>
-
     </>
   )
 }

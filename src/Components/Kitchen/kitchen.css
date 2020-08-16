@@ -46,14 +46,19 @@ display: flex;
 	width: 230px;
 }
 
-.kitchen-time-wrapper {
+.kitchen-time-wrapper, .finish-time-wrapper {
 	align-self: flex-end;
 	padding: 6px;
 	border: 2px solid whitesmoke;
 	border-radius: 25%;
 	background-color: whitesmoke;
-	margin-bottom: 4px;
+	font-size: 14px;
 }
+
+.kitchen-time-wrapper {
+	font-weight: 500;
+}
+
 
 .kitchen-order-info{
   display: flex;
@@ -89,6 +94,26 @@ display: flex;
 
 .kitchen-price-ordered{
 	width: 75px;
+}
+
+.total-wrapper {
+    align-items: end;
+    width: 110px;
+    color: black;
+    padding: 2px;
+    border-radius: 8px;
+    border: 0px solid #ffffff;
+    box-shadow: 0px 0px 3px #000000;
+    align-self: flex-end;
+    margin-right: 20px;
+	background-color: #009d8c;
+}
+
+.total-ordered {
+	display: flex;
+	justify-content: center;
+	font-weight: 500;
+	color: white;
 }
 
 .kitchen-item-ordered{

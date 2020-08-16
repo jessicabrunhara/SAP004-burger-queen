@@ -37,7 +37,7 @@ const LoungeOrderReady = () => {
         <HeaderLounge />
       </div>
       <div className='order-list'>
-        {orderReady.map(item => <OrderReady key={item.id} time={item.time} table={item.table} client={item.client} menuItem={item.menuItem} state={item.state} idDoc={item.id} removeOrder={removeOrder} />)}
+        {orderReady.map(item => <OrderReady key={item.id} time={item.time} table={item.table} client={item.client} menuItem={item.menuItem} state={item.state} idDoc={item.id} waiterName={item.waiterName} removeOrder={removeOrder} />)}
       </div>
     </div>
   )

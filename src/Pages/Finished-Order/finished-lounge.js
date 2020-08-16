@@ -31,7 +31,7 @@ const FinishedLounge = () => {
         <HeaderLounge />
       </div>
       <div className='order-list'>
-        {finalizedOrder.map(item => <FinalizedOrders key={item.id} time={item.time} table={item.table} client={item.client} menuItem={item.menuItem} state={item.state} idDoc={item.id} />)}
+        {finalizedOrder.map(item => <FinalizedOrders key={item.id} time={item.time} table={item.table} client={item.client} menuItem={item.menuItem} state={item.state} idDoc={item.id} waiterName={item.waiterName} total={item.total} endTime={item.endTime} />)}
       </div>
     </div>
   )
