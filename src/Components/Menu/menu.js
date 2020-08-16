@@ -15,14 +15,16 @@ const Menu = ({ items }) => {
   const [client, setClient] = useState('');
   const userLounge = firebase.auth().currentUser;
 
-  function sendOrder(table, client) {
+  function sendOrder(table, client, total) {
     if (table && client != '') {
       const orderPromise = firebase.firestore().collection('orders').add({
         client,
         table,
         menuItem,
+        waiterName: userLounge.displayName,
         state: 'Preparando',
-        time: Date.now()
+        time: Date.now(),
+        total
       });
       orderPromise.then(() => {
         setMenuItem([])
@@ -97,7 +99,7 @@ const Menu = ({ items }) => {
 
         <div className='table-wrapper'>
           <div className='display-name-lounge'>Atendente: {userLounge && userLounge.displayName}</div>
-          <Input value={client} onChange={(e) => setClient(e.target.value)} type='text' className='input-style' placeholder='Nome' required="required" requiredTxt='Preencha o nome do cliente'>Cliente: </Input>
+          <Input value={client} onChange={(e) => setClient(e.target.value)} type='text' className='input-style' placeholder='Cliente' required="required" requiredTxt='Preencha o nome do cliente'>Cliente: </Input>
           <Input value={table} onChange={(e) => setTable(e.target.value)} type='number' className='input-style' placeholder='Mesa' required >Mesa:</Input>
         </div>
 
@@ -107,8 +109,11 @@ const Menu = ({ items }) => {
               <div className='item-ordered'>
                 <div className='all-products-name'>
                   <p className='product-name'>{product.name}</p>
-                  <p className='product-name'>{product.adds}</p>
-                  <p className='product-name'>{product.burgerOption}</p>
+                  <div>
+                    {!!product.burgerOption && <p className='product-add-option'>Sabor: {product.burgerOption}</p>}
+                    {!!product.adds && <p className='product-add-option'>Adicionais: {`${product.adds.join(", ")
+                      } `}</p>}
+                  </div>
                 </div>
                 <div className='btn-order-wrapper'>
                   <Button className='btn-add' type='button' onClick={() => changeQuantity(product, 1)}><i className="fas fa-plus"></i></Button>
@@ -126,7 +131,7 @@ const Menu = ({ items }) => {
           <div className='total-value'>{total},00 </div>
         </div>
         <div className='btn-send-wrapper'>
-          <Button onClick={() => sendOrder(table, client)} type='button' className='btn-std' children={'Enviar'} />
+          <Button onClick={() => sendOrder(table, client, total)} type='button' className='btn-std' children={'Enviar'} />
           <Button onClick={clearOrder} type='button' className='btn-clear' children={'Cancelar'} />
         </div>
       </div>
