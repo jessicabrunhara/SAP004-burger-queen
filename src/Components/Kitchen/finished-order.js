@@ -18,8 +18,7 @@ const FinalizedOrders = ({ idDoc, state, time, table, client, menuItem, waiterNa
     <div className='kitchen-order-wrapper'>
       <div className='kitchen-table-wrapper'>
         <div className='kitchen-time-wrapper'>{formatDate(time)}</div>
-        <div className='kitchen-time-wrapper'>{formatDate(endTime)}</div>
-        <div className='kitchen-time-wrapper'>{(endTime - time) / (1000 * 60)} minutos</div>
+        <div className='finish-time-wrapper'><u>Pedido pronto em: {parseFloat((endTime - time) / (1000 * 60)).toFixed(2)} min.</u></div>
         <div className='client-table-wrapper'>
           <div className='kitchen-table-information-a'><span className='strong-kitchen'>Cliente: </span>{client} </div>
           <div className='kitchen-table-information'><span className='strong-kitchen'>Mesa: </span> {table} </div>
@@ -54,8 +53,8 @@ const FinalizedOrders = ({ idDoc, state, time, table, client, menuItem, waiterNa
           )}
         </div>
       </div>
-      <div>
-        <div className='price-ordered'>Total: {total},00 </div>
+      <div className='total-wrapper'>
+        <div className='total-ordered'>Total: {total},00 </div>
       </div>
     </div >
   )

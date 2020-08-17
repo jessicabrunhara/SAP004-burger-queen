@@ -127,7 +127,7 @@
 }
 
 .item-ordered {
-  align-items: center;
+  align-items: flex-start;
   justify-content: space-between;
   font-size: 20px;
 }
@@ -150,9 +150,21 @@
   text-align: end;
 }
 
-.product-add-option{
-  margin: 0px
+.products-and-add-option {
+  display: flex;
+  flex-direction: column;
 }
+
+.all-add-option {
+  display: flex;
+  flex-direction: column;
+}
+
+.product-add-option {
+  margin: 0px;
+  font-size: 16px;
+}
+
 input[type=number]::-webkit-inner-spin-button {
   -webkit-appearance: none;
 }

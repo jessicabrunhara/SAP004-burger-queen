@@ -107,14 +107,17 @@ const Menu = ({ items }) => {
           <div className='ordered-wrapper'>
             {menuItem.map(product =>
               <div className='item-ordered'>
-                <div className='all-products-name'>
-                  <p className='product-name'>{product.name}</p>
-                  <div>
-                    {!!product.burgerOption && <p className='product-add-option'>Sabor: {product.burgerOption}</p>}
-                    {!!product.adds && <p className='product-add-option'>Adicionais: {`${product.adds.join(", ")
+                <div className='products-and-add-option'>
+                  <div className='all-products-name'>
+                    <p className='product-name'>{product.name}</p>
+                  </div>
+                  <div className='all-add-option'>
+                    {!!product.burgerOption && <p className='product-add-option'>- Sabor: {product.burgerOption}</p>}
+                    {!!product.adds && <p className='product-add-option'>- Adicionais: {`${product.adds.join(", ")
                       } `}</p>}
                   </div>
                 </div>
+
                 <div className='btn-order-wrapper'>
                   <Button className='btn-add' type='button' onClick={() => changeQuantity(product, 1)}><i className="fas fa-plus"></i></Button>
                   <div className='quantify-ordered'>{product.quantity}</div>

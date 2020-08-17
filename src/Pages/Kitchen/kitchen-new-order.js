@@ -39,7 +39,6 @@ const KitchenNewOrder = () => {
       <div className='order-list'>
         {orderLounge.map(item => <OrdersReceived key={item.id} time={item.time} table={item.table} client={item.client} menuItem={item.menuItem} state={item.state} idDoc={item.id} waiterName={item.waiterName} removeOrder={removeOrder} />)}
       </div>
-
     </>
   )
 }
