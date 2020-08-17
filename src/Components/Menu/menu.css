@@ -122,6 +122,8 @@
 
 .all-products-name {
   display: flex;
+  min-width: 200px;
+ flex-direction: column;
 }
 
 .item-ordered {
@@ -130,9 +132,9 @@
   font-size: 20px;
 }
 
-/*  .item-ordered p, .product-name {
-  margin: 2px;
- }  */
+ .product-name {
+  margin: 0px;
+ }  
 
 .display-name-lounge {
   margin: 5px 0 0 20px;
@@ -148,6 +150,9 @@
   text-align: end;
 }
 
+.product-add-option{
+  margin: 0px
+}
 input[type=number]::-webkit-inner-spin-button {
   -webkit-appearance: none;
 }

@@ -2,7 +2,7 @@ import React from 'react';
 import './kitchen.css';
 
 
-const FinalizedOrders = ({ idDoc, state, time, table, client, menuItem }) => {
+const FinalizedOrders = ({ idDoc, state, time, table, client, menuItem, waiterName, total, endTime }) => {
 
   const formatDate = (dateOrder) => {
     if (dateOrder != null) {
@@ -18,12 +18,14 @@ const FinalizedOrders = ({ idDoc, state, time, table, client, menuItem }) => {
     <div className='kitchen-order-wrapper'>
       <div className='kitchen-table-wrapper'>
         <div className='kitchen-time-wrapper'>{formatDate(time)}</div>
+        <div className='kitchen-time-wrapper'>{formatDate(endTime)}</div>
+        <div className='kitchen-time-wrapper'>{(endTime - time) / (1000 * 60)} minutos</div>
         <div className='client-table-wrapper'>
           <div className='kitchen-table-information-a'><span className='strong-kitchen'>Cliente: </span>{client} </div>
           <div className='kitchen-table-information'><span className='strong-kitchen'>Mesa: </span> {table} </div>
         </div>
         <div className='kitchen-table-information'><span className='strong-kitchen'>Status: </span>{state}</div>
-        <div className='kitchen-table-information'><span className='strong-kitchen'>Atendente: </span></div>
+        <div className='kitchen-table-information'><span className='strong-kitchen'>Atendente: </span> {waiterName}</div>
       </div>
 
       <div className='kitchen-order-info'>
@@ -37,7 +39,8 @@ const FinalizedOrders = ({ idDoc, state, time, table, client, menuItem }) => {
                 <div className='kitchen-price-ordered'>R${element.price},00</div>
               </div>
               <div className='kitchen-item-add'>- Sabor: {element.burgerOption}</div>
-              <div className='kitchen-item-add'>- Adicional: {element.adds}</div>
+              <div className='kitchen-item-add'>- Adicionais: {`${element.adds.join(", ")
+                } `}</div>
             </div>
           )}
           {menuItem.filter(item => item.hamburger === false).map(element =>
@@ -50,7 +53,9 @@ const FinalizedOrders = ({ idDoc, state, time, table, client, menuItem }) => {
             </div>
           )}
         </div>
-
+      </div>
+      <div>
+        <div className='price-ordered'>Total: {total},00 </div>
       </div>
     </div >
   )

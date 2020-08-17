@@ -6,14 +6,13 @@ import growl from 'growl-alert';
 import 'growl-alert/dist/growl-alert.css';
 
 
-const OrdersReceived = ({ idDoc, state, time, table, client, menuItem, removeOrder }) => {
+const OrdersReceived = ({ idDoc, state, time, table, client, menuItem, removeOrder, waiterName }) => {
 
   const upDateStatus = (id) => {
     firebase.firestore().collection('orders')
       .doc(id)
       .update({
         state: 'Pedido Pronto',
-        endTime: Date.now(),
       }).then(() => {
         removeOrder(id)
         growl({ text: 'Pedido enviado para o salão!', type: 'success', fadeAway: true, fadeAwayTimeout: 2000 });
@@ -41,7 +40,7 @@ const OrdersReceived = ({ idDoc, state, time, table, client, menuItem, removeOrd
           <div className='kitchen-table-information'><span className='strong-kitchen'>Mesa: </span> {table} </div>
         </div>
         <div className='kitchen-table-information'><span className='strong-kitchen'>Status: </span>{state}</div>
-        <div className='kitchen-table-information'><span className='strong-kitchen'>Atendente: </span> </div>
+        <div className='kitchen-table-information'><span className='strong-kitchen'>Atendente: </span>{waiterName}  </div>
       </div>
 
       <div className='kitchen-order-info'>
@@ -54,7 +53,8 @@ const OrdersReceived = ({ idDoc, state, time, table, client, menuItem, removeOrd
                 <div className='kitchen-item-ordered'>{element.name}</div>
               </div>
               <div className='kitchen-item-add'>- Sabor: {element.burgerOption}</div>
-              <div className='kitchen-item-add'>- Adicional: {element.adds}</div>
+              <div className='kitchen-item-add'>- Adicionais: {`${element.adds.join(", ")
+                } `}</div>
             </div>
           )}
           {menuItem.filter(item => item.hamburger === false).map(element =>
