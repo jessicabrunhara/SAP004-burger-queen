@@ -6,7 +6,7 @@ import growl from 'growl-alert';
 import 'growl-alert/dist/growl-alert.css';
 
 
-const OrderReady = ({ idDoc, state, time, table, client, menuItem, removeOrder }) => {
+const OrderReady = ({ idDoc, state, time, table, client, menuItem, removeOrder, waiterName }) => {
 
   const upDateStatus = (id) => {
     firebase.firestore().collection('orders')
@@ -41,7 +41,7 @@ const OrderReady = ({ idDoc, state, time, table, client, menuItem, removeOrder }
           <div className='lounge-table-information'><span className='strong-lounge'>Mesa: </span> {table} </div>
         </div>
         <div className='lounge-table-information'><span className='strong-lounge'>Status: </span>{state}</div>
-        <div className='lounge-table-information'><span className='strong-lounge'>Atendente: </span> </div>
+        <div className='lounge-table-information'><span className='strong-lounge'>Atendente: </span>{waiterName} </div>
       </div>
 
       <div className='lounge-order-info'>
@@ -49,23 +49,29 @@ const OrderReady = ({ idDoc, state, time, table, client, menuItem, removeOrder }
         <div className='lounge-ordered-wrapper'>
           {menuItem.filter(item => item.hamburger === true).map(element =>
             <div className='items-wrapper'>
-              <div className='lounge-quantify-ordered'>{element.quantity}</div>
-              <div className='lounge-item-ordered'>{element.name}</div>
-              <div className='lounge-item-ordered'>Sabor: {element.burgerOption}<span>adicional: {element.adds}</span></div>
+              <div className='kitchen-name-quantity'>
+                <div className='lounge-quantify-ordered'>{element.quantity}</div>
+                <div className='lounge-item-ordered'>{element.name}</div>
+              </div>
+              <div className='lounge-item-ordered'>- Sabor: {element.burgerOption}</div>
+              <div className='lounge-item-ordered'>- Adicionais: {`${element.adds.join(", ")
+                } `}</div>
             </div>
           )}
           {menuItem.filter(item => item.hamburger === false).map(element =>
             <div className='items-wrapper'>
-              <div className='lounge-quantify-ordered'>{element.quantity}</div>
-              <div className='lounge-item-ordered'>{element.name}</div>
+              <div className='kitchen-name-quantity'>
+                <div className='lounge-quantify-ordered'>{element.quantity}</div>
+                <div className='lounge-item-ordered'>{element.name}</div>
+              </div>
             </div>
           )}
         </div>
       </div>
-      <div className='btn-wrapper'>
+      <div className='btn-wrapper-lounge-order-ready'>
         <Button onClick={() => { upDateStatus(idDoc) }} className='btn-std' children={'Entregar'} />
       </div>
-    </div>
+    </div >
   )
 }
 

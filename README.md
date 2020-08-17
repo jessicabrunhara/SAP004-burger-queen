@@ -1,5 +1,5 @@
 <p align="center">
-<img src="./src/images/4.gif " width="200" heigth="200" >
+<img src="./src/images/4.gif" width="200" heigth="200">
 </p>
 
 ***
@@ -142,7 +142,7 @@ O protótipo também foi essencial no planejamento, para que a equipe tivesse a 
 
 
 #### Página de Login para o Tablet
-<img src="./src/images/logintablet.png" width="600" 
+<img src="./src/images/logintablet.png" width="600"> 
 
 
 #### Página de Login para Web
