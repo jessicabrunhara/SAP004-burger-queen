@@ -6,20 +6,18 @@ import './lounge.css';
 
 const LoungeNewOrder = () => {
 
-  const [menuStore, setMenuStore] = useState([]);
-
+  const [menuStore, setMenuStore] = useState([]);                          
   useEffect(() => {
     firebase.firestore()
       .collection('menu')
       .get()
       .then((result) => {
-        const arrayMenu = [];
-        result.docs.forEach(doc => {
-          arrayMenu.push({
+        const arrayMenu = result.docs.map(doc => {
+          return {
             id: doc.id,
             ...doc.data()
+          }
           })
-        })
         setMenuStore(arrayMenu)
       })
   }, []);

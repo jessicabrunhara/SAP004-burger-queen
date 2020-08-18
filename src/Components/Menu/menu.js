@@ -21,7 +21,7 @@ const Menu = ({ items }) => {
         client,
         table,
         menuItem,
-        waiterName: userLounge.displayName,
+        waiterName: userLounge.displayName, 
         state: 'Preparando',
         time: Date.now(),
         total
@@ -73,8 +73,8 @@ const Menu = ({ items }) => {
   })
 
   return (
-    <div className='order-style'>
-      <div className='menu-wrapper'>
+    <main className='order-style'>
+      <section className='menu-wrapper'>
         <div className='all-menu'>
           <div className='menu-breakfast'>
             <div className='label-menu'>Café da Manhã</div>
@@ -93,10 +93,9 @@ const Menu = ({ items }) => {
             </div>
           </div>
         </div >
-      </div>
+      </section>
 
-      <div className='order-table-wrapper'>
-
+      <section className='order-table-wrapper'>
         <div className='table-wrapper'>
           <div className='display-name-lounge'>Atendente: {userLounge && userLounge.displayName}</div>
           <Input value={client} onChange={(e) => setClient(e.target.value)} type='text' className='input-style' placeholder='Cliente' required="required" requiredTxt='Preencha o nome do cliente'>Cliente: </Input>
@@ -137,8 +136,8 @@ const Menu = ({ items }) => {
           <Button onClick={() => sendOrder(table, client, total)} type='button' className='btn-std' children={'Enviar'} />
           <Button onClick={clearOrder} type='button' className='btn-clear' children={'Cancelar'} />
         </div>
-      </div>
-    </div >
+      </section>
+    </main>
   )
 };
 
