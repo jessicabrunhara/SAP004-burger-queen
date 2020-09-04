@@ -14,17 +14,13 @@ const MyModal = (props) => {
     if (e.target.checked) {
       setAdds([...adds, selectedAdd])
     } else {
-      console.log('qualquer coisa')
       setAdds([selectedAdd])
 
     }
   }
   const sendAdds = () => {
-    console.log(props.product.price)
-    console.log(adds)
     props.addNewItem({ ...props.product, adds, burgerOption, price: props.product.price + adds.length })
     setModalIsOpen(false)
-    console.log('adiciona aí')
   }
 
   return (
@@ -37,7 +33,6 @@ const MyModal = (props) => {
           <>
             <span><Input type='radio' onChange={(e) => {
               setBurgerOption(e.target.value)
-              console.log(e.target.value)
             }} className='radio-modal' name='options' value={option} />
               <aria-label htmlFor={option}>{option}</aria-label></span>
           </>

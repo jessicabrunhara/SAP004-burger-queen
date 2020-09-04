@@ -5,17 +5,18 @@ import { Link } from 'react-router-dom';
 import firebase from 'Config/firebase';
 import 'firebase/auth';
 import Button from 'Components/Button/button'
-
+import growl from 'growl-alert';
+import 'growl-alert/dist/growl-alert.css';
 
 const HeaderKitchen = () => {
 
   const signOut = () => {
     if (firebase.auth().currentUser) {
       firebase.auth().signOut()
-        .then(result => {
-          console.log(' oi');
-        }).catch(erro => {
-          console.log('erro tchau');
+        .then(() => {
+          growl({ text: 'Você está desconectado. Até mais!', type: 'sucess', fadeAway: true, fadeAwayTimeout: 2000 });
+        }).catch(() => {
+          growl({ text: 'Erro ao sair, tente novamente', type: 'error', fadeAway: true, fadeAwayTimeout: 2000 });
         });
     }
   }
