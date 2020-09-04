@@ -22,25 +22,19 @@ const HeaderLounge = () => {
 
   return (
     <header className='header-wrapper-lounge'>
-
-      <div className='logo-header-wrapper'>
+      <figure className='logo-header-wrapper'>
         <img src={LogoPiscando} />
-      </div>
-
+      </figure>
       <div className='all-btn-links'>
-
         <div className='btn-routes'>
           <Button className='btn-links'><Link className='link' to='/lounge-new-order' children={'Novo Pedido'} /></Button>
           <Button className='btn-links'><Link className='link' to='/lounge-order-ready' children={'Pedidos Prontos'} /></Button>
           <Button className='btn-links'><Link className='link' to='/finished-lounge' children={'Pedidos Entregues'} /></Button>
         </div>
-
         <div className='btn-link-out'>
           <Button className='btn-out' onClick={signOut}><Link className='link' to='/' children={'Sair'} /></Button>
         </div>
-
       </div>
-
     </header >
   );
 }

@@ -28,9 +28,8 @@ const MyModal = (props) => {
   }
 
   return (
-    <div>
+    <>
       <Button onClick={() => setModalIsOpen(true)} className='btn-menu'>{props.children}</Button>
-
       <Modal {...props} isOpen={modalIsOpen} onRequestClose={() => setModalIsOpen(false)} className='modal-wrapper'>
         <Button onClick={() => setModalIsOpen(false)} className='btn-modal-out'><p className='modal-close' children={'X'}></p></Button>
         <div className='modal-options'>Opções do Hambúrguer</div>
@@ -57,7 +56,7 @@ const MyModal = (props) => {
         <Button onClick={sendAdds} className='send-btn-modal' type='button' children={'Adicionar'}></Button>
 
       </Modal>
-    </div>
+    </>
   );
 };
 

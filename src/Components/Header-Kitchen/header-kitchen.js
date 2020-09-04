@@ -22,24 +22,18 @@ const HeaderKitchen = () => {
 
   return (
     <header className='header-wrapper-kitchen'>
-
-      <div className='logo-header-wrapper'>
+      <figure className='logo-header-wrapper'>
         <img src={LogoPiscando} />
-      </div>
-
+      </figure>
       <div className='all-btn-links'>
-
         <div className='btn-routes'>
           <Button className='btn-links'><Link className='link' to='/kitchen-new-order' children={'Pedidos Recebidos'} /></Button>
           <Button className='btn-links'><Link className='link' to='/finished-kitchen' children={'Pedidos Finalizados'} /></Button>
         </div>
-
         <div className='btn-link-out'>
           <Button className='btn-out' onClick={signOut}><Link className='link' to='/' children={'Sair'} /></Button>
         </div>
-
       </div>
-
     </header >
   );
 }
